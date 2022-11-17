@@ -1,0 +1,46 @@
+.pos {
+  position: absolute;
+  height: 35%;
+}
+
+.body {
+  bottom: 4%;
+
+  left: 40%;
+}
+
+.teeth {
+  top: 5%;
+  left: 15%;
+  height: 25%;
+}
+
+.nails {
+  top: 45%;
+  left: 8%;
+  height: 25%;
+}
+
+.phoneix {
+  top: 45%;
+  right: 8%;
+  height: 25%;
+}
+
+.bottle {
+  top: 5%;
+  right: 15%;
+  height: 25%;
+}
+
+.earings {
+  top: 5%;
+  left: 40%;
+  height: 25%;
+}
+
+.fist {
+  bottom: 5%;
+  left: 5%;
+  height: 25%;
+}
