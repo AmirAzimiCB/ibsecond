@@ -3,7 +3,7 @@ import Icon from "../Components/3dModels/Icon";
 
 export default function About() {
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative" }} className='container'>
       <img
         style={{ height: "100vh", width: "100%", overflow: "hidden" }}
         src={"/Images/background.png"}

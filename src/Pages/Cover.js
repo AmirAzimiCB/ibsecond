@@ -6,6 +6,7 @@ const CONFIG = {
   scale: [4, 4, 4],
   rotation: [0, 0, 0],
   onlyHead: false,
+  page : "cover"
 };
 
 export default function Cover() {
