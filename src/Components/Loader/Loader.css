@@ -1,0 +1,54 @@
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background: #271d63;
+}
+
+.box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 140%;
+    background: linear-gradient(#00ccff, #d400d4);
+    animation: animate 5s linear infinite;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: #271d63;
+    border-radius: 14px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.box h2 {
+    position: relative;
+    color: #ffffff;
+    font-size: 10vw;
+    z-index: 10;
+}
