@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 gsap.registerPlugin(Draggable);
 export default function Icon() {
   useEffect(() => {
-    Draggable.create("#some", {
+    Draggable.create("#icon", {
       type: "x,y",
       edgeResistance: 0.65,
       bounds: ".container",
@@ -21,39 +21,39 @@ export default function Icon() {
         className='pos body'
         src='/Icons/body.png'
         alt='body'
-        id='some'
+        id='icon'
         onClick={() => alert("clicked")}
       />
       <img
         className='pos bottle'
         src='/Icons/bottle.png'
         alt='bottle '
-        id='some'
+        id='icon'
       />
       <img
         className='pos earings'
         src='/Icons/earings.png'
         alt='earings '
-        id='some'
+        id='icon'
       />
-      <img className='pos fist' src='/Icons/fist.png' alt='fist ' id='some' />
+      <img className='pos fist' src='/Icons/fist.png' alt='fist ' id='icon' />
       <img
         className='pos nails'
         src='/Icons/nails.png'
         alt='nails '
-        id='some'
+        id='icon'
       />
       <img
         className='pos phoneix'
         src='/Icons/phoneix.png'
         alt='phoneix '
-        id='some'
+        id='icon'
       />
       <img
         className='pos teeth'
         src='/Icons/teeth.png'
         alt='teeth '
-        id='some'
+        id='icon'
       />
     </div>
   );

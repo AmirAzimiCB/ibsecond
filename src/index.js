@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cover from "./Pages/Cover";
 import Contact from "./Pages/Contact";
 import About from "./Pages/About";
+import Navbar from "./Components/Navigation/Navbar";
 
 const router = createBrowserRouter([
+  //add navbar
+  
   {
     path: "/",
     element: <Cover />,
@@ -26,6 +28,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <Navbar />
     <RouterProvider router={router} />
   </React.StrictMode>
 );

@@ -18,7 +18,7 @@ const Model = ({ config }) => {
   console.log(gltf);
   const ref = useRef();
 
-  document.addEventListener("mousemove", (e) => {
+  window.addEventListener("mousemove", (e) => {
     if (ref.current) {
       target.set(
         (e.clientX - window.innerWidth / (config.onlyHead ? 4 : 2)) * 0.004,
