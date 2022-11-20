@@ -37,6 +37,11 @@
     cursor: pointer;
     font-weight: 700;
     z-index: 9999;
+    transition: all 0.5s ease;
+}
+
+.nav-link li:hover {
+    transform: translate(0, -5px);
 }
 
 .logo-icon {

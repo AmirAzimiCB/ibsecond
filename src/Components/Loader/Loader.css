@@ -4,7 +4,7 @@
     align-items: center;
     min-height: 100vh;
     min-width: 100vw;
-    background: #271d63;
+    background: #8D72E1;
 }
 
 .box {
@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, .5);
+    background: #6C4AB6;
     overflow: hidden;
     border-radius: 20px;
 }
@@ -24,7 +24,7 @@
     position: absolute;
     width: 150px;
     height: 140%;
-    background: linear-gradient(#00ccff, #d400d4);
+    background: linear-gradient(#FB2576, #FB2576);
     animation: animate 5s linear infinite;
 }
 
@@ -32,7 +32,7 @@
     content: '';
     position: absolute;
     inset: 6px;
-    background: #271d63;
+    background: #8D72E1;
     border-radius: 14px;
 }
 
