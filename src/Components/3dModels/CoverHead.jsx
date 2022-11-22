@@ -10,7 +10,7 @@ import Header from "../Header/Header";
 const target = new Vector3(0, 0, 0);
 
 const Model = ({ config }) => {
-  const gltf = useGLTF("/Models/3D-HEAD.glb");
+  const gltf = useGLTF("/Models/afrogirl.glb");
   const { camera } = useThree();
   console.log(gltf);
   const ref = useRef();
@@ -18,8 +18,10 @@ const Model = ({ config }) => {
   window.addEventListener("mousemove", (e) => {
     if (ref.current) {
       target.set(
-        (e.clientX - window.innerWidth / (config.onlyHead ? 4 : 2)) * 0.004,
-        (e.clientY - window.innerHeight / 4) * -0.004,
+        (e.clientX - window.innerWidth / (config.onlyHead ? 4 : 2)) *
+          (config.onlyHead ? 0.004 : 0.004),
+        (e.clientY - window.innerHeight / 4) *
+          (config.onlyHead ? -0.003 : -0.004),
         camera.position.z + 1
       );
       gsap.to(
@@ -31,9 +33,18 @@ const Model = ({ config }) => {
           delay: 1,
 
           onUpdate: () => {
-            ref.current.children[1].children[0].children[0].children[0].children[0].lookAt(
-              target
-            );
+            if (config.onlyHead) {
+              ref.current.children[1].children[0].children[0].children[0].children[0].children[0].lookAt(
+                target
+              );
+            } else {
+              ref.current.children[1].children[0].children[0].children[0].children[0].children[0].lookAt(
+                target
+              );
+              ref.current.children[1].children[0].children[0].children[0].children[0].lookAt(
+                target
+              );
+            }
           },
         }
       );
@@ -55,10 +66,31 @@ const Lighting = () => {
   return (
     <>
       <ambientLight intensity={0.4} />
-      <pointLight position={[10, 10, 10]} penumbra={1} color={"#ffffff"} />
-      <pointLight position={[-10, 10, 10]} penumbra={1} color={"#ffffff"} />
-      <pointLight position={[-10, -10, 10]} penumbra={1} color={"#ffffff"} />
-      <pointLight position={[-10, -10, -10]} penumbra={1} color={"#ffffff"} />
+      <pointLight
+        position={[10, -10, 10]}
+        intensity={2}
+        penumbra={1}
+        color={"#FC0FC0"}
+      />
+      <pointLight
+        position={[-10, 10, 10]}
+        penumbra={1}
+        intensity={2}
+        color={"#0000ff"}
+      />
+
+      <pointLight
+        position={[-10, -10, 10]}
+        intensity={2}
+        penumbra={1}
+        color={"#FC0FC0"}
+      />
+      <pointLight
+        position={[-10, -10, -10]}
+        intensity={2}
+        penumbra={1}
+        color={"#00ff00"}
+      />
     </>
   );
 };
@@ -68,12 +100,23 @@ export default function CoverHead({ config }) {
 
   return (
     <div style={{ height: "100vh", position: "relative", overflow: "hidden" }}>
-      <Canvas camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 0] }}>
+      {isLoading ? null : (
+        <img
+          src={
+            config.page === "cover"
+              ? "/Images/Cover-bg.png"
+              : "/Images/Contact-bg.png"
+          }
+          className='bg-img'
+          alt='background'
+        />
+      )}
+      <Canvas camera={{ fov: 45, near: 0.1, far: 1000, position: [0, 0, 0] }}>
         <Lighting />
 
         <Suspense fallback={<Loader setIsLoading={setIsLoading} />}>
           <Model config={config} />
-          <Environment files='/CoverEnv.hdr' background />
+          <Environment preset='sunset' />
         </Suspense>
       </Canvas>{" "}
       {isLoading ? null : (

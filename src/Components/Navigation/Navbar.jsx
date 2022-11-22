@@ -25,7 +25,7 @@ export default function Navbar() {
     <>
       {currentRoute !== "/" ? (
         <>
-          <img src='/Icons/earings.png' alt='logo' className='logo-icon' />
+          <img src='/Icons/LogoWhite.png' alt='logo' className='logo-icon' />
           <div className='navbar-container'>
             <ul ref={navLinksRef} className='nav-link'>
               <li>
