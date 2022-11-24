@@ -29,7 +29,7 @@ export default function Navbar() {
           <div className='navbar-container'>
             <ul ref={navLinksRef} className='nav-link'>
               <li>
-                <a href='/' className='link'>
+                <a href='/home' className='link'>
                   Home
                 </a>
               </li>

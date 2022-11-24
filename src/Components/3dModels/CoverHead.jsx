@@ -1,52 +1,62 @@
-import { Canvas, useThree } from "@react-three/fiber";
-import { Environment, useGLTF, Html, useProgress } from "@react-three/drei";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Environment, useGLTF } from "@react-three/drei";
 import React, { Suspense, useRef } from "react";
 import { Vector3 } from "three";
+import * as THREE from "three";
 import { gsap } from "gsap";
 import "./index.css";
 import Loader from "../Loader/Loader";
 import Contact from "../ContactBox/Contact";
 import Header from "../Header/Header";
-const target = new Vector3(0, 0, 0);
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Model = ({ config }) => {
   const gltf = useGLTF("/Models/afrogirl.glb");
-  const { camera } = useThree();
+  let targetY = 0;
+  let targetX = 0;
+  const [target, setTarget] = useState(null);
   console.log(gltf);
   const ref = useRef();
 
-  window.addEventListener("mousemove", (e) => {
-    if (ref.current) {
-      target.set(
-        (e.clientX - window.innerWidth / (config.onlyHead ? 4 : 2)) *
-          (config.onlyHead ? 0.004 : 0.004),
-        (e.clientY - window.innerHeight / 4) *
-          (config.onlyHead ? -0.003 : -0.004),
-        camera.position.z + 1
-      );
-      gsap.to(
-        ref.current.children[1].children[0].children[0].children[0].children[0]
-          .rotation,
-        {
-          ease: "power3.easeOut",
-          duration: 5,
-          delay: 1,
+  useEffect(() => {
+    if (ref) {
+      config.onlyHead
+        ? setTarget(
+            ref.current.children[1].children[0].children[0].children[0]
+              .children[0].children[0]
+          )
+        : setTarget(
+            ref.current.children[1].children[0].children[0].children[0]
+              .children[0]
+          );
+    }
+  }, [ref]);
 
-          onUpdate: () => {
-            if (config.onlyHead) {
-              ref.current.children[1].children[0].children[0].children[0].children[0].children[0].lookAt(
-                target
-              );
-            } else {
-              ref.current.children[1].children[0].children[0].children[0].children[0].children[0].lookAt(
-                target
-              );
-              ref.current.children[1].children[0].children[0].children[0].children[0].lookAt(
-                target
-              );
-            }
-          },
-        }
+  useFrame(({ pointer }) => {
+    if (target) {
+      targetY = config.onlyHead
+        ? -pointer.y < 0.4
+          ? -pointer.y > -0.1
+            ? -pointer.y * 0.01 + 0.4
+            : -pointer.y * 0.1 * 0.8
+          : -pointer.y * 0.9
+        : -pointer.y * 0.5;
+      targetX = config.onlyHead
+        ? pointer.x < 0.2 && pointer.x > -0.4
+          ? pointer.x * 0.1 + 0.3
+          : pointer.x * 0.8
+        : pointer.x * 0.8;
+      console.log(pointer.x, targetX);
+      target.rotation.y = THREE.MathUtils.lerp(
+        target.rotation.y,
+        targetX,
+        0.02
+      );
+      target.rotation.x = THREE.MathUtils.lerp(
+        target.rotation.x,
+        targetY,
+        0.01
       );
     }
   });

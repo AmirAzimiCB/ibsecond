@@ -8,7 +8,8 @@ import Contact from "./Pages/Contact";
 import About from "./Pages/About";
 import Navbar from "./Components/Navigation/Navbar";
 import About2 from "./Pages/About2";
-
+import Home from "./Pages/Home";
+import "react-round-carousel/src/index.css";
 const router = createBrowserRouter([
   //add navbar
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     path: "/about2",
     element: <About2 />,
   },
+  {
+    path: "/home",
+    element: <Home />,
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

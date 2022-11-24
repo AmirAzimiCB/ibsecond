@@ -16,7 +16,7 @@ export default function Contact() {
       </span>
       <div className='form'>
         <div className='form-input-fields'>
-          <input className='input-field' placeholder='Name' />
+          <input className='input-field' />
           <input className='input-field' placeholder='Subject' />
         </div>
         <textarea
