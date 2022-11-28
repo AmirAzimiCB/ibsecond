@@ -1,0 +1,44 @@
+.about-text-container {
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    right: 100vw;
+    overflow: hidden;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.about-image {
+    height: 100vh;
+    width: 55vw;
+    overflow: hidden;
+}
+
+.about-text {
+    width: 45%;
+    height: 100vh;
+    padding-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+
+    overflow: hidden;
+}
+
+.drag-over-text {
+    font-size: 1.3rem;
+    margin-top: 10%cd;
+}
+
+.cross-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #000;
+    font-size: 1.5rem;
+    margin: .5rem;
+    z-index: 999;
+    cursor: pointer;
+}

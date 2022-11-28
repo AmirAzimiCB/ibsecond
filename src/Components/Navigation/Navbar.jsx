@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <>
       {currentRoute !== "/" ? (
-        <>
+        <div style={{ position: "relative" }}>
           <img src='/Icons/LogoWhite.png' alt='logo' className='logo-icon' />
           <div className='navbar-container'>
             <ul ref={navLinksRef} className='nav-link'>
@@ -57,7 +57,7 @@ export default function Navbar() {
               </div>
             )}
           </div>
-        </>
+        </div>
       ) : null}
     </>
   );

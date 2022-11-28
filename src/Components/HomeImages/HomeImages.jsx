@@ -7,9 +7,9 @@ export default function HomeImages() {
   const descRefBottom = React.useRef(null);
   const descRefTop = React.useRef(null);
 
-  useEffect(() => {
-    document.getElementById("imagesContainer").scrollTop = 0;
-  }, [isTop]);
+  // useEffect(() => {
+  //   document.getElementById("imagesContainer").scrollTop = 0;
+  // }, [isTop]);
 
   const handleScrollClick = () => {
     console.log("clicked");

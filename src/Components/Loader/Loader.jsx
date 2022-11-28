@@ -10,9 +10,9 @@ export default function Loader({ setIsLoading }) {
   return (
     <Html>
       <div className='loader-container'>
-        <div className='box'>
-          <h2>{progress.toFixed(0)}</h2>
-        </div>
+        <video autoPlay muted loop id='myVideo'>
+          <source src='/Video/loader.mp4' type='video/mp4' />
+        </video>
       </div>
     </Html>
   );

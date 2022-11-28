@@ -1,91 +1,32 @@
 import React from "react";
-import Icon from "../Components/3dModels/Icon";
+import Carousel from "../Components/CircularCarousel/Carousel";
+import AboutText from "../Components/AboutText/AboutText";
 
 export default function About() {
+  const [object, setObject] = React.useState();
+  const [isClicked, setIsClicked] = React.useState(false);
   return (
-    <>
-      <div
-        style={{ position: "relative", overflow: "hidden" }}
-        className='container'
-      >
-        <img
-          style={{ height: "100vh", width: "100%", overflow: "hidden" }}
-          src={"/Images/background.png"}
-          alt='background'
-        />
-        <Icon />
-      </div>
-      <div
+    <div
+      draggable='false'
+      style={{ height: "100vh", width: "100vw", overflow: "hidden" }}
+    >
+      <img
+        src='/Images/background.png'
+        alt='background'
+        draggable='false'
         style={{
-          display: "flex",
-          flexDirection: "row",
+          position: "absolute",
+          top: 0,
+          width: "100%",
+          height: "100%",
         }}
-        className='about-text-container'
-      >
-        <div className='about-image'>
-          <img
-            style={{ height: "100vh", width: "100%", overflow: "hidden" }}
-            src={"/Images/background.png"}
-            alt='about image'
-          />
-        </div>
-
-        <div
-          style={{
-            width: "45%",
-            height: "100vh",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "0 5%",
-          }}
-          className='about-text'
-        >
-          <h1
-            style={{
-              textAlign: "center",
-            }}
-          >
-            About
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            condimentum, nisl ut aliquam lacinia, nunc nisl aliquam nisl, quis
-            aliquam nisl nunc vel nunc. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            condimentum, nisl ut aliquam lacinia, nunc nisl aliquam nisl, quis
-            aliquam nisl nunc vel nunc. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi.
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            condimentum, nisl ut aliquam lacinia, nunc nisl aliquam nisl, quis
-            aliquam nisl nunc vel nunc. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi facilisi. Nulla facilisi.
-            Nulla facilisi. Nulla facilisi. Nulla
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            condimentum, nisl ut aliquam lacinia, nunc nisl aliquam nisl, quis
-            aliquam nisl nunc vel nunc. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-            facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          </p>
-        </div>
-      </div>
-    </>
+      />
+      <Carousel setIsClicked={setIsClicked} setObject={setObject} />
+      <AboutText
+        setIsClicked={setIsClicked}
+        isClicked={isClicked}
+        object={object}
+      />
+    </div>
   );
 }

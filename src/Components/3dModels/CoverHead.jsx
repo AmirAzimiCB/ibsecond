@@ -47,7 +47,7 @@ const Model = ({ config }) => {
           ? pointer.x * 0.1 + 0.3
           : pointer.x * 0.8
         : pointer.x * 0.8;
-      console.log(pointer.x, targetX);
+
       target.rotation.y = THREE.MathUtils.lerp(
         target.rotation.y,
         targetX,
@@ -123,7 +123,6 @@ export default function CoverHead({ config }) {
       )}
       <Canvas camera={{ fov: 45, near: 0.1, far: 1000, position: [0, 0, 0] }}>
         <Lighting />
-
         <Suspense fallback={<Loader setIsLoading={setIsLoading} />}>
           <Model config={config} />
           <Environment preset='sunset' />
