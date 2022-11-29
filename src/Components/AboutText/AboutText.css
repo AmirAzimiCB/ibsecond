@@ -1,44 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+
 .about-text-container {
-    width: 100vw;
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    top: 0;
-    right: 100vw;
-    overflow: hidden;
-    background-color: #fff;
-    z-index: 999;
+  font-family: "Courier Prime", monospace;
+  width: 75vw;
+  height: auto;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  left: 0;
+  transform: translate(15%, 105%);
+  background-color: #fff;
+  z-index: 999;
+}
+
+.about-text-container p {
+  font-size: 1.2rem;
 }
 
 .about-image {
-    height: 100vh;
-    width: 55vw;
-    overflow: hidden;
+  height: 100vh;
+  width: 40vw;
+  overflow: hidden;
 }
 
 .about-text {
-    width: 45%;
-    height: 100vh;
-    padding-top: 2rem;
-    justify-content: center;
-    align-items: center;
-    padding: 0 5%;
+  width: 50%;
+  height: 100vh;
 
-    overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5%;
+  padding-top: 4rem;
+  overflow: hidden;
 }
 
 .drag-over-text {
-    font-size: 1.3rem;
-    margin-top: 10%cd;
+  font-size: 1.3rem;
+  margin-top: 10%cd;
 }
 
 .cross-icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #000;
-    font-size: 1.5rem;
-    margin: .5rem;
-    z-index: 999;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #000;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  z-index: 999;
+  cursor: pointer;
 }

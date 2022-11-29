@@ -12,14 +12,14 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
         duration: 3,
         opacity: 1,
         ease: "ease-out",
-        x: window.innerWidth,
+        y: 0,
       });
     } else {
       gsap.to(ref.current, {
         duration: 3,
-        opacity: 1,
+        opacity: 0,
         ease: "ease-in",
-        x: -window.innerWidth,
+        y: window.innerHeight,
       });
     }
   }, [isClicked]);
@@ -34,7 +34,7 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
       <div className='about-image'>
         <img
           style={{ height: "100%", width: "100%", overflow: "hidden" }}
-          src={"/Images/background.png"}
+          src={"/Images/aboutText.png"}
           alt='about'
         />
       </div>
@@ -76,19 +76,8 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
           quis aliquam nisl nunc vel nunc. Nulla facilisi. Nulla facilisi. Nulla
           facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
           facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi. <span className='hide-text'> Nulla facilisi. </span> Nulla
-          facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi. Nulla facilisi. Nulla
+          facilisi.
           <br />
-          <br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-          condimentum, nisl <span className='hide-text'> Nulla facilisi. </span>
-          ut aliquam lacinia, nunc nisl aliquam nisl, quis aliquam nisl nunc vel
-          nunc. Nulla facilisi. Nulla{" "}
-          <span className='hide-text'> Nulla facilisi. </span> facilisi. Nulla
-          facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi. Nulla facilisi.{" "}
           <span className='hide-text'> Nulla facilisi. </span> Nulla facilisi.
           Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
           facilisi. Nulla <span className='hide-text'> Nulla facilisi. </span>
@@ -109,18 +98,6 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
           Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi
           facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
           <br />
-          Lorem ipsum dolor sit amet,{" "}
-          <span className='hide-text'> Nulla facilisi. </span> consectetur
-          adipiscing elit. Sed condimentum, nisl ut aliquam lacinia, nunc nisl
-          aliquam nisl, quis aliquam{" "}
-          <span className='hide-text'> Nulla facilisi. </span> nisl nunc vel
-          nunc. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi.
-          Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi. Nulla facilisi. Nulla facilisi.{" "}
-          <span className='hide-text'> Nulla facilisi. </span>Nulla facilisi.
-          facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi. Nulla facilisi.
-          <span className='hide-text'> Nulla facilisi. </span> Nulla
         </p>
         <center>
           <p className='drag-over-text'>Drag Over to Read Full About Section</p>

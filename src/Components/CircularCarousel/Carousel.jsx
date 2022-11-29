@@ -2,52 +2,9 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import "./Carousel.css";
 
-export default function Carousel({ setObject, setIsClicked }) {
+export default function Carousel({ setObject, setIsClicked, isClicked }) {
   const ref = useRef();
-  let deg;
-  let drag = false;
-  useEffect(() => {
-    deg = 0;
-    if (ref.current) {
-      gsap.to(ref.current.rotation, {
-        duration: 1,
-        y: deg,
-        ease: "none",
-        repeat: -1,
-      });
-    }
-
-    const requestAnimationFrame = () => {
-      deg = deg + 0.00001;
-
-      ref.current.style.webkitTransform = "rotate(" + deg + "deg)";
-      ref.current.style.mozTransform = "rotate(" + deg + "deg)";
-      ref.current.style.msTransform = "rotate(" + deg + "deg)";
-      ref.current.style.oTransform = "rotate(" + deg + "deg)";
-      ref.current.style.transform = "rotate(" + deg + "deg)";
-      requestAnimationFrame();
-    };
-
-    // const animationId = setInterval(requestAnimationFrame, 20);
-
-    // window.addEventListener("mouseup", () => (drag = false));
-    // document.addEventListener("mousedown", () => (drag = true));
-    // document.addEventListener("mousemove", () => {
-    //   if (!drag) return;
-    //   deg = deg + 1;
-
-    //   ref.current.style.webkitTransform = "rotate(" + deg + "deg)";
-    //   ref.current.style.mozTransform = "rotate(" + deg + "deg)";
-    //   ref.current.style.msTransform = "rotate(" + deg + "deg)";
-    //   ref.current.style.oTransform = "rotate(" + deg + "deg)";
-    //   ref.current.style.transform = "rotate(" + deg + "deg)";
-    // });
-  }, []);
-
-  const iconPointer = () => {};
-  const iconGrab = () => {
-    document.body.style.cursor = "grab";
-  };
+  const refAboutImage = useRef();
 
   const handleClick = () => {
     setObject({
@@ -56,6 +13,23 @@ export default function Carousel({ setObject, setIsClicked }) {
 
     setIsClicked(true);
   };
+
+  useEffect(() => {
+    if (isClicked) {
+      //to blur abount image container
+      gsap.to(refAboutImage.current, {
+        duration: 3,
+        opacity: 0.2,
+        ease: "ease-out",
+      });
+    } else {
+      gsap.to(refAboutImage.current, {
+        duration: 3,
+        opacity: 1,
+        ease: "ease-out",
+      });
+    }
+  }, [isClicked]);
 
   const onHover = () => {
     //remove animation from ref
@@ -69,6 +43,7 @@ export default function Carousel({ setObject, setIsClicked }) {
   return (
     <>
       <div
+        ref={refAboutImage}
         className='about-image-container'
         draggable='false'
         unselectable={true}
