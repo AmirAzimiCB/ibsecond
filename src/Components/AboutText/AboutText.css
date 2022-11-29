@@ -3,19 +3,19 @@
 .about-text-container {
   font-family: "Courier Prime", monospace;
   width: 75vw;
-  height: auto;
+  height: 75vh;
   position: absolute;
   display: flex;
   flex-direction: row;
-  top: 0;
+  top: 10%;
   left: 0;
-  transform: translate(15%, 105%);
+  transform: translate(15%, 120%);
   background-color: #fff;
   z-index: 999;
 }
 
 .about-text-container p {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .about-image {
@@ -27,17 +27,16 @@
 .about-text {
   width: 50%;
   height: 100vh;
-
   justify-content: center;
   align-items: center;
   padding: 0 5%;
-  padding-top: 4rem;
+  padding-top: 2rem;
   overflow: hidden;
 }
 
 .drag-over-text {
   font-size: 1.3rem;
-  margin-top: 10%cd;
+  margin-top: 10%;
 }
 
 .cross-icon {

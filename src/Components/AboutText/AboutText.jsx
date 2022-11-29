@@ -2,28 +2,26 @@ import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
 import { HiOutlineX } from "react-icons/hi";
 import "./AboutText.css";
-//cross icon
-
 export default function AboutText({ setIsClicked, isClicked, object }) {
   const ref = useRef();
   useEffect(() => {
     if (isClicked) {
       gsap.to(ref.current, {
-        duration: 3,
+        duration: 1.5,
         opacity: 1,
         ease: "ease-out",
         y: 0,
       });
     } else {
       gsap.to(ref.current, {
-        duration: 3,
+        duration: 1.5,
         opacity: 0,
         ease: "ease-in",
         y: window.innerHeight,
       });
     }
   }, [isClicked]);
-  console.log(object);
+
   return (
     <div
       ref={ref}
@@ -33,7 +31,7 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
       <HiOutlineX className='cross-icon' onClick={() => setIsClicked(false)} />
       <div className='about-image'>
         <img
-          style={{ height: "100%", width: "100%", overflow: "hidden" }}
+          style={{ height: "75%", width: "100%", overflow: "hidden" }}
           src={"/Images/aboutText.png"}
           alt='about'
         />
@@ -65,7 +63,6 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
         </h1>
         <p>
           facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
           facilisi. <span className='hide-text'> Nulla facilisi. </span>
           <br />
           <br />
@@ -74,29 +71,17 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
           adipiscing elit. Sed condimentum, nisl ut aliquam lacinia, nunc nisl
           aliquam nisl, <span className='hide-text'> Nulla facilisi. </span>{" "}
           quis aliquam nisl nunc vel nunc. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi.
+          Nulla facilisi. Nulla facilisi.
           <br />
           <span className='hide-text'> Nulla facilisi. </span> Nulla facilisi.
           Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
           facilisi. Nulla <span className='hide-text'> Nulla facilisi. </span>
-          facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi. Nulla facilisi. Nulla facilisi.
           <br />
           <br />
-          Lorem ipsum dolor sit amet,{" "}
-          <span className='hide-text'> Nulla facilisi. </span>consectetur
-          adipiscing elit. Sed condimentum, nisl ut aliquam{" "}
           <span className='hide-text'> Nulla facilisi. </span>lacinia, nunc nisl
-          aliquam nisl, quis aliquam nisl nunc vel nunc. Nulla facilisi. Nulla
-          facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi. Nulla facilisi. Nulla facilisi.{" "}
-          <span className='hide-text'> Nulla facilisi. </span> Nulla facilisi.
-          Nulla facilisi. Nulla facilisi. Nulla facilisi.{" "}
+          i. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi.{" "}
           <span className='hide-text'> Nulla facilisi. </span> Nulla facilisi.
           Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi
-          facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
           <br />
         </p>
         <center>

@@ -16,23 +16,23 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
 
   useEffect(() => {
     if (isClicked) {
-      //to blur abount image container
       gsap.to(refAboutImage.current, {
-        duration: 3,
-        opacity: 0.2,
+        duration: 1.5,
+        opacity: 0,
         ease: "ease-out",
       });
+      ref.current.style.animationPlayState = "paused";
     } else {
       gsap.to(refAboutImage.current, {
-        duration: 3,
+        duration: 1.5,
         opacity: 1,
         ease: "ease-out",
       });
+      ref.current.style.animationPlayState = "running";
     }
   }, [isClicked]);
 
   const onHover = () => {
-    //remove animation from ref
     document.body.style.cursor = "pointer";
     ref.current.style.animationPlayState = "paused";
   };

@@ -9,18 +9,20 @@ export default function About() {
   const ref = React.useRef();
   useEffect(() => {
     if (isClicked) {
-      //to blur abount image container
-      gsap.to(ref.current, {
-        filter: "blur(5px)",
-        duration: 1,
-      });
-      // ref.current.style.background = "rgba(0,0,0,0.9)";
+      // gsap.to(ref.current, {
+      //   filter: "blur(5px)",
+      //   backgroundColor: "rgba(0,0,0,0.9)",
+      //   duration: 1,
+      // });
+
+      ref.current.style.display = "block";
     } else {
-      gsap.to(ref.current, {
-        filter: "blur(0px)",
-        duration: 1,
-      });
-      //ref.current.style.background = "rgba(0,0,0,0)";
+      // gsap.to(ref.current, {
+      //   filter: "blur(0px)",
+      //   backgroundColor: "rgba(0,0,0,0)",
+      //   duration: 1,
+      // });
+      ref.current.style.display = "none";
     }
   }, [isClicked]);
 
@@ -34,8 +36,22 @@ export default function About() {
         position: "relative",
       }}
     >
-      <img
+      <div
         ref={ref}
+        style={{
+          height: "100vh",
+          width: "100vw",
+          top: 0,
+          left: 0,
+          overflowY: "hidden",
+          position: "absolute",
+          zIndex: 999,
+          display: "none",
+          backgroundColor: "rgba(0,0,0,.7)",
+        }}
+      ></div>
+
+      <img
         src='/Images/background.png'
         alt='background'
         draggable='false'
