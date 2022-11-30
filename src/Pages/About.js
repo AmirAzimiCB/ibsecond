@@ -49,6 +49,7 @@ export default function About() {
           display: "none",
           backgroundColor: "rgba(0,0,0,.7)",
         }}
+        onClick={() => setIsClicked(false)}
       ></div>
 
       <img

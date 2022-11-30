@@ -38,7 +38,7 @@ export default function Navbar() {
                   About
                 </a>
               </li>
-              <li>Founder & CEO</li>
+              <li href='/founders'>Founder & CEO</li>
               <li>Protest Resource</li>
               <li>Limited Space</li>
               <li>
