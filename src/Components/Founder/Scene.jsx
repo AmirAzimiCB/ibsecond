@@ -28,7 +28,7 @@ const Scene = ({ position, middle, position2 }) => {
   return (
     <div
       style={{
-        width: "50vw",
+        width: "45vw",
         minHeight: "75vh",
         alignSelf: "flex-start",
         marginBottom: "10%",

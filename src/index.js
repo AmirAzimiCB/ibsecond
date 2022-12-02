@@ -9,6 +9,8 @@ import About from "./Pages/About";
 import Navbar from "./Components/Navigation/Navbar";
 import Home from "./Pages/Home";
 import Founder from "./Pages/Founder";
+import ProtestResources from "./Pages/ProtestResources";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/founder",
     element: <Founder />,
+  },
+  {
+    path: "/protestresources",
+    element: <ProtestResources />,
   },
 ]);
 

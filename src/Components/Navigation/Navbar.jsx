@@ -46,7 +46,11 @@ export default function Navbar() {
                   Founder & CEO
                 </a>
               </li>
-              <li>Protest Resource</li>
+              <li>
+                <a href='/protestresources' className='link'>
+                  Protest Resource
+                </a>
+              </li>
               <li>Limited Space</li>
               <li>
                 <a href='/contact' className='link'>

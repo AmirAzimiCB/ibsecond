@@ -1,0 +1,133 @@
+.protest-header-img {
+  width: 100%;
+  position: relative;
+}
+
+.protest-header-text-container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #000;
+}
+
+.protest-header-text {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.protest-desc-text-container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2%;
+  font-size: 1.1rem;
+}
+
+.protest-lists-container {
+  width: 90%;
+  height: 75vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2%;
+  font-size: 1.1rem;
+}
+
+.protest-list-left {
+  width: 40%;
+  height: 100%;
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.protest-list-right {
+  width: 40%;
+  height: 100%;
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+
+}
+
+.protest-list-header {
+  width: 80%;
+
+  font-size: 2.5rem;
+
+}
+
+.protest-list-header::after {
+  content: "";
+  display: block;
+  width: 35%;
+  height: 5px;
+  background-color: #000;
+  margin-left: .3rem;
+  margin-top: .2rem;
+}
+
+.list-header-right::after {
+  width: 35%;
+  margin-left: 63%;
+}
+
+.protest-list-items-left {
+  align-self: flex-start;
+  height: 100%;
+  list-style-type: none;
+  margin-left: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  align-content: flex-start;
+  text-align: left;
+  flex-direction: column;
+}
+
+.protest-list-items-right {
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-end;
+
+  list-style-type: none;
+  text-align: right;
+  height: 100%;
+  margin-right: 5rem;
+  flex-direction: column;
+}
+
+.protest-lists-container a {
+  text-decoration: none;
+  color: #000;
+}
+
+.protest-list-item {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.protest-bottom-text-container {
+  width: 80%;
+  padding: 4%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1rem;
+}
