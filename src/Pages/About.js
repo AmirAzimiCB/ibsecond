@@ -37,6 +37,7 @@ export default function About() {
       }}
     >
       <div
+        onClick={() => setIsClicked(!isClicked)}
         ref={ref}
         style={{
           height: "100vh",

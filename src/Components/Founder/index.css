@@ -1,0 +1,45 @@
+.founder-section {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.founder-section-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.founder-text-container {
+  width: 100%;
+  height: 50%;
+  top: 50%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.founder-section2-text-container {
+  height: 100%;
+  top: 0;
+}
+.founder-text-bg {
+  background-color: #fff;
+  color: #000;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 40%;
+}
+
+.founder-section1-text-container {
+  align-items: flex-end;
+}
+
+.founder2-text {
+  align-self: flex-start;
+}
+.founder3-text {
+  align-self: flex-end;
+}
