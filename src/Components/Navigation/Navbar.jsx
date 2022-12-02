@@ -25,7 +25,9 @@ export default function Navbar() {
     <>
       {currentRoute !== "/" ? (
         <div style={{ position: "relative" }}>
-          <img src='/Icons/LogoWhite.png' alt='logo' className='logo-icon' />
+          <a href='/' className='link'>
+            <img src='/Icons/LogoWhite.png' alt='logo' className='logo-icon' />
+          </a>
           <div className='navbar-container'>
             <ul ref={navLinksRef} className='nav-link'>
               <li>
@@ -38,7 +40,12 @@ export default function Navbar() {
                   About
                 </a>
               </li>
-              <li href='/founders'>Founder & CEO</li>
+              <li>
+                {" "}
+                <a href='/founder' className='link'>
+                  Founder & CEO
+                </a>
+              </li>
               <li>Protest Resource</li>
               <li>Limited Space</li>
               <li>

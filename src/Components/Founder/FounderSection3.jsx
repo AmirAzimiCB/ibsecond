@@ -1,4 +1,5 @@
 import React from "react";
+import Scene from "./Scene";
 import "./index.css";
 
 function FounderSection3() {
@@ -29,6 +30,7 @@ function FounderSection3() {
           Tupac Shakur, Hayao Miyazaki, Will Smith, Frida Kahlo, Sandra Cisneros
           and strong women, like her mother.
         </span>
+        <Scene position={[0.5, 0, 0]} />
       </div>
     </div>
   );

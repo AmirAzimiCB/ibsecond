@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import Scene from "./Scene";
 
 function FounderSection2() {
   return (
@@ -9,8 +10,7 @@ function FounderSection2() {
         src='/Images/founder2.png'
         alt=''
       />
-      <div className=' founder-text-container founder-section2-text-container '>
-        {" "}
+      <div className='founder-text-container founder-section2-left-text-container'>
         <span className='founder-text-bg founder2-text'>
           “When I was little I used to dream I could change what I saw happening
           in my community… what my neighborhood was going through. I hated the
@@ -24,7 +24,11 @@ function FounderSection2() {
           it’s definitely one of my top career and life goals. For me, it’s more
           than trying to “objectify” the struggle that Black people face. It is
           taking action.
-        </span>{" "}
+        </span>
+        <Scene position={[0.4, -0.4, 0]} />{" "}
+      </div>
+      <div className=' founder-text-container founder-section2-right-text-container '>
+        <Scene position={[-0.4, 0, 0]} />{" "}
         <span className='founder-text-bg founder3-text'>
           We’ve been “objectified” and “commodified” by people who have
           re-worked our narratives, our culture, to their advantage. I believe

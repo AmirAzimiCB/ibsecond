@@ -8,12 +8,7 @@ import Contact from "./Pages/Contact";
 import About from "./Pages/About";
 import Navbar from "./Components/Navigation/Navbar";
 import Home from "./Pages/Home";
-<<<<<<< HEAD
-import Founders from "./Pages/Founders";
-=======
 import Founder from "./Pages/Founder";
-import "react-round-carousel/src/index.css";
->>>>>>> d0ac6505b06ebf3446bd80313aee3816182c69eb
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,13 +28,8 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-<<<<<<< HEAD
-    path: "/founders",
-    element: <Founders />,
-=======
     path: "/founder",
     element: <Founder />,
->>>>>>> d0ac6505b06ebf3446bd80313aee3816182c69eb
   },
 ]);
 

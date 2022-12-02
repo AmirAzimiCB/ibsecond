@@ -3,6 +3,8 @@
   height: 100vh;
   position: relative;
   overflow-x: hidden;
+  overflow-y: hidden;
+
 }
 
 .founder-section-img {
@@ -20,11 +22,14 @@
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
+  z-index: 5;
+
 }
-.founder-section2-text-container {
-  height: 100%;
-  top: 0;
+
+.founder-section2-container {
+  height: 150vh;
 }
+
 .founder-text-bg {
   background-color: #fff;
   color: #000;
@@ -37,9 +42,34 @@
   align-items: flex-end;
 }
 
+.founder-section2-left-text-container {
+  top: 0;
+}
+
+.founder1-text {
+  margin-right: 1rem;
+}
+
 .founder2-text {
   align-self: flex-start;
+  margin-left: 2rem;
 }
+
 .founder3-text {
   align-self: flex-end;
+  margin-right: 1rem;
+}
+
+.founder4-text {
+  margin-left: 2rem;
+}
+
+.founder-section1-inner-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.founders-name {
+  color: #fff;
+  font-size: 4rem;
 }

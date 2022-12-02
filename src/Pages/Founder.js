@@ -5,6 +5,7 @@ import FounderSection3 from "../Components/Founder/FounderSection3";
 function Founder() {
   return (
     <div>
+      <div className='founder-overlay'></div>
       <FounderSection1 />
       <FounderSection2 />
       <FounderSection3 />
