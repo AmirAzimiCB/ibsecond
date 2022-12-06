@@ -26,12 +26,13 @@
 
 .about-text {
   width: 50%;
-  height: 100vh;
+  height: 100%;
   justify-content: center;
   align-items: center;
   padding: 0 5%;
   padding-top: 2rem;
   overflow: hidden;
+
 }
 
 .drag-over-text {

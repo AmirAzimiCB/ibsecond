@@ -51,7 +51,7 @@ export default function Navbar() {
                   Protest Resource
                 </a>
               </li>
-              <li>Limited Space</li>
+              <li>Liminal Space</li>
               <li>
                 <a href='/contact' className='link'>
                   Contact
