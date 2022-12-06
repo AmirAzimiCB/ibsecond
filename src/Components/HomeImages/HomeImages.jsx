@@ -27,7 +27,7 @@ export default function HomeImages() {
         <div className='left-img-container'>
           <img
             className='left-img'
-            src='/Images/home-img-left.png'
+            src='/Images/Home-img-left.png'
             alt='1'
             border='0'
           />
