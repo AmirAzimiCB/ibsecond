@@ -18,7 +18,15 @@ const ModelImage = ({ position, middle }) => {
 
   return (
     <mesh ref={ref} position={position} scale={[1, 1, 5]}>
-      <planeGeometry args={[3.5, 4.2, 5]} />
+      <planeGeometry
+        args={
+          window.innerWidth < 900
+            ? window.innerWidth < 480
+              ? [2, 3.5, 5]
+              : [2.5, 3.5, 5]
+            : [3.5, 4.2, 5]
+        }
+      />
       <meshBasicMaterial map={texture} side={THREE.DoubleSide} />
     </mesh>
   );
@@ -26,15 +34,7 @@ const ModelImage = ({ position, middle }) => {
 
 const Scene = ({ position, middle, position2 }) => {
   return (
-    <div
-      style={{
-        width: "45vw",
-        minHeight: "75vh",
-        alignSelf: "flex-start",
-        marginBottom: "10%",
-        overflow: "hidden",
-      }}
-    >
+    <div className='founders-scene'>
       <Canvas>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />

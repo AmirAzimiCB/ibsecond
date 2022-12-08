@@ -3,7 +3,7 @@
     top: 10%;
     left: 0;
     width: 100%;
-    z-index: 9;
+    z-index: 999999;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -15,9 +15,10 @@
 .nav-link {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    z-index: 9;
+    z-index: 999999;
     right: -800px;
 }
 
@@ -33,7 +34,7 @@
     list-style: none;
     margin: 0 1.2rem;
     color: white;
-    font-size: 1rem;
+    font-size: .9rem;
     cursor: pointer;
     font-weight: 700;
     z-index: 9;
@@ -75,8 +76,9 @@
         flex-direction: column;
         background-color: rgba(0, 0, 0, .8);
         height: 60%;
+        width: 100%;
         top: 10%;
-        right: -250px;
+        right: -300px;
 
         text-align: center;
         justify-content: center;
@@ -85,6 +87,6 @@
 
     .nav-link li {
 
-        margin: 1rem 2rem;
+        margin: 1rem 1rem;
     }
 }

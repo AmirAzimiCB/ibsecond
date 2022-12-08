@@ -4,15 +4,25 @@ import "./index.css";
 
 function FounderSection3() {
   return (
-    <div className='founder-section3-container founder-section'>
+    <div
+      className='founder-section'
+      style={{
+        justifyContent: "center",
+      }}
+    >
       <img
         className='founder-section3-img founder-section-img'
         src='/Images/Home-img1.png'
         alt=''
       />
-      <div className='founder-section3-text-container founder-text-container '>
-        {" "}
-        <span className='founder-text-bg founder4-text'>
+      <div className='founder-text-container '>
+        <span
+          className='founder-text-bg'
+          style={{
+            marginLeft: window.innerWidth < 900 ? "0" : "2rem",
+            marginTop: window.innerWidth < 900 ? "5rem" : "0",
+          }}
+        >
           Coming up without any industry connections, Talia’s persistence
           allowed her to knock-down doors at major news outlets; that were not
           readily open to her cultural point of view. Talia’s work has appeared
@@ -30,7 +40,7 @@ function FounderSection3() {
           Tupac Shakur, Hayao Miyazaki, Will Smith, Frida Kahlo, Sandra Cisneros
           and strong women, like her mother.
         </span>
-        <Scene position={[0.5, 0, 0]} />
+        <Scene position={window.innerWidth < 900 ? [0, 1, 0] : [0.5, 0, 0]} />
       </div>
     </div>
   );

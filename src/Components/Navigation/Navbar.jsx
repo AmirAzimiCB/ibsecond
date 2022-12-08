@@ -14,7 +14,7 @@ export default function Navbar() {
     if (show) {
       gsap.to(navLinksRef.current, {
         duration: 1,
-        x: window.innerWidth > 768 ? -880 : -250,
+        x: window.innerWidth > 768 ? -880 : -300,
         y: 0,
       });
     } else {

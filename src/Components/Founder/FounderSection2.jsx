@@ -4,14 +4,33 @@ import Scene from "./Scene";
 
 function FounderSection2() {
   return (
-    <div className='founder-section2-container founder-section'>
+    <div
+      className='founder-section'
+      style={{
+        height: window.innerWidth < 900 ? "200vh" : "150vh",
+      }}
+    >
       <img
         className='founder-section2-img founder-section-img'
         src='/Images/founder2.png'
         alt=''
       />
-      <div className='founder-text-container founder-section2-left-text-container'>
-        <span className='founder-text-bg founder2-text'>
+      <div
+        className='founder-text-container'
+        style={
+          window.innerWidth < 900
+            ? {
+                flexDirection: "column-reverse",
+              }
+            : null
+        }
+      >
+        <span
+          className='founder-text-bg'
+          style={{
+            marginLeft: window.innerWidth < 900 ? "0" : "2rem",
+          }}
+        >
           “When I was little I used to dream I could change what I saw happening
           in my community… what my neighborhood was going through. I hated the
           narrative used to describe my home; what we would now consider to be
@@ -25,10 +44,12 @@ function FounderSection2() {
           than trying to “objectify” the struggle that Black people face. It is
           taking action.
         </span>
-        <Scene position={[0.4, -0.4, 0]} />{" "}
+        <Scene
+          position={window.innerWidth < 900 ? [0, 0, 0] : [0.4, -0.4, 0]}
+        />
       </div>
-      <div className=' founder-text-container founder-section2-right-text-container '>
-        <Scene position={[-0.4, 0, 0]} />{" "}
+      <div className=' founder-text-container'>
+        <Scene position={window.innerWidth < 900 ? [0, 0, 0] : [-0.4, 0, 0]} />
         <span className='founder-text-bg founder3-text'>
           We’ve been “objectified” and “commodified” by people who have
           re-worked our narratives, our culture, to their advantage. I believe
