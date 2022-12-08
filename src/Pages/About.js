@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 
 export default function About() {
   const [object, setObject] = React.useState();
-  const [isClicked, setIsClicked] = React.useState(false);
+  const [isClicked, setIsClicked] = React.useState(true);
   const ref = React.useRef();
   useEffect(() => {
     if (isClicked) {

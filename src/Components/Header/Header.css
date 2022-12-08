@@ -27,3 +27,45 @@
     font-size: 2.5rem;
     font-weight: 700;
 }
+
+
+@media screen and (max-width: 768px) {
+    .header-container {
+        padding: 0.5rem;
+        flex-direction: column-reverse;
+        height: 10vh;
+
+    }
+
+    .enter-btn {
+        width: 20%;
+        margin: 0.5rem;
+    }
+
+    .cover-title {
+        font-size: 2rem;
+
+
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .header-container {
+        padding: 0.5rem;
+        flex-direction: column-reverse;
+        height: 10vh;
+    }
+
+    .enter-btn {
+        width: 25%;
+        margin: 0.5rem 1rem;
+        font-size: .9rem;
+    }
+
+    .cover-title {
+        font-size: 1.8rem;
+
+    }
+
+}

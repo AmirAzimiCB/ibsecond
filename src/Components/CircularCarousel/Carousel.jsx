@@ -46,15 +46,9 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
         ref={refAboutImage}
         className='about-image-container'
         draggable='false'
-        unselectable={true}
       >
-        <div className='about-container' draggable='false' unselectable={true}>
-          <div
-            className='about-inner-container'
-            ref={ref}
-            draggable='false'
-            unselectable={true}
-          >
+        <div className='about-container' draggable='false'>
+          <div className='about-inner-container' ref={ref} draggable='false'>
             <li style={{ "--i": 0 }}>
               <img
                 className='icon-img'
@@ -64,7 +58,6 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
                 onPointerEnter={onHover}
                 onPointerLeave={onHoverOut}
                 onClick={handleClick}
-                unselectable={true}
               />
             </li>
             <li style={{ "--i": 1 }}>
@@ -76,7 +69,6 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
                 onPointerEnter={onHover}
                 onPointerLeave={onHoverOut}
                 onClick={handleClick}
-                unselectable={true}
               />
             </li>
             <li style={{ "--i": 2 }}>
@@ -88,7 +80,6 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
                 onPointerEnter={onHover}
                 onPointerLeave={onHoverOut}
                 onClick={handleClick}
-                unselectable={true}
               />
             </li>
             <li style={{ "--i": 3 }}>
@@ -100,7 +91,6 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
                 onPointerEnter={onHover}
                 onPointerLeave={onHoverOut}
                 onClick={handleClick}
-                unselectable={true}
               />
             </li>
             <li style={{ "--i": 4 }}>
@@ -112,7 +102,6 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
                 onPointerEnter={onHover}
                 onPointerLeave={onHoverOut}
                 onClick={handleClick}
-                unselectable={true}
               />
             </li>
             <li style={{ "--i": 5 }}>
@@ -124,7 +113,6 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
                 onPointerEnter={onHover}
                 onPointerLeave={onHoverOut}
                 onClick={handleClick}
-                unselectable={true}
               />
             </li>
             <li style={{ "--i": 6 }}>
@@ -136,7 +124,6 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
                 onPointerEnter={onHover}
                 onPointerLeave={onHoverOut}
                 onClick={handleClick}
-                unselectable={true}
               />
             </li>
           </div>
