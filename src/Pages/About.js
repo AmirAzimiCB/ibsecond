@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 
 export default function About() {
   const [object, setObject] = React.useState();
-  const [isClicked, setIsClicked] = React.useState(true);
+  const [isClicked, setIsClicked] = React.useState(false);
   const ref = React.useRef();
   useEffect(() => {
     if (isClicked) {
@@ -50,7 +50,6 @@ export default function About() {
           display: "none",
           backgroundColor: "rgba(0,0,0,.7)",
         }}
-        onClick={() => setIsClicked(false)}
       ></div>
 
       <img
