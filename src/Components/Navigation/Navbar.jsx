@@ -26,7 +26,7 @@ export default function Navbar() {
       {currentRoute !== "/" ? (
         <div style={{ position: "relative" }}>
           <a href='/' className='link'>
-            <img src='/Icons/LogoWhite.png' alt='logo' className='logo-icon' />
+            <img src='/Icons/dark-logo.png' alt='logo' className='logo-icon' />
           </a>
           <div className='navbar-container'>
             <ul ref={navLinksRef} className='nav-link'>
@@ -65,7 +65,7 @@ export default function Navbar() {
             </ul>
             {show ? (
               <div className='nav-icon' onClick={() => setShow(!show)}>
-                <HiOutlineX color='#fff' fontSize={35} />
+                <HiOutlineX  fontSize={35} />
               </div>
             ) : (
               <div className='nav-icon' onClick={() => setShow(!show)}>

@@ -6,8 +6,8 @@ const BlogPost = ({src,heading,text}) => {
         <article>
             <img src={src}/>
             <div className='content'>
-            <h2>{heading}</h2>
-            <p>{text}</p>
+                <h2>{heading}</h2>
+                <p>{text}</p>
             </div>
         </article>
     )

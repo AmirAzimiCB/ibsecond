@@ -1,90 +1,83 @@
 .navbar-container {
-    position: absolute;
-    top: 10%;
-    left: 0;
-    width: 100%;
-    z-index: 9;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    margin-top: 2%;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 2%;
 }
 
 .nav-link {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: absolute;
-    z-index: 9;
-    right: -800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: absolute;
+  color: black;
+  z-index: 9;
+  right: -800px;
 }
 
 .nav-icon {
-    margin-right: 30px;
-    cursor: pointer;
-    z-index: 9;
-    align-self: flex-end;
-    color: #fff !important;
+  margin-right: 30px;
+  cursor: pointer;
+  z-index: 9;
+  align-self: flex-end;
 }
 
 .nav-link li {
-    list-style: none;
-    margin: 0 1.2rem;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    font-weight: 700;
-    z-index: 9;
-    transition: all 0.5s ease;
+  list-style: none;
+  margin: 0 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+  z-index: 9;
+  transition: all 0.5s ease;
 }
 
 .nav-link li:hover {
-    transform: translate(0, -5px);
+  transform: translate(0, -5px);
 }
 
 .logo-icon {
-    height: 5.5rem;
-    width: 4rem;
-    margin-left: 1.5rem;
-    margin-top: 1rem;
-    position: absolute;
-    z-index: 1000;
-    cursor: pointer;
-
+  height: 5.5rem;
+  width: 4rem;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+  position: absolute;
+  z-index: 1000;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    height: 100vh;
+    width: 30%;
+    left: 70%;
+    top: 0;
+  }
 
+  .nav-icon {
+    margin-top: 1rem;
+  }
 
-    .navbar-container {
-        flex-direction: column;
-        height: 100vh;
-        width: 30%;
-        left: 70%;
-        top: 0;
-    }
+  .nav-link {
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 60%;
+    top: 10%;
+    right: -250px;
 
-    .nav-icon {
-        margin-top: 1rem;
+    text-align: center;
+    justify-content: center;
+  }
 
-    }
-
-    .nav-link {
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, .8);
-        height: 60%;
-        top: 10%;
-        right: -250px;
-
-        text-align: center;
-        justify-content: center;
-
-    }
-
-    .nav-link li {
-
-        margin: 1rem 2rem;
-    }
+  .nav-link li {
+    margin: 1rem 2rem;
+  }
 }
