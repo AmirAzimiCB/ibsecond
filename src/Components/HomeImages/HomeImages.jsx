@@ -74,7 +74,7 @@ export default function HomeImages() {
                 className='home-img'
               />
               <div className='home-text-container'>
-                <span style={{ fontSize: "5rem", fontWeight: 700 }}>ENTER</span>
+                <span className='home-text-container-span'>ENTER</span>
               </div>
             </div>
             <div className='right-img-inner-upper'>
@@ -85,7 +85,7 @@ export default function HomeImages() {
                 border='0'
               />
               <div className='home-text-container'>
-                <span style={{ fontSize: "5rem", fontWeight: 700 }}>THE</span>
+                <span className='home-text-container-span'>THE</span>
               </div>
             </div>
           </div>
@@ -98,9 +98,7 @@ export default function HomeImages() {
                 border='0'
               />
               <div className='home-text-container'>
-                <span style={{ fontSize: "5rem", fontWeight: 700 }}>
-                  GALLERY
-                </span>
+                <span className='home-text-container-span'>GALLERY</span>
               </div>
             </div>
           </div>

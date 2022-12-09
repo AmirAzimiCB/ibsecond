@@ -131,3 +131,87 @@
   text-align: center;
   font-size: 1rem;
 }
+
+@media screen and (max-width: 768px) {
+  .protest-header-img {
+    height: 40vh;
+
+  }
+
+  .protest-header-text-container {
+    top: 22%;
+  }
+
+  .protest-header-text {
+    font-size: 3rem;
+  }
+
+  .protest-desc-text-container {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2%;
+    font-size: 1.1rem;
+  }
+
+  .protest-list-header {
+    font-size: 2rem;
+  }
+
+  .protest-lists-container {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+  }
+
+  .protest-list-left,
+  .protest-list-right {
+    width: 100%;
+    height: 50%;
+    margin-bottom: 2rem;
+    align-self: center;
+    text-align: center;
+  }
+
+  .protest-list-header::after {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .protest-list-items-right {
+    text-align: center;
+    align-self: center;
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  .protest-list-items-left {
+    text-align: center;
+    align-self: center;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+}
+
+@media screen and (max-width: 1250px) {
+  .protest-header-img {
+    height: 40vh;
+
+  }
+
+  .protest-header-text-container {
+    top: 22%;
+  }
+
+  .protest-header-text {
+    font-size: 3rem;
+  }
+}
