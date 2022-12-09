@@ -28,7 +28,7 @@ export default function About() {
 
   return (
     <div
-      draggable='false'
+      draggable="false"
       style={{
         height: "100vh",
         width: "100vw",
@@ -50,13 +50,13 @@ export default function About() {
           display: "none",
           backgroundColor: "rgba(0,0,0,.7)",
         }}
-        onClick={() => setIsClicked(false)}
+        // onClick={() => setIsClicked(false)}
       ></div>
 
       <img
-        src='/Images/background.png'
-        alt='background'
-        draggable='false'
+        src="/Images/background.png"
+        alt="background"
+        draggable="false"
         style={{
           position: "absolute",
           top: 0,

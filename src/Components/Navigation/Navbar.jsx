@@ -57,6 +57,11 @@ export default function Navbar() {
                   Contact
                 </a>
               </li>
+              <li>
+                <a href='/blog' className='link'>
+                  Blog
+                </a>
+              </li>
             </ul>
             {show ? (
               <div className='nav-icon' onClick={() => setShow(!show)}>
