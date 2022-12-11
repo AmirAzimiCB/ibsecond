@@ -6,12 +6,10 @@ import {schemaTypes} from './schemas'
 export default defineConfig({
   name: 'default',
   title: 'blog',
-
+  basePath: '/studio',
   projectId: 'gwaghe3o',
   dataset: 'post',
-
   plugins: [deskTool(), visionTool()],
-
   schema: {
     types: schemaTypes,
   },

@@ -21,60 +21,121 @@ export default function Navbar() {
       gsap.to(navLinksRef.current, { duration: 1, x: 0, y: 0 });
     }
   }, [show]);
-  return (
-    <>
-      {currentRoute !== "/" ? (
-        <div style={{ position: "relative" }}>
-          <a href='/' className='link'>
-            <img src='/Icons/dark-logo.png' alt='logo' className='logo-icon' />
+
+  switch(currentRoute){
+    case '/':
+      return null 
+    case '/blog':
+      return (
+       <>
+        <div style={{position:'relative'}}>
+          <a href="/" className="link">
+            <img src="/Icons/dark-logo.png" alt="logo" className="logo-icon"/>
           </a>
-          <div className='navbar-container'>
-            <ul ref={navLinksRef} className='nav-link'>
-              <li>
-                <a href='/home' className='link'>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href='/about' className='link'>
-                  About
-                </a>
-              </li>
-              <li>
-                {" "}
-                <a href='/founder' className='link'>
-                  Founder & CEO
-                </a>
-              </li>
-              <li>
-                <a href='/protestresources' className='link'>
-                  Protest Resource
-                </a>
-              </li>
-              <li>Liminal Space</li>
-              <li>
-                <a href='/contact' className='link'>
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href='/blog' className='link'>
-                  Blog
-                </a>
-              </li>
+          <div className="navbar-container">
+            <ul ref={navLinksRef} className="nav-link">
+                  <li>
+                    <a href='/home' className='link'>
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href='/about' className='link'>
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a href='/founder' className='link'>
+                      Founder & CEO
+                    </a>
+                  </li>
+                  <li>
+                    <a href='/protestresources' className='link'>
+                      Protest Resource
+                    </a>
+                  </li>
+                  <li>
+                     <a href="/" className="link">
+                     Liminal Space
+                      </a>  
+                  </li>
+                  <li>
+                    <a href='/contact' className='link'>
+                      Contact
+                    </a>
+                  </li>
+                  <li>
+                    <a href='/blog' className={`link`}>
+                      Blog
+                    </a>
+                  </li>
             </ul>
             {show ? (
-              <div className='nav-icon' onClick={() => setShow(!show)}>
-                <HiOutlineX  fontSize={35} />
-              </div>
-            ) : (
-              <div className='nav-icon' onClick={() => setShow(!show)}>
-                <HiOutlineMenu fontSize={35} />
-              </div>
-            )}
+                  <div className='nav-icon' onClick={() => setShow(!show)}>
+                    <HiOutlineX color="black"  fontSize={35} />
+                  </div>
+                ) : (
+                  <div className='nav-icon' onClick={() => setShow(!show)}>
+                    <HiOutlineMenu color="black" fontSize={35} />
+                  </div>
+                )}
           </div>
         </div>
-      ) : null}
-    </>
-  );
+       </>
+      )
+      default:
+          return (
+            <>
+            <div style={{ position: "relative" }}>
+              <a href='/' className='link'>
+                <img src='/Icons/LogoWhite.png' alt='logo' className='logo-icon' />
+              </a>
+              <div className={`navbar-container `}>
+                <ul ref={navLinksRef} className='nav-link'>
+                  <li>
+                    <a href='/home' className='white-link'>
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href='/about' className='white-link'>
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a href='/founder' className='white-link'>
+                      Founder & CEO
+                    </a>
+                  </li>
+                  <li>
+                    <a href='/protestresources' className='white-link'>
+                      Protest Resource
+                    </a>
+                  </li>
+                  <li>Liminal Space</li>
+                  <li>
+                    <a href='/contact' className='white-link'>
+                      Contact
+                    </a>
+                  </li>
+                  <li>
+                    <a href='/blog' className={`white-link`}>
+                      Blog
+                    </a>
+                  </li>
+                </ul>
+                {show ? (
+                  <div className='nav-icon' onClick={() => setShow(!show)}>
+                    <HiOutlineX  fontSize={35} />
+                  </div>
+                ) : (
+                  <div className='nav-icon' onClick={() => setShow(!show)}>
+                    <HiOutlineMenu fontSize={35} />
+                  </div>
+                )}
+              </div>
+            </div>
+          </>
+      )
+  }
 }
