@@ -19,9 +19,11 @@
 }
 
 .about-image {
-  height: 100vh;
+  height: 100%;
   width: 40vw;
   overflow: hidden;
+  object-fit: cover;
+  z-index: 999;
 }
 
 .about-text {
@@ -53,7 +55,7 @@
   color: #000;
   font-size: 1.5rem;
   margin: 0.5rem;
-  z-index: 999;
+  z-index: 99999;
   cursor: pointer;
 }
 

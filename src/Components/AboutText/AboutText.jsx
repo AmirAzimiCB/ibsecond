@@ -28,7 +28,14 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
       className='about-text-container'
       onPointerEnter={() => (document.body.style.cursor = "default")}
     >
-      <HiOutlineX className='cross-icon' onClick={() => setIsClicked(false)} />
+      <HiOutlineX
+        className='cross-icon'
+        onClick={() => {
+          console.log("Clicked");
+          setIsClicked(false);
+        }}
+      />
+
       <div className='about-image'>
         <img
           style={{ height: "100%", width: "100%", overflow: "hidden" }}

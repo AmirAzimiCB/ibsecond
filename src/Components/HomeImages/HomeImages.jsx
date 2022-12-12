@@ -71,7 +71,7 @@ export default function HomeImages() {
                 src='/Images/Home-img1.png'
                 alt='1'
                 border='0'
-                className='home-img'
+                className='home-img upper-right-img'
               />
               <div className='home-text-container'>
                 <span className='home-text-container-span'>ENTER</span>
@@ -81,7 +81,7 @@ export default function HomeImages() {
               <img
                 src='/Images/Home-img2.png'
                 alt='1'
-                className='home-img'
+                className='home-img upper-right-img'
                 border='0'
               />
               <div className='home-text-container'>

@@ -17,17 +17,23 @@ const ModelImage = ({ position, middle }) => {
   });
 
   return (
-    <mesh ref={ref} position={position} scale={[1, 1, 5]}>
+    <mesh ref={ref} position={position} scale={[1, 1, 1]}>
       <planeGeometry
         args={
           window.innerWidth < 900
-            ? window.innerWidth < 480
-              ? [2, 3.5, 5]
-              : [2.5, 3.5, 5]
-            : [3.5, 4.2, 5]
+            ? window.innerWidth < 550
+              ? window.innerWidth < 400
+                ? [3, 3.4, 1]
+                : [3.5, 3.5, 1]
+              : [3, 4, 5]
+            : [3, 4, 1]
         }
       />
-      <meshBasicMaterial map={texture} side={THREE.DoubleSide} />
+      <meshBasicMaterial
+        map={texture}
+        side={THREE.DoubleSide}
+        encoding={THREE.sRGBEncoding}
+      />
     </mesh>
   );
 };

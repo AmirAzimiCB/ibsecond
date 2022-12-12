@@ -40,7 +40,7 @@ function FounderSection3() {
           Tupac Shakur, Hayao Miyazaki, Will Smith, Frida Kahlo, Sandra Cisneros
           and strong women, like her mother.
         </span>
-        <Scene position={window.innerWidth < 900 ? [0, 1, 0] : [0.5, 0, 0]} />
+        <Scene position={window.innerWidth < 900 ? [0, 0.5, 0] : [0.5, 0, 0]} />
       </div>
     </div>
   );

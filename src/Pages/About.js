@@ -30,25 +30,26 @@ export default function About() {
     <div
       draggable='false'
       style={{
-        height: "100vh",
+        height: window.innerWidth < 768 ? "101vh" : "100vh",
         width: "100vw",
         overflowY: "hidden",
         position: "relative",
       }}
     >
       <div
-        onClick={() => setIsClicked(!isClicked)}
+        onClick={() => setIsClicked(false)}
         ref={ref}
         style={{
-          height: "100vh",
+          height: "100%",
           width: "100vw",
           top: 0,
           left: 0,
           overflowY: "hidden",
           position: "absolute",
-          zIndex: 999,
+          zIndex: 999999,
           display: "none",
           backgroundColor: "rgba(0,0,0,.7)",
+          border: "1px solid red",
         }}
       ></div>
 
