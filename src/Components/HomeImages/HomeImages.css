@@ -4,8 +4,6 @@
     height: 100vh;
     margin: 0;
     overflow: hidden !important;
-
-
 }
 
 .imagesContainer::-webkit-scrollbar {
@@ -128,14 +126,18 @@
     margin: auto;
     text-align: left;
     color: #fff;
-
 }
 
+.bottom-text {
+    opacity: 0;
+}
 
 .home-desc-text {
+    position: absolute;
     font-weight: 700;
     height: 25%;
     overflow: scroll;
+    overflow-y: hidden;
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
@@ -163,10 +165,30 @@
     font-weight: 700;
 }
 
+@media screen and (max-width: 900px) {
+
+
+    .home-text-container-span {
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    .home-desc-text {
+        height: 35%;
+        font-weight: 500;
+    }
+
+}
+
 @media screen and (max-width: 768px) {
     .imagesContainer {
-        height: 115vh;
+        height: 140vh;
         overflow-x: scroll;
+    }
+
+    .home-desc-text {
+        height: 45%;
+        font-weight: 500;
     }
 
     .left-img-container {
@@ -179,8 +201,9 @@
 
     .mainContainer {
         flex-direction: column;
-        height: 100vh;
-        top: 10%;
+        height: 120vh;
+        top: 12%;
+
     }
 
     .right-img-container {
@@ -201,17 +224,12 @@
 
 }
 
-@media screen and (max-width: 900px) {
-
-
-    .home-text-container-span {
-        font-size: 4rem;
-        font-weight: 700;
-    }
-
-}
 
 @media screen and (max-width: 480px) {
+    .home-desc-text {
+        height: 45%;
+        font-weight: 500;
+    }
 
     .home-text-container-span {
         font-size: 2.3rem;

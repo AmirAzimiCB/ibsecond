@@ -46,7 +46,7 @@ export default function About() {
           left: 0,
           overflowY: "hidden",
           position: "absolute",
-          zIndex: 999999,
+          zIndex: 999,
           display: "none",
           backgroundColor: "rgba(0,0,0,.7)",
           border: "1px solid red",

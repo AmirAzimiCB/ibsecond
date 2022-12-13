@@ -82,7 +82,7 @@
 @media screen and (max-width: 768px) {
     .contact-container {
         width: 60%;
-        height: 60%;
+        height: 70%;
         top: 15%;
         transform: translateX(-28%);
     }
