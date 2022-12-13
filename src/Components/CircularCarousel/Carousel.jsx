@@ -7,10 +7,6 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
   const refAboutImage = useRef();
 
   const handleClick = () => {
-    setObject({
-      title: "Incendiary Balloons",
-    });
-
     setIsClicked(true);
   };
 

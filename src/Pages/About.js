@@ -9,20 +9,9 @@ export default function About() {
   const ref = React.useRef();
   useEffect(() => {
     if (isClicked) {
-      // gsap.to(ref.current, {
-      //   filter: "blur(5px)",
-      //   backgroundColor: "rgba(0,0,0,0.9)",
-      //   duration: 1,
-      // });
-
-      ref.current.style.display = "block";
+      ref.current.style.backgroundColor = "rgba(0,0,0,.7)";
     } else {
-      // gsap.to(ref.current, {
-      //   filter: "blur(0px)",
-      //   backgroundColor: "rgba(0,0,0,0)",
-      //   duration: 1,
-      // });
-      ref.current.style.display = "none";
+      ref.current.style.backgroundColor = "rgba(0,0,0,0)";
     }
   }, [isClicked]);
 
@@ -32,7 +21,7 @@ export default function About() {
       style={{
         height: window.innerWidth < 768 ? "101vh" : "100vh",
         width: "100vw",
-        overflowY: "hidden",
+        overflow: "hidden",
         position: "relative",
       }}
     >
@@ -47,9 +36,7 @@ export default function About() {
           overflowY: "hidden",
           position: "absolute",
           zIndex: 999,
-          display: "none",
-          backgroundColor: "rgba(0,0,0,.7)",
-          border: "1px solid red",
+          backgroundColor: "rgba(0,0,0,.01)",
         }}
       ></div>
 

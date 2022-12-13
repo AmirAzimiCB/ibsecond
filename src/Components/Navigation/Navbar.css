@@ -3,7 +3,7 @@
     top: 10%;
     left: 0;
     width: 100%;
-    z-index: 999998;
+
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -24,6 +24,7 @@
 
 .nav-icon {
     margin-right: 30px;
+    z-index: 999998;
     cursor: pointer;
     z-index: 9;
     align-self: flex-end;
@@ -79,7 +80,6 @@
         width: 100%;
         top: 10%;
         right: -300px;
-
         text-align: center;
         justify-content: center;
 
