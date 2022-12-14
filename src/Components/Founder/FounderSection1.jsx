@@ -15,6 +15,7 @@ function FounderSection1() {
         src='/Images/founder1.png'
         alt=''
       />
+      <span className='founder-scroll-text'>Scroll down to read more</span>
       <div
         className='founder-text-container'
         style={{ marginBottom: window.innerWidth < 900 ? "1rem" : "4rem" }}

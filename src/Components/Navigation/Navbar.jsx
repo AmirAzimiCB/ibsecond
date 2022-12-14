@@ -36,8 +36,8 @@ export default function Navbar() {
                 </a>
               </li>
               <li>
-                <a href='/about' className='link'>
-                  About
+                <a href='/Manifesto' className='link'>
+                  Manifesto
                 </a>
               </li>
               <li>
@@ -51,7 +51,7 @@ export default function Navbar() {
                   Protest Resource
                 </a>
               </li>
-              <li>Liminal Space</li>
+              <li>Zine</li>
               <li>
                 <a href='/contact' className='link'>
                   Contact

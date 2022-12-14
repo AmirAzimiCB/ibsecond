@@ -9,8 +9,9 @@ export default function Header() {
   return (
     <div className='header-container'>
       <button className='enter-btn' onClick={handleClick}>
-        ENTER
+        ENTER THE VOID
       </button>
+
       <span className='cover-title'>Incendiary Balloons</span>
     </div>
   );
