@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Carousel from "../Components/CircularCarousel/Carousel";
 import AboutText from "../Components/AboutText/AboutText";
-import { gsap } from "gsap";
 
 export default function About() {
   const [object, setObject] = React.useState();

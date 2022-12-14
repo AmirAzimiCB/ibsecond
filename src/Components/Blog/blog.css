@@ -1,0 +1,54 @@
+article {
+  display: flex;
+  width: 70%;
+  align-items: center;
+  max-height: 500px;
+  border-top: 1px solid #cecece;
+  border-right: 1px solid #cecece;
+  padding: 1.2rem;
+}
+
+article:nth-child(1) {
+  background: #080808;
+  width: 100%;
+  color: white;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 150px;
+  padding: 0;
+  position: relative;
+}
+
+article:nth-child(1) img {
+  width: 60%;
+  height: 450px;
+}
+
+article img {
+  height: 350px;
+  width: 60%;
+  background-size: cover;
+}
+
+article .content {
+  width: 40%;
+  padding: 0 3rem;
+}
+
+article .content h2 {
+  font-size: 1.8rem;
+}
+
+article .content p {
+  line-height: 1.3rem;
+  font-size: 1rem;
+}
+
+.latest {
+  position: absolute;
+  bottom: 25%;
+  left: 8%;
+  z-index: 10;
+  font-size: 3.2rem;
+  text-transform: uppercase;
+}

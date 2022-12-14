@@ -6,10 +6,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cover from "./Pages/Cover";
 import Contact from "./Pages/Contact";
 import About from "./Pages/About";
-import Navbar from "./Components/Navigation/Navbar";
 import Home from "./Pages/Home";
 import Founder from "./Pages/Founder";
 import ProtestResources from "./Pages/ProtestResources";
+import Blog from "./Pages/Blog";
+import Navbar from "./Components/Navigation/Navbar";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     element: <Contact />,
   },
   {
-    path: "/Manifesto",
+    path: "/manifesto",
     element: <About />,
   },
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/protestresources",
     element: <ProtestResources />,
+  },
+  {
+    path: "/blog",
+    element: <Blog />,
   },
 ]);
 
