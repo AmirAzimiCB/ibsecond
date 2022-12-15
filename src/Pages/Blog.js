@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import "../blog.css";
 
 import BlogPost from "../Components/Blog/BlogPost";
-import clinet from "../lib/clinet";
+import client from "../lib/clinet";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    clinet
+    client
       .fetch(
         `*[_type == "post"]{
           title,
@@ -27,8 +27,6 @@ const Blog = () => {
       .catch((err) => console.error(err));
   }, []);
 
-  console.log(posts);
-
   return (
     <div>
       <div className="main">
@@ -40,9 +38,13 @@ const Blog = () => {
           {posts.map((post) => (
             <BlogPost
               key={post.slug.current}
+              slug={post.slug.current}
               src={post.mainImage.asset.url}
               heading={post.title}
-              text={post.body[0].children[0].text}
+              // text={post.body[0].children[0].text}
+              text={post.body.map((item) =>
+                item.children.map((i) => i.text.substring(0, 80))
+              )}
             />
           ))}
         </div>

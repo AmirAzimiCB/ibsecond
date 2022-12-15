@@ -1,0 +1,20 @@
+.container {
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container img {
+  width: 900px;
+  height: 500px;
+}
+
+.container p {
+  /* color: black; */
+  padding: 10px 60px;
+  line-height: 1.6rem;
+}

@@ -1,12 +1,15 @@
 import React from 'react'
+import { Link} from 'react-router-dom'
 import './blog.css'
 
-const BlogPost = ({src,heading,text}) => {
+const BlogPost = ({src,slug,heading,text}) => {
     return (
         <article>
-            <img src={src}/>
+            <img src={src} alt={heading}/> 
             <div className='content'>
-                <h2>{heading}</h2>
+                <Link to={slug}>
+                    <h2>{heading}</h2>
+                </Link>
                 <p>{text}</p>
             </div>
         </article>

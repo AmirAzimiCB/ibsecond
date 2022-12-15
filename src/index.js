@@ -11,6 +11,7 @@ import Founder from "./Pages/Founder";
 import ProtestResources from "./Pages/ProtestResources";
 import Blog from "./Pages/Blog";
 import Navbar from "./Components/Navigation/Navbar";
+import Post from "./Pages/Post";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/blog",
     element: <Blog />,
+  },
+  {
+    path: "/blog/:slug",
+    element: <Post />,
   },
 ]);
 
