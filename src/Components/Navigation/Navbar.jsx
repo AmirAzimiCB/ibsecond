@@ -109,7 +109,6 @@ export default function Navbar() {
                   </a>
                 </li>
                 <li>
-                  {" "}
                   <a href='/founder' className='link'>
                     Founder & CEO
                   </a>
@@ -119,7 +118,11 @@ export default function Navbar() {
                     Protest Resource
                   </a>
                 </li>
-                <li>Zine</li>
+                <li>
+                  <a href="/" className="link">
+                    Blog
+                  </a>
+                </li>
                 <li>
                   <a href='/contact' className='link'>
                     Contact
