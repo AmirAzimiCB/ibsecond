@@ -28,10 +28,17 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
       className='about-text-container'
       onPointerEnter={() => (document.body.style.cursor = "default")}
     >
-      <HiOutlineX className='cross-icon' onClick={() => setIsClicked(false)} />
+      <HiOutlineX
+        className='cross-icon'
+        onClick={() => {
+          console.log("Clicked");
+          setIsClicked(false);
+        }}
+      />
+
       <div className='about-image'>
         <img
-          style={{ height: "75%", width: "100%", overflow: "hidden" }}
+          style={{ height: "100%", width: "100%", overflow: "hidden" }}
           src={"/Images/aboutText.png"}
           alt='about'
         />
@@ -52,16 +59,10 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
           );
         }}
       >
-        <h1
-          style={{
-            textAlign: "center",
-            fontWeight: 400,
-            letterSpacing: "0.1rem",
-          }}
-        >
+        <h1 className='about-text-title'>
           The culture, as told by the culture.
         </h1>
-        <p>
+        <p className='about-text-desc'>
           facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
           facilisi. <span className='hide-text'> Nulla facilisi. </span>
           <br />
@@ -85,7 +86,10 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
           <br />
         </p>
         <center>
-          <p className='drag-over-text'>Drag Over to Read Full About Section</p>
+          <p className='drag-over-text'>
+            {window.innerWidth < 768 ? "Hold" : "Drag Over"} to Read Full About
+            Section
+          </p>
         </center>
       </div>
     </div>

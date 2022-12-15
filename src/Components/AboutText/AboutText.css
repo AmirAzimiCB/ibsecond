@@ -15,24 +15,31 @@
 }
 
 .about-text-container p {
-  font-size: 1rem;
+  font-size: .9rem;
 }
 
 .about-image {
-  height: 100vh;
+  height: 100%;
   width: 40vw;
   overflow: hidden;
+  object-fit: cover;
+  z-index: 999;
 }
 
 .about-text {
   width: 50%;
-  height: 100%;
   justify-content: center;
   align-items: center;
   padding: 0 5%;
   padding-top: 2rem;
   overflow: hidden;
 
+}
+
+.about-text-title {
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
 }
 
 .drag-over-text {
@@ -47,6 +54,89 @@
   color: #000;
   font-size: 1.5rem;
   margin: 0.5rem;
-  z-index: 999;
+  z-index: 999999;
+
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .about-text-container {
+    height: 80vh;
+    flex-direction: column;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 40vh;
+    object-fit: contain;
+  }
+
+  .about-text {
+    width: 100%;
+
+    padding: 0;
+
+  }
+
+  .about-text-title {
+    font-size: 1.5rem;
+  }
+
+  .about-text-desc {
+    font-size: .9rem !important;
+    padding: 0 5%;
+
+  }
+
+  .drag-over-text {
+    font-size: 1rem;
+    margin-top: 0;
+  }
+
+  .cross-icon {
+    color: #fff;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .about-text-container {
+    height: 75vh;
+    width: 80vw;
+    top: 13%;
+    flex-direction: column;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 35vh;
+    flex: 3;
+    object-fit: contain;
+  }
+
+  .about-text {
+    width: 100%;
+    flex: 7;
+    padding: 0;
+
+  }
+
+  .about-text-title {
+    font-size: 1.2rem;
+  }
+
+  .about-text-desc {
+    font-size: .75rem !important;
+    padding: 0 5%;
+
+  }
+
+  .drag-over-text {
+    font-size: 1rem;
+    margin-top: 0;
+  }
+
+  .cross-icon {
+    color: #fff;
+  }
 }

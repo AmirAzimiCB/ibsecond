@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./HomeImages.css";
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
+import { gsap } from "gsap";
 
 export default function HomeImages() {
   const [isTop, setIsTop] = React.useState(true);
@@ -14,9 +15,30 @@ export default function HomeImages() {
   const handleScrollClick = () => {
     console.log("clicked");
     //scroll height
-    isTop
-      ? descRefBottom.current.scrollIntoView({ behavior: "smooth" })
-      : descRefTop.current.scrollIntoView({ behavior: "smooth" });
+    if (isTop) {
+      gsap.to(descRefTop.current, {
+        duration: 1.5,
+        opacity: 0,
+        ease: "ease-out",
+      });
+      gsap.to(descRefBottom.current, {
+        duration: 1.5,
+        opacity: 1,
+        ease: "ease-out",
+      });
+      console.log("clicked");
+    } else {
+      gsap.to(descRefTop.current, {
+        duration: 1.5,
+        opacity: 1,
+        ease: "ease-out",
+      });
+      gsap.to(descRefBottom.current, {
+        duration: 1.5,
+        opacity: 0,
+        ease: "ease-out",
+      });
+    }
 
     setIsTop(!isTop);
   };
@@ -31,29 +53,27 @@ export default function HomeImages() {
             alt='1'
             border='0'
           />
-          <div className='home-text-container'>
+
+          <div className='home-text-container '>
             <div className='home-desc-text'>
-              <span ref={descRefTop}>
+              <span ref={descRefTop} className='top-text'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
                 laudantium eos, excepturi repellat non vitae officia, quia vel
                 dolore alias, dolor veritatis accusantium ducimus consequatur
                 optio aperiam possimus cum magni.
               </span>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <span ref={descRefBottom}>
-                Nottt ipsum dolor sit amet consectetur adipisicing elit. Totam
-                laudantium eos, excepturi repellat non vitae officia, quia vel
-                dolore alias, dolor veritatis accusantium ducimus consequatur
-                optio aperiam possimus cum magni.
+            </div>
+            <div className='home-desc-text'>
+              <span ref={descRefBottom} className='bottom-text'>
+                Whales that waters beginning divided life fifth brought so
+                wherein creature him life fruitful beginning is. Years bring
+                first midst his together seasons he tree yielding them may his
+                saying fourth their fly shall. Whose doesn't beast fruitful
+                subdue rule gathered. Divide after of. They're isn't.
               </span>
             </div>
           </div>
+
           <div className='scroll-text' onClick={handleScrollClick}>
             {" "}
             {isTop ? (
@@ -71,21 +91,21 @@ export default function HomeImages() {
                 src='/Images/Home-img1.png'
                 alt='1'
                 border='0'
-                className='home-img'
+                className='home-img upper-right-img'
               />
               <div className='home-text-container'>
-                <span style={{ fontSize: "5rem", fontWeight: 700 }}>ENTER</span>
+                <span className='home-text-container-span'>ENTER</span>
               </div>
             </div>
             <div className='right-img-inner-upper'>
               <img
                 src='/Images/Home-img2.png'
                 alt='1'
-                className='home-img'
+                className='home-img upper-right-img'
                 border='0'
               />
               <div className='home-text-container'>
-                <span style={{ fontSize: "5rem", fontWeight: 700 }}>THE</span>
+                <span className='home-text-container-span'>THE</span>
               </div>
             </div>
           </div>
@@ -98,9 +118,7 @@ export default function HomeImages() {
                 border='0'
               />
               <div className='home-text-container'>
-                <span style={{ fontSize: "5rem", fontWeight: 700 }}>
-                  GALLERY
-                </span>
+                <span className='home-text-container-span'>GALLERY</span>
               </div>
             </div>
           </div>

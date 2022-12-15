@@ -13,17 +13,61 @@
     background: rgb(156, 236, 214);
     background: radial-gradient(circle, rgba(217, 200, 149, 1) 9%, rgba(156, 236, 214, 1) 57%);
     color: #fff;
-    width: 7%;
-    height: 35px;
-    font-size: 1rem;
-    font-weight: 500;
+    width: 20%;
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
     cursor: pointer;
     border: none;
 }
 
 .cover-title {
-    align-self: center;
-    margin: auto;
+
+    margin-left: 18%;
     font-size: 2.5rem;
     font-weight: 700;
+}
+
+
+@media screen and (max-width: 768px) {
+    .header-container {
+        padding: 0.5rem;
+        flex-direction: column-reverse;
+        height: 10vh;
+
+    }
+
+    .enter-btn {
+        width: 35%;
+        margin: 0.5rem;
+    }
+
+    .cover-title {
+        font-size: 2rem;
+        margin: 0;
+
+
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .header-container {
+        padding: 0.5rem;
+        flex-direction: column-reverse;
+        height: 10vh;
+    }
+
+    .enter-btn {
+        width: 40%;
+        margin: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .cover-title {
+        font-size: 1.8rem;
+        margin: 0;
+
+    }
+
 }

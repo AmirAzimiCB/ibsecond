@@ -3,13 +3,7 @@
     width: 100%;
     height: 100vh;
     margin: 0;
-    overflow-x: hidden;
-    scrollbar-width: none;
-    /* For Firefox */
-    -ms-overflow-style: none;
-    /* For Internet Explorer and Edge */
-    box-sizing: border-box;
-
+    overflow: hidden !important;
 }
 
 .imagesContainer::-webkit-scrollbar {
@@ -67,7 +61,7 @@
 
 .right-img-inner-upper-container {
     width: 100%;
-    height: 47%;
+    height: 55%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -78,7 +72,7 @@
 
 .right-img-inner-lower-container {
     width: 100%;
-    height: 47%;
+    height: 43%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -100,14 +94,23 @@
     width: 100%;
     height: 100%;
     position: relative;
+
 }
 
+.left-img {
+    object-fit: cover;
+}
 
 .home-img {
     width: 100%;
     height: 100%;
 
     object-fit: fill;
+}
+
+.upper-right-img {
+
+    object-fit: cover;
 }
 
 .home-text-container {
@@ -123,14 +126,18 @@
     margin: auto;
     text-align: left;
     color: #fff;
-
 }
 
+.bottom-text {
+    opacity: 0;
+}
 
 .home-desc-text {
+    position: absolute;
     font-weight: 700;
     height: 25%;
     overflow: scroll;
+    overflow-y: hidden;
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
@@ -151,4 +158,82 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+}
+
+.home-text-container-span {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 900px) {
+
+
+    .home-text-container-span {
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    .home-desc-text {
+        height: 35%;
+        font-weight: 500;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .imagesContainer {
+        height: 140vh;
+        overflow-x: scroll;
+    }
+
+    .home-desc-text {
+        height: 45%;
+        font-weight: 500;
+    }
+
+    .left-img-container {
+        width: 90%;
+        height: 50%;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mainContainer {
+        flex-direction: column;
+        height: 120vh;
+        top: 12%;
+
+    }
+
+    .right-img-container {
+
+        width: 90%;
+        height: 110vh;
+        margin: auto;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: .3rem;
+    }
+
+    .home-text-container-span {
+        font-size: 2.8rem;
+        font-weight: 700;
+    }
+
+
+}
+
+
+@media screen and (max-width: 480px) {
+    .home-desc-text {
+        height: 45%;
+        font-weight: 500;
+    }
+
+    .home-text-container-span {
+        font-size: 2.3rem;
+        font-weight: 700;
+    }
+
 }

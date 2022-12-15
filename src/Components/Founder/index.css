@@ -2,8 +2,27 @@
   width: 100%;
   height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden !important;
   overflow-y: hidden !important;
+
+
+}
+
+.founder-scroll-text {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
 
 }
 
@@ -11,27 +30,28 @@
   width: 100%;
   height: 100%;
   overflow: hidden !important;
+  object-fit: cover;
   position: absolute;
 
 }
 
+
 .founder-text-container {
   max-width: 100vw;
   height: 50%;
-  top: 50%;
-  position: absolute;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
   z-index: 5;
   overflow: hidden !important;
-
 }
 
-.founder-section2-container {
-  height: 150vh;
+
+.founder-text {
+  z-index: 2;
 }
+
 
 .founder-text-bg {
   background-color: #fff;
@@ -41,38 +61,67 @@
   width: 40%;
 }
 
-.founder-section1-text-container {
-  align-items: flex-end;
-}
-
-.founder-section2-left-text-container {
-  top: 0;
-}
-
-.founder1-text {
-  margin-right: 1rem;
-}
-
-.founder2-text {
-  align-self: flex-start;
-  margin-left: 2rem;
-}
-
-.founder3-text {
-  align-self: flex-end;
-  margin-right: 1rem;
-}
-
-.founder4-text {
-  margin-left: 2rem;
-}
-
 .founder-section1-inner-text-container {
   display: flex;
   flex-direction: column;
+
 }
 
 .founders-name {
   color: #fff;
   font-size: 4rem;
+}
+
+.founders-scene {
+  width: 45vw;
+  min-height: 75vh;
+  align-self: flex-start;
+  overflow: hidden;
+  z-index: 2;
+}
+
+@media screen and (max-width: 900px) {
+  .founder-text-container {
+    height: 100%;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .founders-scene {
+    align-self: center;
+    min-height: 50vh;
+    width: 70vw;
+  }
+
+  .founder-section1-inner-text-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .founders-name {
+    font-size: 2rem;
+  }
+
+  .founder-text-bg {
+    width: 70%;
+    font-size: .95rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .founder-text-bg {
+    text-align: center;
+    width: 80%;
+    font-size: .9rem;
+    padding: 1rem;
+  }
+
+  .founders-scene {
+    width: 90vw;
+  }
+
 }

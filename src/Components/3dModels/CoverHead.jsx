@@ -109,7 +109,7 @@ export default function CoverHead({ config }) {
   const [isLoading, setIsLoading] = React.useState(true);
 
   return (
-    <div style={{ height: "100vh", position: "relative", overflow: "hidden" }}>
+    <div className='main-scene'>
       {isLoading ? null : (
         <img
           src={

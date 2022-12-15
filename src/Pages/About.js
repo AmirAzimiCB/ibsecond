@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Carousel from "../Components/CircularCarousel/Carousel";
 import AboutText from "../Components/AboutText/AboutText";
-import { gsap } from "gsap";
 
 export default function About() {
   const [object, setObject] = React.useState();
@@ -9,54 +8,41 @@ export default function About() {
   const ref = React.useRef();
   useEffect(() => {
     if (isClicked) {
-      // gsap.to(ref.current, {
-      //   filter: "blur(5px)",
-      //   backgroundColor: "rgba(0,0,0,0.9)",
-      //   duration: 1,
-      // });
-
-      ref.current.style.display = "block";
+      ref.current.style.backgroundColor = "rgba(0,0,0,.7)";
     } else {
-      // gsap.to(ref.current, {
-      //   filter: "blur(0px)",
-      //   backgroundColor: "rgba(0,0,0,0)",
-      //   duration: 1,
-      // });
-      ref.current.style.display = "none";
+      ref.current.style.backgroundColor = "rgba(0,0,0,0)";
     }
   }, [isClicked]);
 
   return (
     <div
-      draggable="false"
+      draggable='false'
       style={{
-        height: "100vh",
+        height: window.innerWidth < 768 ? "101vh" : "100vh",
         width: "100vw",
-        overflowY: "hidden",
+        overflow: "hidden",
         position: "relative",
       }}
     >
       <div
-        onClick={() => setIsClicked(!isClicked)}
+        onClick={() => setIsClicked(false)}
         ref={ref}
         style={{
-          height: "100vh",
+          height: "100%",
           width: "100vw",
           top: 0,
           left: 0,
           overflowY: "hidden",
           position: "absolute",
           zIndex: 999,
-          display: "none",
-          backgroundColor: "rgba(0,0,0,.7)",
+          backgroundColor: "rgba(0,0,0,.01)",
         }}
-        // onClick={() => setIsClicked(false)}
       ></div>
 
       <img
-        src="/Images/background.png"
-        alt="background"
-        draggable="false"
+        src='/Images/background.png'
+        alt='background'
+        draggable='false'
         style={{
           position: "absolute",
           top: 0,

@@ -12,6 +12,13 @@ code {
     monospace;
 }
 
+.link {
+  text-decoration: none;
+  color: #fff;
+  z-index: 99999;
+}
+
+
 .founder-overlay {
   position: absolute;
   top: 0;
@@ -24,4 +31,12 @@ code {
 .hide-text {
   background-color: #000;
   transition: 1s auto ease-out;
+}
+
+@media screen and (max-width: 900px) {
+  .founder-overlay {
+    height: 400vh;
+
+  }
+
 }

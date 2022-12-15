@@ -4,14 +4,25 @@ import "./index.css";
 
 function FounderSection1() {
   return (
-    <div className='founder-section1-container founder-section'>
+    <div
+      className='founder-section'
+      style={{
+        justifyContent: window.innerWidth < 900 ? "center" : "flex-end",
+      }}
+    >
       <img
         className='founder-section1-img founder-section-img'
         src='/Images/founder1.png'
         alt=''
       />
-      <div className='founder-section1-text-container founder-text-container '>
-        <Scene position={[-0.5, 0, 0]} />
+      <span className='founder-scroll-text'>Scroll down to read more</span>
+      <div
+        className='founder-text-container'
+        style={{ marginBottom: window.innerWidth < 900 ? "1rem" : "4rem" }}
+      >
+        <Scene
+          position={window.innerWidth < 900 ? [0, -0.5, 0] : [-0.5, 0, 0]}
+        />
         <div className='founder-section1-inner-text-container'>
           <span className='founders-name'>TALIA "BINX" SMITH</span>
           <span className='founder-text-bg founder1-text'>
