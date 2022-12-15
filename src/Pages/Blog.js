@@ -41,7 +41,6 @@ const Blog = () => {
               slug={post.slug.current}
               src={post.mainImage.asset.url}
               heading={post.title}
-              // text={post.body[0].children[0].text}
               text={post.body.map((item) =>
                 item.children.map((i) => i.text.substring(0, 80))
               )}

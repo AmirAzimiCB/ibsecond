@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import client from "../lib/clinet";
 
+import { PortableText } from "@portabletext/react";
+
 import "../styles/post.css";
 
 const Post = () => {
@@ -37,7 +39,7 @@ const Post = () => {
       {loading && <div>Loading</div>}
       <img src={post?.mainImage.asset.url} alt={""} />
       <h1>{post?.title}</h1>
-      {post?.body.map((item) => item.children.map((i) => <p>{i.text}</p>))}
+      <PortableText value={post?.body} />
     </div>
   );
 };
