@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import "./Navbar.css";
 
-
 export default function Navbar() {
   const [currentRoute, setCurrentRoute] = useState(
     window.location.pathname.toLowerCase()
@@ -23,74 +22,78 @@ export default function Navbar() {
     }
   }, [show]);
 
-  switch(currentRoute){
-    case '/':
-      return null 
-    case '/blog/:slug':
-      return (
-        <>
-        <div style={{position:'relative'}}>
-          <a href="/" className="link">
-            <img src="/Icons/dark-logo.png" alt="logo" className="logo-icon"/>
-          </a>
-          <div className="navbar-container">
-            <ul ref={navLinksRef} className="nav-link">
-                  <li>
-                    <a href='/home' className='link'>
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href='/about' className='link'>
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a href='/founder' className='link'>
-                      Founder & CEO
-                    </a>
-                  </li>
-                  <li>
-                    <a href='/protestresources' className='link'>
-                      Protest Resource
-                    </a>
-                  </li>
-                  <li>
-                     <a href="/" className="link">
-                     Liminal Space
-                      </a>  
-                  </li>
-                  <li>
-                    <a href='/contact' className='link'>
-                      Contact
-                    </a>
-                  </li>
-                  <li>
-                    <a href='/blog' className={`link`}>
-                      Blog
-                    </a>
-                  </li>
-            </ul>
-            {show ? (
-                  <div className='nav-icon' onClick={() => setShow(!show)}>
-                    <HiOutlineX color="black"  fontSize={35} />
-                  </div>
-                ) : (
-                  <div className='nav-icon' onClick={() => setShow(!show)}>
-                    <HiOutlineMenu color="black" fontSize={35} />
-                  </div>
-                )}
-          </div>
-        </div>
-       </>
-      )
-    case '/blog':
+  switch (currentRoute) {
+    case "/":
+      return null;
+    case "/blog/:slug":
       return (
         <>
           <div style={{ position: "relative" }}>
             <a href='/' className='link'>
               <img
-                src='/Icons/dark-logo.png'
+                src='/Icons/FinalLogo.jpg'
+                alt='logo'
+                className='logo-icon'
+              />
+            </a>
+            <div className='navbar-container'>
+              <ul ref={navLinksRef} className='nav-link'>
+                <li>
+                  <a href='/home' className='link'>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href='/about' className='link'>
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href='/founder' className='link'>
+                    Founder & CEO
+                  </a>
+                </li>
+                <li>
+                  <a href='/protestresources' className='link'>
+                    Protest Resource
+                  </a>
+                </li>
+                <li>
+                  <a href='/' className='link'>
+                    Liminal Space
+                  </a>
+                </li>
+                <li>
+                  <a href='/contact' className='link'>
+                    Contact
+                  </a>
+                </li>
+                <li>
+                  <a href='/blog' className={`link`}>
+                    Blog
+                  </a>
+                </li>
+              </ul>
+              {show ? (
+                <div className='nav-icon' onClick={() => setShow(!show)}>
+                  <HiOutlineX color='black' fontSize={35} />
+                </div>
+              ) : (
+                <div className='nav-icon' onClick={() => setShow(!show)}>
+                  <HiOutlineMenu color='black' fontSize={35} />
+                </div>
+              )}
+            </div>
+          </div>
+        </>
+      );
+    case "/blog":
+      return (
+        <>
+          <div style={{ position: "relative" }}>
+            <a href='/' className='link'>
+              <img
+                src='/Icons/FinalLogo.jpg'
                 alt='logo'
                 className='logo-icon'
               />
@@ -119,7 +122,7 @@ export default function Navbar() {
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="link">
+                  <a href='/' className='link'>
                     Blog
                   </a>
                 </li>
@@ -148,7 +151,7 @@ export default function Navbar() {
           <div style={{ position: "relative" }}>
             <a href='/' className='link'>
               <img
-                src='/Icons/LogoWhite.png'
+                src='/Icons/FinalLogo.jpg'
                 alt='logo'
                 className='logo-icon'
               />

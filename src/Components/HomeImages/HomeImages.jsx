@@ -38,10 +38,12 @@ export default function HomeImages() {
           <div className='home-text-container '>
             <div className='home-desc-text' id='home-desc-text'>
               <span ref={descRefTop} id='topText' className='top-text'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-                laudantium eos, excepturi repellat non vitae officia, quia vel
-                dolore alias, dolor veritatis accusantium ducimus consequatur
-                optio aperiam possimus cum magni.
+                Welcome to Incendiary Balloons! We are a One-Of-A-Kind
+                Documentary News Platform Televising the Revolution and
+                Reshaping the Media's Narrative Of Our Communities. You are
+                about to enter our 3D Art Gallery. Once you enter, press the
+                keys on your keyboard to move around the gallery and view all of
+                our website categories.
               </span>
               <br />
               <br />
@@ -50,11 +52,11 @@ export default function HomeImages() {
               <br />
               <br />
               <span ref={descRefBottom} className='bottom-text' id='bottomText'>
-                Whales that waters beginning divided life fifth brought so
-                wherein creature him life fruitful beginning is. Years bring
-                first midst his together seasons he tree yielding them may his
-                saying fourth their fly shall. Whose doesn't beast fruitful
-                subdue rule gathered. Divide after of. They're isn't.
+                Use your mouse to click on each art installation picture frame.
+                Every individual artpiece leads you to read more about each
+                indiadial news topic. If you are using your mobile phone, please
+                navigate around the gallery by swiping on the direction that you
+                would like to go in.
               </span>
             </div>
           </div>

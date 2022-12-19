@@ -12,7 +12,7 @@ export default function Contact() {
       <span className='contact-navs'>
         Contact Incendiary Balloons today for more information
         <a href=''>info@incendiaryballons.com</a>
-        <a href=''>media@incendiaryballons.com</a>
+        <a href=''>contact@incendiaryballoons.com</a>
       </span>
       <div className='form'>
         <div className='form-input-fields'>
