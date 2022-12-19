@@ -126,22 +126,27 @@
     margin: auto;
     text-align: left;
     color: #fff;
+    scroll-behavior: smooth;
 }
 
-.bottom-text {
-    opacity: 0;
-}
 
 .home-desc-text {
     position: absolute;
     font-weight: 700;
-    height: 25%;
+    font-size: 1.1rem;
+    line-height: 1.4em;
+    height: 35%;
     overflow: scroll;
-    overflow-y: hidden;
+    scroll-behavior: smooth;
+
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+}
+
+.bottom-text {
+    margin-bottom: 2rem;
 }
 
 .home-desc-text::-webkit-scrollbar {
@@ -174,8 +179,9 @@
     }
 
     .home-desc-text {
-        height: 35%;
-        font-weight: 500;
+        height: 40%;
+        font-weight: 700;
+        font-size: 1.2rem;
     }
 
 }
@@ -188,7 +194,8 @@
 
     .home-desc-text {
         height: 45%;
-        font-weight: 500;
+        font-weight: 700;
+        font-size: 1.3rem;
     }
 
     .left-img-container {
@@ -227,8 +234,9 @@
 
 @media screen and (max-width: 480px) {
     .home-desc-text {
-        height: 45%;
-        font-weight: 500;
+        height: 50%;
+        font-weight: 700;
+        font-size: 1.3rem;
     }
 
     .home-text-container-span {

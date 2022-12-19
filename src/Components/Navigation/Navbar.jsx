@@ -6,7 +6,7 @@ import useCatrgoires from "../../hooks/useCatrgories";
 
 
 export default function Navbar({isBlack}) {
-  const [show, setShow] = useState(false);
+ const [show, setShow] = useState(false);
   const navLinksRef = useRef(null);
   useEffect(() => {
     if (show) {
@@ -20,8 +20,8 @@ export default function Navbar({isBlack}) {
     }
   }, [show]);
 
-  if(isBlack) return <NavbarBlack navLinksRef={navLinksRef} show={show} setShow={setShow}/>
 
+  if(isBlack) return <NavbarBlack navLinksRef={navLinksRef} show={show} setShow={setShow}/>
   return (
     <NavbatWhite navLinksRef={navLinksRef} show={show} setShow={setShow}/>  
   )
@@ -82,9 +82,9 @@ const NavbatWhite = ({navLinksRef,show,setShow}) => {
               <HiOutlineMenu fontSize={35} />
             </div>
           )}
+          </div>
         </div>
-      </div>
-    </>
+      </>
   )
 }
 
