@@ -136,7 +136,7 @@
     height: 25%;
     overflow: scroll;
     scroll-behavior: smooth;
-    overflow-y: hidden;
+
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
