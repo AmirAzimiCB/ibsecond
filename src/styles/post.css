@@ -4,8 +4,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 860px;
+  margin: 0 15%;
   align-items: center;
-  padding: 20px;
+  padding: 100px 20px;
 }
 
 .container img {
@@ -14,7 +16,6 @@
 }
 
 .container p {
-  /* color: black; */
   padding: 10px 60px;
   line-height: 1.6rem;
 }
