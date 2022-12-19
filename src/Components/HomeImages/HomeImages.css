@@ -133,7 +133,9 @@
 .home-desc-text {
     position: absolute;
     font-weight: 700;
-    height: 25%;
+    font-size: 1.1rem;
+    line-height: 1.4em;
+    height: 35%;
     overflow: scroll;
     scroll-behavior: smooth;
 
@@ -141,6 +143,10 @@
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+}
+
+.bottom-text {
+    margin-bottom: 2rem;
 }
 
 .home-desc-text::-webkit-scrollbar {

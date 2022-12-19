@@ -50,7 +50,6 @@ export default function HomeImages() {
               <br />
               <br />
               <br />
-              <br />
               <span ref={descRefBottom} className='bottom-text' id='bottomText'>
                 Use your mouse to click on each art installation picture frame.
                 Every individual artpiece leads you to read more about each
@@ -58,6 +57,9 @@ export default function HomeImages() {
                 navigate around the gallery by swiping on the direction that you
                 would like to go in.
               </span>
+              <br />
+
+              <br />
             </div>
           </div>
 
