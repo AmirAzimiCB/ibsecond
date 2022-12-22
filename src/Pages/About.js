@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import Carousel from "../Components/CircularCarousel/Carousel";
 import AboutText from "../Components/AboutText/AboutText";
 
+import Layout from "../Components/Layout";
+
 export default function About() {
   const [object, setObject] = React.useState();
   const [isClicked, setIsClicked] = React.useState(false);
@@ -15,51 +17,53 @@ export default function About() {
   }, [isClicked]);
 
   return (
-    <div
-      draggable='false'
-      style={{
-        height: window.innerWidth < 768 ? "101vh" : "100vh",
-        width: "100vw",
-        overflow: "hidden",
-        position: "relative",
-      }}
-    >
+    <Layout>
       <div
-        onClick={() => setIsClicked(false)}
-        ref={ref}
+        draggable="false"
         style={{
-          height: "100%",
+          height: window.innerWidth < 768 ? "101vh" : "100vh",
           width: "100vw",
-          top: 0,
-          left: 0,
-          overflowY: "hidden",
-          position: "absolute",
-          zIndex: 999,
-          backgroundColor: "rgba(0,0,0,.01)",
+          overflow: "hidden",
+          position: "relative",
         }}
-      ></div>
+      >
+        <div
+          onClick={() => setIsClicked(false)}
+          ref={ref}
+          style={{
+            height: "100%",
+            width: "100vw",
+            top: 0,
+            left: 0,
+            overflowY: "hidden",
+            position: "absolute",
+            zIndex: 999,
+            backgroundColor: "rgba(0,0,0,.01)",
+          }}
+        ></div>
 
-      <img
-        src='/Images/background.png'
-        alt='background'
-        draggable='false'
-        style={{
-          position: "absolute",
-          top: 0,
-          width: "100%",
-          height: "100%",
-        }}
-      />
-      <Carousel
-        setIsClicked={setIsClicked}
-        setObject={setObject}
-        isClicked={isClicked}
-      />
-      <AboutText
-        setIsClicked={setIsClicked}
-        isClicked={isClicked}
-        object={object}
-      />
-    </div>
+        <img
+          src="/Images/background.png"
+          alt="background"
+          draggable="false"
+          style={{
+            position: "absolute",
+            top: 0,
+            width: "100%",
+            height: "100%",
+          }}
+        />
+        <Carousel
+          setIsClicked={setIsClicked}
+          setObject={setObject}
+          isClicked={isClicked}
+        />
+        <AboutText
+          setIsClicked={setIsClicked}
+          isClicked={isClicked}
+          object={object}
+        />
+      </div>
+    </Layout>
   );
 }

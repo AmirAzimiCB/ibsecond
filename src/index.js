@@ -10,7 +10,6 @@ import Home from "./Pages/Home";
 import Founder from "./Pages/Founder";
 import ProtestResources from "./Pages/ProtestResources";
 import Blog from "./Pages/Blog";
-import Navbar from "./Components/Navigation/Navbar";
 import Post from "./Pages/Post";
 
 const router = createBrowserRouter([
@@ -52,7 +51,6 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Navbar />
     <RouterProvider router={router} />
   </React.StrictMode>
 );

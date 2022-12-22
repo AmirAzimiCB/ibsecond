@@ -5,6 +5,7 @@ import client from "../lib/clinet";
 import { PortableText } from "@portabletext/react";
 
 import "../styles/post.css";
+import Layout from "../Components/Layout";
 
 const Post = () => {
   const { slug } = useParams();
@@ -35,12 +36,14 @@ const Post = () => {
   }, [slug]);
 
   return (
-    <div className="container">
-      {loading && <div>Loading</div>}
-      <img src={post?.mainImage.asset.url} alt={""} />
-      <h1>{post?.title}</h1>
-      <PortableText value={post?.body} />
-    </div>
+    <Layout isBlack={true}>
+      <div className="container">
+        {loading && <div>Loading...</div>}
+        <img src={post?.mainImage.asset.url} alt={""} />
+        <h1>{post?.title}</h1>
+        <PortableText value={post?.body} />
+      </div>
+    </Layout>
   );
 };
 
