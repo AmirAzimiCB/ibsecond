@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import "./Navbar.css";
-import useCatrgoires from "../../hooks/useCatrgories";
+import useCategories from "../../hooks/useCatrgories";
 
 
 export default function Navbar({isBlack}) {
