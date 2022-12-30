@@ -7,12 +7,13 @@ export default function Header() {
     window.location.href = "/home";
   };
   return (
-    <div className='header-container'>
+    <>
       <button className='enter-btn' onClick={handleClick}>
         ENTER THE VOID
       </button>
-
-      <span className='cover-title'>Incendiary Balloons</span>
-    </div>
+      <div className='header-container'>
+        <span className='cover-title'>Incendiary Balloons</span>
+      </div>
+    </>
   );
 }

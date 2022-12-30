@@ -1,11 +1,14 @@
 import React from "react";
+import Layout from "../Components/Layout";
 import ProtestComponent from "../Components/ProtestResources/ProtestComponent";
 
 function ProtestResources() {
   return (
-    <div>
-      <ProtestComponent />
-    </div>
+    <Layout>
+      <div>
+        <ProtestComponent />
+      </div>
+    </Layout>
   );
 }
 
