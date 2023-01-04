@@ -33,6 +33,12 @@ code {
   transition: 1s auto ease-out;
 }
 
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
 @media screen and (max-width: 900px) {
   .founder-overlay {
     height: 400vh;

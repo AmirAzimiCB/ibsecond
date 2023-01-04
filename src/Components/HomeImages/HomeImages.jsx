@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./HomeImages.css";
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 import { gsap } from "gsap";
+import VideoLoader from "../VideoLoader/VideoLoader";
 
 export default function HomeImages() {
   const [isTop, setIsTop] = React.useState(true);
@@ -113,6 +114,7 @@ export default function HomeImages() {
           </div>
         </div>
       </div>
+   
     </div>
   );
 }
