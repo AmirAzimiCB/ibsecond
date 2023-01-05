@@ -1,37 +1,26 @@
-import React, { useEffect, useState } from "react";
-import "../blog.css";
+import React from "react";
+import "../styles/blog.css";
 
 import BlogPost from "../Components/Blog/BlogPost";
 import Layout from "../Components/Layout";
-import client from "../lib/clinet";
+import usePosts from "../hooks/usePosts";
+import useCategories from "../hooks/useCatrgories";
+
+import Marqee from "react-fast-marquee";
 
 const Blog = () => {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    client
-      .fetch(
-        `*[_type == "post"]{
-          title,
-          slug,
-          body,
-          mainImage{
-            asset -> {
-              _id,
-              url
-            },
-            alt
-          }
-        }`
-      )
-      .then((data) => setPosts(data))
-      .catch((err) => console.error(err));
-  }, []);
+  const { posts } = usePosts();
+  const { categories } = useCategories();
 
   return (
     <Layout isBlack={true}>
       <div>
         <div className="main">
+          <Marqee gradient={false} spped={40}>
+            {categories.map((item) => (
+              <li key={item._id}>{item.title}</li>
+            ))}
+          </Marqee>
           <h2 className="latest">
             The <br />
             Latest

@@ -4,6 +4,7 @@ import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import "./Navbar.css";
 import useStore from "../../store/ZustandStore";
 import VideoLoader from "../VideoLoader/VideoLoader";
+import useCatrgoires from "../../hooks/useCatrgories";
 
 export default function Navbar({ isBlack }) {
   const [show, setShow] = useState(false);
