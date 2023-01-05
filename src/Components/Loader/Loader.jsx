@@ -11,7 +11,14 @@ export default function Loader({ setIsLoading }) {
     <Html>
       <div className='loader-container'>
         <video autoPlay muted loop id='myVideo'>
-          <source src='/Video/loader.mp4' type='video/mp4' />
+          <source
+            style={{
+              width: window.innerWidth,
+              height: window.innerHeight,
+            }}
+            src='/Video/loader.mp4'
+            type='video/mp4'
+          />
         </video>
       </div>
     </Html>

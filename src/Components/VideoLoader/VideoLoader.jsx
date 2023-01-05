@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import useStore from "../../store/ZustandStore";
-
+import { BsArrowRightSquare } from "react-icons/bs";
+import "./VideoLoader.css";
 export default function VideoLoader({ Navigateto }) {
   const videoRef = useRef(null);
   const [showVideo, setShowVideo] = useState(useStore.getState().showVideo);
@@ -52,34 +53,29 @@ export default function VideoLoader({ Navigateto }) {
         ref={videoRef}
         style={{
           display: showVideo ? "block" : "none",
-          position: "absolute",
-          zIndex: 999999,
-          left: 0,
-          top: 0,
           width: window.innerWidth,
           minHeight: window.innerHeight,
           objectFit: "fill",
         }}
+        className='video'
       >
         <source
           style={{ width: "100vw", height: "100vh" }}
-          src={"/Video/final_train.mkv"}
+          src={"/Video/Train.mp4"}
           type='video/mp4'
         />
       </video>
       <div
+        className='videoText'
         style={{
-          position: "absolute",
-          bottom: "0",
-          right: "5%",
-          zIndex: 999999,
-          color: "black",
-          fontSize: "18px",
-          fontWeight: "bold",
           display: showVideo ? "block" : "none",
         }}
       >
-        <p>Hold the right arrow key to continue </p>
+        <span>Hold the right arrow key to continue</span>
+        <BsArrowRightSquare
+          fontSize={15}
+          style={{ marginLeft: ".5rem", alignSelf: "center" }}
+        />
       </div>
     </div>
   );
