@@ -22,7 +22,6 @@ export default function VideoLoader({ Navigateto }) {
   const handleKeyPress = (event) => {
     if (event.keyCode === 39) {
       videoRef.current.play();
-      console.log(Navigateto);
     } else videoRef.current.pause();
   };
   const handleKeyUp = (event) => {

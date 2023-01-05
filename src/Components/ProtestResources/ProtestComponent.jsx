@@ -43,34 +43,50 @@ function ProtestComponent() {
           </h1>
           <ul className='protest-list-items-left'>
             <li className='protest-list-item'>
-              <a href=''>Link1</a>
+              <a href='https://minnesotafreedomfund.org/donate'>
+                Minnesota Freedom Fund
+              </a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link2</a>
+              <a href='https://actionnetwork.org/fundraising/louisville-community-bail-fund/ '>
+                Louisville Community Bail Fund
+              </a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link3</a>
+              <a href='https://www.knowyourrightscamp.com/legal'>
+                Funding defense lawyers in the Minneapolis, Minnesota area to
+                provide legal resources for those in need.
+              </a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link4</a>
+              <a href='https://brooklynbailfund.org/'>Brooklyn Protest</a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link5</a>
+              <a href='https://www.phillybailout.com/'>Philadelphia Protest</a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link6</a>
+              <a href='https://atlsolidarity.org/ '>Atlanta Protest</a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link7</a>
+              <a href='https://www.gofundme.com/f/peoples-city-council-ticket-fund'>
+                Los Angeles
+              </a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link8</a>
+              <a href='https://bailproject.org/ '>The Bail Project</a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link9</a>
+              <a href=' https://www.communityjusticeexchange.org/nbfn-directory'>
+                National Bail Funds
+              </a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link10</a>
+              <a href=' https://www.gofundme.com/f/help-us-raise-funds-to-support-our-community'>
+                San Diego
+              </a>
+            </li>
+            <li className='protest-list-item'>
+              <a href='https://fundly.com/coloradofreedom'>Colorado</a>
             </li>
           </ul>
         </div>
@@ -79,36 +95,55 @@ function ProtestComponent() {
             {" "}
             Free Virtual Mental Health Resource{" "}
           </h1>
+
           <ul className='protest-list-items-right'>
             <li className='protest-list-item'>
-              <a href=''>Link1</a>
+              <a href=' https://borislhensonfoundation.org/covid-19-free-virtual-therapy-support-campaign/'>
+                Virtual Therapy Support Campaign
+              </a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link2</a>
+              <a href=' https://blackmenheal.org/services/'>Blank Men Heal</a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link3</a>
+              <a href='  https://www.beam.community/bvtn'>Beam Community</a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link4</a>
+              <a href=' https://thenapministry.wordpress.com/'>
+                The Nap Ministory
+              </a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link5</a>
+              <a href=' https://www.ayanatherapy.com/'>Ayana Therapy</a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link6</a>
+              <a href='https://liberatemeditation.com/'>Liberate Meditation</a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link7</a>
+              <a href='https://www.indiegogo.com/projects/ayana-therapy#/'>
+                Ayana Therapy Indiegogo
+              </a>
+            </li>
+
+            <li className='protest-list-item'>
+              <a href='https://www.facebook.com/groups/QTPOCsupport/'>
+                QTPOC Support Facebook Group
+              </a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link8</a>
+              <a href='https://www.instagram.com/qtpocmentalhealth/?hl=en'>
+                QTPOC Mental Health Instagram
+              </a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link9</a>
+              <a href='https://docs.google.com/document/d/1NSYoEIb_b4Oucuz0TMrwpwmc39uBSO7xnCvrWQvOHg8/edit'>
+                Intersectional Mental Health Concerns of LGBTQ & POC Communities
+              </a>
             </li>
             <li className='protest-list-item'>
-              <a href=''>Link10</a>
+              <a href='https://apps.apple.com/us/app/insight-timer-meditation-timer/id337472899'>
+                Insight Timer Meditation Timer
+              </a>
             </li>
           </ul>
         </div>

@@ -46,7 +46,7 @@ const NavbatWhite = ({ navLinksRef, show, setShow }) => {
         </a>
         <div className={`navbar-container `}>
           <ul ref={navLinksRef} className='nav-link'>
-            <li onClick={() => handleClick("/")}>Home</li>
+            <li onClick={() => handleClick("/home")}>Home</li>
             <li onClick={() => handleClick("/manifesto")}>Manifesto</li>
             <li onClick={() => handleClick("/founder")}>Founder & CEO</li>
             <li onClick={() => handleClick("/protestresources")}>

@@ -1,10 +1,11 @@
 import React from "react";
 import "./Header.css";
-
+import useStore from "../../store/ZustandStore";
+import VideoLoader from "../VideoLoader/VideoLoader";
 export default function Header() {
   const handleClick = () => {
     //navigate to another page
-    window.location.href = "/home";
+    useStore.setState({ showVideo: true });
   };
   return (
     <>
@@ -14,6 +15,7 @@ export default function Header() {
       <div className='header-container'>
         <span className='cover-title'>Incendiary Balloons</span>
       </div>
+      <VideoLoader Navigateto={"/home"} />
     </>
   );
 }
