@@ -74,6 +74,12 @@ const NavbatWhite = ({ navLinksRef, show, setShow }) => {
 };
 
 export const NavbarBlack = ({ navLinksRef, show, setShow }) => {
+  const [navigateTo, setNavigateTo] = useState(null);
+  const handleClick = (link) => {
+    setNavigateTo(link);
+    setShow(false);
+    useStore.setState({ showVideo: true });
+  };
   return (
     <>
       <div style={{ position: "relative" }}>
@@ -83,36 +89,15 @@ export const NavbarBlack = ({ navLinksRef, show, setShow }) => {
 
         <div className='navbar-container'>
           <ul ref={navLinksRef} className='nav-link'>
-            <li>
-              <a href='/home' className='link'>
-                Home
-              </a>
+            <li onClick={() => handleClick("/home")}>Home</li>
+            <li onClick={() => handleClick("/manifesto")}>Manifesto</li>
+            <li onClick={() => handleClick("/founder")}>Founder & CEO</li>
+            <li onClick={() => handleClick("/protestresources")}>
+              Protest Resource
             </li>
-            <li>
-              <a href='/manifesto' className='link'>
-                Manifesto
-              </a>
-            </li>
-            <li>
-              <a href='/founder' className='link'>
-                Founder & CEO
-              </a>
-            </li>
-            <li>
-              <a href='/protestresources' className='link'>
-                Protest Resource
-              </a>
-            </li>
-            <li>
-              <a href='/' className='link'>
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href='/contact' className='link'>
-                Contact
-              </a>
-            </li>
+            <li>Zine</li>
+            <li onClick={() => handleClick("/contact")}>Contact</li>
+            <li onClick={() => handleClick("/blog")}>Blog</li>
           </ul>
           {show ? (
             <div className='nav-icon' onClick={() => setShow(!show)}>
@@ -125,6 +110,7 @@ export const NavbarBlack = ({ navLinksRef, show, setShow }) => {
           )}
         </div>
       </div>
+      {navigateTo && <VideoLoader Navigateto={navigateTo} />}
     </>
   );
 };
