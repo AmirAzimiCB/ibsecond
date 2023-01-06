@@ -43,7 +43,7 @@ const NavbatWhite = ({ navLinksRef, show, setShow }) => {
     <>
       <div style={{ position: "relative" }}>
         <a href='/' className='link'>
-          <img src='/Icons/LogoWhite.png' alt='logo' className='logo-icon' />
+          <img src='/Icons/FinalLogo.jpg' alt='logo' className='logo-icon' />
         </a>
         <div className={`navbar-container `}>
           <ul ref={navLinksRef} className='nav-link'>
@@ -84,7 +84,7 @@ export const NavbarBlack = ({ navLinksRef, show, setShow }) => {
     <>
       <div style={{ position: "relative" }}>
         <a href='/' className='link'>
-          <img src='/Icons/dark-logo.png' alt='logo' className='logo-icon' />
+          <img src='/Icons/FinalLogo.jpg' alt='logo' className='logo-icon' />
         </a>
 
         <div className='navbar-container'>

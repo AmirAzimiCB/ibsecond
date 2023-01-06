@@ -44,6 +44,11 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
         draggable='false'
       >
         <div className='about-container' draggable='false'>
+          <div className='about-instruction-text-container'>
+            <span className='about-instruction-text' draggable='false'>
+              Click on one of the images to read About Our Site
+            </span>
+          </div>
           <div className='about-inner-container' ref={ref} draggable='false'>
             <li style={{ "--i": 0 }}>
               <img
