@@ -44,8 +44,7 @@
   text-align: center;
   color: #000;
   width: 20%;
-
-
+  background-color: transparent !important;
 }
 
 @keyframes rotation {
