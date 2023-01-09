@@ -33,7 +33,7 @@ function FounderSection1() {
             storytelling as a means of shining a light on those whose narratives
             have been overlooked or erased. Talia began writing poetry and
             novels, based on, and inspired by her surroundings, as well as
-            crafting visual art pieces, that told stories of her own community.{" "}
+            crafting visual art pieces, that told stories of her own community.
           </span>
         </div>
       </div>

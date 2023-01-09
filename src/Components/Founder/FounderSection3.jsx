@@ -28,17 +28,17 @@ function FounderSection3() {
           readily open to her cultural point of view. Talia’s work has appeared
           in Harper’s Bazaar, Cheddar TV, Paper Magazine, Vice, Nylon Magazine,
           Dazed & Confused, GALORE, The New York Observer, among many other
-          places.
-          <br />
-          <br />
-          Talia continues to persevere to ensure the that the culture is
+          places. Talia continues to persevere to ensure the that the culture is
           represented on increasingly bigger platforms, and that the revolution
-          WILL be televised. Talia holds undergraduate degree in journalism from
-          The Arthur L. Carter Institute at New York University and was heavily
-          inspired by a long list of readings by James Baldwin, Audre Lorde and
-          more. Talia describes her philosophy as a mixture of all her idols
-          Tupac Shakur, Hayao Miyazaki, Will Smith, Frida Kahlo, Sandra Cisneros
-          and strong women, like her mother.
+          WILL be televised.
+          <br />
+          <br />
+          Talia holds undergraduate degree in journalism from The Arthur L.
+          Carter Institute at New York University and was heavily inspired by a
+          long list of readings by James Baldwin, Audre Lorde and more. Talia
+          describes her philosophy as a mixture of all her idols Tupac Shakur,
+          Hayao Miyazaki, Will Smith, Frida Kahlo, Sandra Cisneros and strong
+          women, like her mother.
         </span>
         <Scene position={window.innerWidth < 900 ? [0, 0.5, 0] : [0.5, 0, 0]} />
       </div>

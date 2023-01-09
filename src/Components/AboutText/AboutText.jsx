@@ -59,30 +59,41 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
           );
         }}
       >
-        <h1 className='about-text-title'>
+        <h2 className='about-text-title'>
           The culture, as told by the culture.
-        </h1>
+        </h2>
         <p className='about-text-desc'>
-          facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi. <span className='hide-text'> Nulla facilisi. </span>
+          One-Of-A-Kind Documentary News Platform Televising the Revolution and
+          Reshaping the <span className='hide-text'>Media's Narrative</span> Of
+          Our Communities facilisi. Nulla
           <br />
+          Yung Lords is a one-of -a kind media publication that disrupts the
+          space of news by taking an{" "}
+          <span className='hide-text'>avant-garde</span>{" "}
+          <span className='hide-text'>approach</span> to the ways news stories
+          are traditionally structured.
+          <br />A visual multimedia space that is perfectly designed to
+          highlight issues <span className='hide-text'>affecting</span> all
+          underrepresented groups regardless of race, gender, sexuality,
+          identity politics, augmented world views, cultural{" "}
+          <span className='hide-text'> experiences</span> , and everything
+          in-between. Our primary focus is to highlight cutting edge global and
+          domestic issues and provide space, for those who have grown weary of
+          the established media’s{" "}
+          <span className='hide-text'>mono-dimensional</span> coverage of
+          communities of color and those who voices go unheard: via our uniquely
+          nuanced immersive journalism. We are a{" "}
+          <span className='hide-text'>creative</span> think hub dedicated and
+          penned specifically for the people.
           <br />
-          Lorem ipsum dolor sit amet,
-          <span className='hide-text'> Nulla facilisi. </span>consectetur
-          adipiscing elit. Sed condimentum, nisl ut aliquam lacinia, nunc nisl
-          aliquam nisl, <span className='hide-text'> Nulla facilisi. </span>{" "}
-          quis aliquam nisl nunc vel nunc. Nulla facilisi. Nulla facilisi. Nulla
-          Nulla facilisi. Nulla facilisi.
-          <br />
-          <span className='hide-text'> Nulla facilisi. </span> Nulla facilisi.
-          Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
-          facilisi. Nulla <span className='hide-text'> Nulla facilisi. </span>
-          <br />
-          <br />
-          <span className='hide-text'> Nulla facilisi. </span>lacinia, nunc nisl
-          i. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi.{" "}
-          <span className='hide-text'> Nulla facilisi. </span> Nulla facilisi.
-          Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi
+          We discuss world issues in a nuanced avant garde ways and tackle each
+          issue with thoughtful <span className='hide-text'>critiques</span>,
+          beautiful imagery, engaging narratives, and insight straight from the{" "}
+          <span className='hide-text'>people</span> who live these issues as
+          their reality. Yung Lords moves beyond sensationalism to{" "}
+          <span className='hide-text'>tackle</span>   the social, political, and
+          economic effects of the issues at hand. Immersion journalism at its
+          finest.
           <br />
         </p>
         <center>

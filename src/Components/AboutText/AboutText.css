@@ -30,8 +30,8 @@
   width: 50%;
   justify-content: center;
   align-items: center;
-  padding: 0 5%;
-  padding-top: 2rem;
+  padding: 0 3%;
+  padding-top: 1rem;
   overflow: hidden;
 
 }
@@ -44,7 +44,7 @@
 
 .drag-over-text {
   font-size: 1.3rem;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .cross-icon {
@@ -55,7 +55,6 @@
   font-size: 1.5rem;
   margin: 0.5rem;
   z-index: 999999;
-
   cursor: pointer;
 }
 
@@ -69,22 +68,25 @@
     width: 100%;
     height: 40vh;
     object-fit: contain;
+    flex:3;
   }
 
   .about-text {
     width: 100%;
-
+    
+    flex:9;
     padding: 0;
+    text-align:center;
 
   }
 
   .about-text-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .about-text-desc {
-    font-size: .9rem !important;
-    padding: 0 5%;
+    font-size: .75rem !important;
+    padding: 0 2%;
 
   }
 
@@ -116,17 +118,18 @@
 
   .about-text {
     width: 100%;
-    flex: 7;
+    flex: 10;
     padding: 0;
+    text-align: center;
 
   }
 
   .about-text-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .about-text-desc {
-    font-size: .75rem !important;
+    font-size: .7rem !important;
     padding: 0 5%;
 
   }
