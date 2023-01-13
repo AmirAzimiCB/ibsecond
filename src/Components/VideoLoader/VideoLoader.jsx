@@ -6,6 +6,10 @@ export default function VideoLoader({ Navigateto }) {
   const videoRef = useRef(null);
   const [showVideo, setShowVideo] = useState(useStore.getState().showVideo);
   useEffect(() => {
+    if (window.innerWidth < 756) {
+      useStore.setState({ showVideo: false });
+      return;
+    }
     useStore.subscribe(
       () => setShowVideo(useStore.getState().showVideo),
       (state) => state.showVideo
@@ -18,10 +22,6 @@ export default function VideoLoader({ Navigateto }) {
       //remove class from body
       document.body.classList.remove("no-scroll");
     }
-
-    // if (window.innerWidth < 756 && videoRef) {
-    //   videoRef.current.currentTime = videoRef.current.duration;
-    // }
   }, [showVideo]);
 
   const handleKeyPress = (event) => {
