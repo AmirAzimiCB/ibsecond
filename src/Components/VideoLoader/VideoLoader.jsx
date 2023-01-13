@@ -19,9 +19,9 @@ export default function VideoLoader({ Navigateto }) {
       document.body.classList.remove("no-scroll");
     }
 
-    if (window.innerWidth < 756) {
-      videoRef.current.currentTime = videoRef.current.duration;
-    }
+    // if (window.innerWidth < 756 && videoRef) {
+    //   videoRef.current.currentTime = videoRef.current.duration;
+    // }
   }, [showVideo]);
 
   const handleKeyPress = (event) => {
