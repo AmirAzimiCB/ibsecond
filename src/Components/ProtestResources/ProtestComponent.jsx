@@ -91,6 +91,53 @@ function ProtestComponent() {
             </li>
           </ul>
         </div>
+        <div className='protest-list-center'>
+          <h1 className='protest-list-header list-header-center'>
+            {" "}
+            Monetary Virtual Mental Health Resources{" "}
+          </h1>
+
+          <ul className='protest-list-items-center'>
+            <li className='protest-list-item'>
+              <a href='https://therapyforblackgirls.com/'>
+                Therapy for black girls
+              </a>
+            </li>
+            <li className='protest-list-item'>
+              <a href='https://therapyforblackmen.org/'>
+                Therapy for black men
+              </a>
+            </li>
+            <li className='protest-list-item'>
+              <a href='https://linktr.ee/inclusivetherapists '>
+                Inclusive Therapists
+              </a>
+            </li>
+            <li className='protest-list-item'>
+              <a href='https://www.healhaus.com/offerings/ '>Heal haus</a>
+            </li>
+            <li className='protest-list-item'>
+              <a href='https://therapy-for-black-girls.mn.co/'>
+                Therapy for black girls
+              </a>
+            </li>
+            <li className='protest-list-item'>
+              <a href='http://blackyouthproject.com/the-five-signs-of-a-great-virtual-black-therapist/'>
+                Black youth project
+              </a>
+            </li>
+            <li className='protest-list-item'>
+              <a href='https://openpathcollective.org/'>Open path collective</a>
+            </li>
+
+            <li className='protest-list-item'>
+              <a href='https://www.headspace.com/'>Headspace</a>
+            </li>
+            <li className='protest-list-item'>
+              <a href='https://www.betterhelp.com/'>Better help</a>
+            </li>
+          </ul>
+        </div>
         <div className='protest-list-right'>
           <h1 className='protest-list-header list-header-right'>
             {" "}

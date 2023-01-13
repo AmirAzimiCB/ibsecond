@@ -17,6 +17,10 @@
   font-weight: 700;
 }
 
+li {
+  margin-left: 0 !important;
+}
+
 .protest-desc-text-container {
   width: 90%;
   height: 100%;
@@ -45,9 +49,9 @@
 }
 
 .protest-list-left {
-  width: 40%;
-  height: 100%;
 
+  height: 100%;
+  flex: 1;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -55,8 +59,19 @@
   text-align: left;
 }
 
+.protest-list-center {
+
+  height: 100%;
+  flex: 1;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
 .protest-list-right {
-  width: 40%;
+  flex: 1;
   height: 100%;
 
   align-items: center;
@@ -68,7 +83,7 @@
 }
 
 .protest-list-header {
-  width: 80%;
+  width: 90%;
 
   font-size: 2.5rem;
 
@@ -89,16 +104,34 @@
   margin-left: 63%;
 }
 
+
+.list-header-center::after {
+  width: 35%;
+  margin-left: 35%;
+}
+
 .protest-list-items-left {
   align-self: flex-start;
   height: 100%;
   list-style-type: none;
-  margin-left: 2rem;
+
   display: flex;
   justify-content: space-between;
   align-items: left;
-  align-content: flex-start;
+
   text-align: left;
+  flex-direction: column;
+}
+
+.protest-list-items-center {
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-start;
+
+  list-style-type: none;
+  text-align: left;
+  height: 100%;
+  margin-right: 5rem;
   flex-direction: column;
 }
 
@@ -108,7 +141,7 @@
   align-self: flex-end;
 
   list-style-type: none;
-  text-align: right;
+  text-align: left;
   height: 100%;
   margin-right: 5rem;
   flex-direction: column;
@@ -131,6 +164,41 @@
   text-align: center;
   font-size: 1rem;
 }
+
+@media screen and (max-width: 1150px) {
+  .protest-lists-container {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+  }
+
+  .protest-list-left,
+  .protest-list-right,
+  .protest-list-center {
+    width: 100%;
+    height: 50%;
+    margin-bottom: 2rem;
+    align-self: center;
+    text-align: center;
+  }
+
+  .protest-list-header::after {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .protest-list-items-right,
+  .protest-list-items-left,
+  .protest-list-items-center {
+    text-align: center;
+    align-self: center;
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+}
+
 
 @media screen and (max-width: 768px) {
   .protest-header-img {
@@ -172,7 +240,8 @@
   }
 
   .protest-list-left,
-  .protest-list-right {
+  .protest-list-right,
+  .protest-list-center {
     width: 100%;
     height: 50%;
     margin-bottom: 2rem;
@@ -185,19 +254,16 @@
     margin-left: 0;
   }
 
-  .protest-list-items-right {
+  .protest-list-items-right,
+  .protest-list-items-left,
+  .protest-list-items-center {
     text-align: center;
     align-self: center;
     margin-right: 0;
     padding-left: 0;
   }
 
-  .protest-list-items-left {
-    text-align: center;
-    align-self: center;
-    margin-left: 0;
-    padding-left: 0;
-  }
+
 
 }
 

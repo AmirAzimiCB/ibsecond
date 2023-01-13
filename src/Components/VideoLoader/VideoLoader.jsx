@@ -68,14 +68,17 @@ export default function VideoLoader({ Navigateto }) {
       <div
         className='videoText'
         style={{
-          display: showVideo ? "block" : "none",
+          display: showVideo ? "flex" : "none",
         }}
       >
-        <span>Hold the right arrow key to continue</span>
-        <BsArrowRightSquare
-          fontSize={15}
-          style={{ marginLeft: ".5rem", alignSelf: "center" }}
-        />
+        <span>
+          Press and hold the left arrow key to go to the next page on Incendiary
+          Balloons{" "}
+          <BsArrowRightSquare
+            fontSize={18}
+            style={{ marginLeft: ".5rem", alignSelf: "center" }}
+          />
+        </span>
       </div>
     </div>
   );

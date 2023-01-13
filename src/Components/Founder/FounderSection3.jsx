@@ -12,7 +12,7 @@ function FounderSection3() {
     >
       <img
         className='founder-section3-img founder-section-img'
-        src='/Images/Home-img1.png'
+        src='/Images/founder3.png'
         alt=''
       />
       <div className='founder-text-container '>

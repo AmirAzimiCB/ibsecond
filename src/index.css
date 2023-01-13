@@ -1,15 +1,22 @@
+@font-face {
+  font-family: "CloisterBlack";
+  src: local("CloisterBlack"),
+    url("./fonts/CloisterBlack.ttf") format("truetype");
+  font-weight: 100;
+}
+
 body {
   margin: 0;
   padding: 0;
 
-  font-family: Helvetica, "Open Sans", sans-serif;
+  font-family: "CloisterBlack", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "CloisterBlack",
+    sans-serif;
 }
 
 .link {

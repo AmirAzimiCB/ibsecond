@@ -10,6 +10,8 @@ import Home from "./Pages/Home";
 import Founder from "./Pages/Founder";
 import ProtestResources from "./Pages/ProtestResources";
 import Blog from "./Pages/Blog";
+import "./fonts/CloisterBlack.ttf";
+
 import Post from "./Pages/Post";
 
 const router = createBrowserRouter([
