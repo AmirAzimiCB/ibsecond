@@ -5,6 +5,12 @@
   font-weight: 100;
 }
 
+@font-face {
+  font-family: "DistortYou";
+  src: local("DistortYou"),
+    url("./fonts/DistortYouaLesson.otf") format("opentype");
+}
+
 body {
   margin: 0;
   padding: 0;

@@ -10,6 +10,7 @@ import Contact from "../ContactBox/Contact";
 import Header from "../Header/Header";
 import { useState } from "react";
 import { useEffect } from "react";
+import LoadingEnd from "../Loader/LoadingEnd";
 
 const Model = ({ config }) => {
   const gltf = useGLTF("/Models/afrogirl.glb");
@@ -110,6 +111,7 @@ export default function CoverHead({ config }) {
 
   return (
     <div className='main-scene'>
+      {isLoading ? null : <LoadingEnd />}
       {isLoading ? null : (
         <img
           src={

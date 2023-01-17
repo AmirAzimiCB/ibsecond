@@ -76,8 +76,8 @@ export default function VideoLoader({ Navigateto }) {
         }}
       >
         <span>
-          Press and hold the left arrow key to go to the next page on Incendiary
-          Balloons{" "}
+          Press and hold the right arrow key to go to the next page on
+          Incendiary Balloons{" "}
           <BsArrowRightSquare
             fontSize={18}
             style={{ marginLeft: ".5rem", alignSelf: "center" }}

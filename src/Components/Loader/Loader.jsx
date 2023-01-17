@@ -4,17 +4,39 @@ import "./Loader.css";
 
 export default function Loader({ setIsLoading }) {
   const { progress } = useProgress();
-  if (progress > 95) {
+  if (progress > 50) {
     setIsLoading(false);
   }
   return (
     <Html>
       <div className='loader-container'>
-        <video autoPlay muted loop id='myVideo'>
+        <div className='loader-text'>
+          <span className='loader-percent'>{progress.toFixed(2)}%</span>
+          <div class='loading-anim'>
+            <span class='loading-p'>l</span>
+            <span class='loading-p'>o</span>
+            <span class='loading-p'>a</span>
+            <span class='loading-p'>d</span>
+            <span class='loading-p'>i</span>
+            <span class='loading-p'>n</span>
+            <span class='loading-p'>g</span>
+          </div>
+        </div>
+        <video
+          autoPlay
+          muted
+          loop
+          id='myVideo'
+          style={{
+            width: window.innerWidth,
+            minHeight: window.innerHeight,
+            objectFit: "fill",
+          }}
+        >
           <source
             style={{
-              width: window.innerWidth,
-              height: window.innerHeight,
+              width: "100vw !important",
+              height: "100vh",
             }}
             src='/Video/loader.mp4'
             type='video/mp4'

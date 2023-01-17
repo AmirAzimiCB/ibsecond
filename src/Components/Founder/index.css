@@ -44,12 +44,14 @@
   flex-direction: column;
   justify-content: space-around;
   z-index: 5;
+
   overflow: hidden !important;
 }
 
 
 .founder-text {
   z-index: 2;
+
 }
 
 
@@ -59,6 +61,8 @@
   padding: 2rem;
   border-radius: 10px;
   width: 40%;
+  font-size: 1.2rem;
+  line-height: 1.3em;
 }
 
 .founder-section1-inner-text-container {
@@ -116,7 +120,7 @@
   .founder-text-bg {
     text-align: center;
     width: 80%;
-    font-size: .9rem;
+    font-size: 1rem;
     padding: 1rem;
   }
 
