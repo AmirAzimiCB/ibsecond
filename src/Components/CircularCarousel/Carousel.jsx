@@ -45,7 +45,7 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
       >
         <div className='about-container' draggable='false'>
           <div className='about-instruction-text-container'>
-            <span className='about-instruction-text' draggable='false'>
+            <span className='about-instruction-text'>
               Click on one of the images to read About Our Site
             </span>
           </div>
