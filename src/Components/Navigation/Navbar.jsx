@@ -58,7 +58,7 @@ const NavbatWhite = ({ navLinksRef, show, setShow }) => {
             <li onClick={() => handleClick("/manifesto")}>Manifesto</li>
             <li onClick={() => handleClick("/founder")}>Founder & CEO</li>
             <li onClick={() => handleClick("/protestresources")}>
-              Protest Resource
+              Protest Resources
             </li>
             <li>Zine</li>
             <li onClick={() => handleClick("/contact")}>Contact</li>
@@ -106,7 +106,7 @@ export const NavbarBlack = ({ navLinksRef, show, setShow }) => {
             <li onClick={() => handleClick("/manifesto")}>Manifesto</li>
             <li onClick={() => handleClick("/founder")}>Founder & CEO</li>
             <li onClick={() => handleClick("/protestresources")}>
-              Protest Resource
+              Protest Resources
             </li>
             <li>Zine</li>
             <li onClick={() => handleClick("/contact")}>Contact</li>

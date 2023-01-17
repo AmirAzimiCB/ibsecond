@@ -42,7 +42,7 @@
   list-style: none;
   margin: 0 1.2rem;
   color: white;
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   font-weight: 700;
   z-index: 9;
@@ -90,5 +90,6 @@
 
   .nav-link li {
     margin-bottom: 2rem;
+    font-size: 1rem;
   }
 }
