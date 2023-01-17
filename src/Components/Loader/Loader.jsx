@@ -28,14 +28,17 @@ export default function Loader({ setIsLoading }) {
           loop
           id='myVideo'
           style={{
-            width: window.innerWidth,
+            width:
+              window.innerWidth < 756
+                ? window.innerWidth * 2
+                : window.innerWidth,
             minHeight: window.innerHeight,
             objectFit: "fill",
           }}
         >
           <source
             style={{
-              width: "100vw !important",
+              width: window.innerWidth < 756 ? "150vw" : "100vw !important",
               height: "100vh",
             }}
             src='/Video/loader.mp4'

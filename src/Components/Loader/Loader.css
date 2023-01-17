@@ -99,3 +99,12 @@
         transform: scale(.9);
     }
 }
+
+@media screen and (max-width: 768px) {
+    .loader-text {
+
+        font-size: 50px;
+        top: 50%;
+    }
+
+}
