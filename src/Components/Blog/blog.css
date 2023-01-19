@@ -1,6 +1,35 @@
-article {
+img {
+  width: 100%;
+  height: 400px;
+}
+
+.marquee {
   display: flex;
-  width: 70%;
+}
+
+.marquee li {
+  padding: 0 2rem;
+}
+
+.nav-container {
+  background: #fff !important;
+  color: #333;
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.navigation-block {
+  display: flex !important;
+}
+
+/* article {
+  display: flex;
   align-items: center;
   max-height: 500px;
   border-top: 1px solid #cecece;
@@ -20,8 +49,7 @@ article:nth-child(1) {
 }
 
 article:nth-child(1) img {
-  width: 60%;
-  height: 450px;
+  width: 100%;
 }
 
 article:nth-child(1) h2 {
@@ -60,3 +88,5 @@ h2 {
 h2:hover {
   text-decoration: underline;
 }
+
+*/

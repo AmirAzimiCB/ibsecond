@@ -2,7 +2,7 @@ import React from 'react'
 import { Link} from 'react-router-dom'
 import './blog.css'
 
-const BlogPost = ({src,slug,heading,text}) => {
+const BlogPost = ({ src, slug, heading, text, body }) => {
     return (
         <article>
             <img src={src} alt={heading}/> 
