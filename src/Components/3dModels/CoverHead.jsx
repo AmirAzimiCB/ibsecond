@@ -110,29 +110,25 @@ const Video = () => {
   const videoRef = useRef();
   const [video] = useState(() => {
     const vid = document.createElement("video");
-    vid.src = "/Video/Train.mp4";
+    vid.src = "/Video/vd.mp4";
     vid.crossOrigin = "Anonymous";
     vid.loop = true;
-    vid.muted = false;
+    vid.muted = true;
     vid.preload = "auto";
+    vid.autoplay = true;
 
     return vid;
   });
 
   console.log("loaded");
   return (
-    <mesh
-      ref={videoRef}
-      scale={0}
-      position={[-5, 1.5, 20]}
-      rotation={[0, 1, 0]}
-    >
+    <mesh ref={videoRef} scale={1} position={[0, 0, -5]} rotation={[0, 1, 0]}>
       <planeGeometry args={[1080, 1920]} />
 
       <meshPhongMaterial
         side={THREE.DoubleSide}
         encoding={THREE.RGBAFormat}
-        opacity={0.4}
+        opacity={0}
         transparent={true}
       >
         <videoTexture
@@ -141,7 +137,7 @@ const Video = () => {
           flipY={true}
           repeat={[1, 1]}
           offset={[0, 0]}
-          opacity={0.1}
+          opacity={1}
           wrapT={THREE.RepeatWrapping}
           wrapS={THREE.RepeatWrapping}
           encoding={THREE.RGBAFormat}

@@ -235,6 +235,11 @@
 
 
 @media screen and (max-width: 480px) {
+    .imagesContainer {
+        height: 140vh;
+        overflow-x: scroll;
+    }
+
     .home-desc-text {
         font-weight: 700;
         font-size: 16px;
@@ -249,6 +254,11 @@
 }
 
 @media screen and (max-width: 360px) {
+    .imagesContainer {
+        height: 140vh;
+        overflow-x: scroll;
+    }
+
     .home-desc-text {
         font-weight: 700;
         font-size: 14px;
