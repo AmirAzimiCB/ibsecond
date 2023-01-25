@@ -11,6 +11,7 @@ const usePosts = () => {
           title,
           slug,
           body,
+          categories -> {title},
           mainImage{
             asset -> {
               _id,

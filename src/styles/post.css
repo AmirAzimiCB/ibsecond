@@ -1,3 +1,4 @@
+
 .container {
   background: white;
   color: black;
@@ -11,11 +12,25 @@
 }
 
 .container img {
-  width: 900px;
-  height: 500px;
+  width: 100%;
+    height: auto;
 }
 
 .container p {
   padding: 10px 60px;
   line-height: 1.6rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.blog-post__container li {
+  list-style: none;
+  line-height: 2;
+}
+
+.blog-post__container li:hover {
+  font-weight: 400;
+  cursor: auto;
 }
