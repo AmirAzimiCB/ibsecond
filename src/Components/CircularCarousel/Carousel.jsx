@@ -105,18 +105,8 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
                 onClick={handleClick}
               />
             </li>
+
             <li style={{ "--i": 5 }}>
-              <img
-                className='icon-img'
-                src='/Icons/phoneix.png'
-                draggable='false'
-                alt='phoneix'
-                onPointerEnter={onHover}
-                onPointerLeave={onHoverOut}
-                onClick={handleClick}
-              />
-            </li>
-            <li style={{ "--i": 6 }}>
               <img
                 className='icon-img'
                 src='/Icons/teeth.png'

@@ -44,27 +44,16 @@ export default function HomeImages() {
                 Reshaping the Media's Narrative Of Our Communities. You are
                 about to enter our 3D Art Gallery. Once you enter, press the
                 keys on your keyboard to move around the gallery and view all of
-                our website categories.
+                our website categories. Use your mouse to click on each art
+                installation picture frame. Every individual artpiece leads you
+                to read more about each indiadial news topic. If you are using
+                your mobile phone, please navigate around the gallery by swiping
+                on the direction that you would like to go in.
               </span>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <span ref={descRefBottom} className='bottom-text' id='bottomText'>
-                Use your mouse to click on each art installation picture frame.
-                Every individual artpiece leads you to read more about each
-                indiadial news topic. If you are using your mobile phone, please
-                navigate around the gallery by swiping on the direction that you
-                would like to go in.
-              </span>
-              <br />
-
-              <br />
             </div>
           </div>
 
-          <div className='scroll-text' onClick={handleScrollClick}>
+          {/* <div className='scroll-text' onClick={handleScrollClick}>
             {" "}
             {isTop ? (
               <AiOutlineArrowDown style={{ marginRight: ".3rem" }} />
@@ -72,7 +61,7 @@ export default function HomeImages() {
               <AiOutlineArrowUp style={{ marginRight: ".3rem" }} />
             )}
             <span>{isTop ? "Scroll to read more" : "Go Back to top"}</span>
-          </div>
+          </div> */}
         </div>
         <div className='right-img-container'>
           <div className='right-img-inner-upper-container'>
@@ -114,7 +103,6 @@ export default function HomeImages() {
           </div>
         </div>
       </div>
-   
     </div>
   );
 }

@@ -62,7 +62,9 @@ const NavbatWhite = ({ navLinksRef, show, setShow }) => {
             </li>
             <li>Zine</li>
             <li onClick={() => handleClick("/contact")}>Contact</li>
-            {/* <li onClick={() => handleClick("/blog")}>Blog</li> */}
+            <a href='/blog' className='link'>
+              {/* <li >Blog</li> */}
+            </a>
           </ul>
           {show ? (
             <div className='nav-icon' onClick={() => setShow(!show)}>
@@ -110,7 +112,9 @@ export const NavbarBlack = ({ navLinksRef, show, setShow }) => {
             </li>
             <li>Zine</li>
             <li onClick={() => handleClick("/contact")}>Contact</li>
-            {/* <li onClick={() => handleClick("/blog")}>Blog</li> */}
+            <a href='/blog' className='link'>
+              {/* <li >Blog</li> */}
+            </a>
           </ul>
           {show ? (
             <div className='nav-icon' onClick={() => setShow(!show)}>

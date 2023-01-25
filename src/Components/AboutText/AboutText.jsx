@@ -63,38 +63,43 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
           The culture, as told by the culture.
         </h2>
         <p className='about-text-desc'>
-          One-Of-A-Kind Documentary News Platform Televising the Revolution and
-          Reshaping the <span className='hide-text'>Media's Narrative</span> Of
-          Our Communities facilisi. Nulla
+          Here at Incendiary Balloons we take an{" "}
+          <span className='hide-text'>abolitionist</span> approach to news,
+          media, and creativity. We are disrupting the space of news and
+          rebuilding it to be structureless,{" "}
+          <span className='hide-text'>non-conforming</span>, non-ridged, and
+          fluid — without anything attached— and free of the jargon that hurts
+          our communities.
           <br />
-          Yung Lords is a one-of -a kind media publication that disrupts the
-          space of news by taking an{" "}
-          <span className='hide-text'>avant-garde</span>{" "}
-          <span className='hide-text'>approach</span> to the ways news stories
-          are traditionally structured.
-          <br />A visual multimedia space that is perfectly designed to
-          highlight issues <span className='hide-text'>affecting</span> all
-          underrepresented groups regardless of race, gender, sexuality,
-          identity politics, augmented world views, cultural{" "}
-          <span className='hide-text'> experiences</span> , and everything
-          in-between. Our primary focus is to highlight cutting edge global and
-          domestic issues and provide space, for those who have grown weary of
-          the established media’s{" "}
-          <span className='hide-text'>mono-dimensional</span> coverage of
-          communities of color and those who voices go unheard: via our uniquely
-          nuanced immersive journalism. We are a{" "}
-          <span className='hide-text'>creative</span> think hub dedicated and
-          penned specifically for the people.
           <br />
-          We discuss world issues in a nuanced avant garde ways and tackle each
-          issue with thoughtful <span className='hide-text'>critiques</span>,
-          beautiful imagery, engaging narratives, and insight straight from the{" "}
-          <span className='hide-text'>people</span> who live these issues as
-          their reality. Yung Lords moves beyond sensationalism to{" "}
-          <span className='hide-text'>tackle</span>   the social, political, and
-          economic effects of the issues at hand. Immersion journalism at its
-          finest.
+          We take a <span className='hide-text'>scorched</span> earth approach
+          to media: knocking down the established media’s current
+          mono-dimensional coverage and deeply ingrained{" "}
+          <span className='hide-text'>inherent</span> biases. We stray away from
+          all roads that lead to tradition and{" "}
+          <span className='hide-text'>uniformity</span>. Instead we are
+          rebuilding a way of reporting the news that is for us, and by us.
           <br />
+          <br />
+          As a Black-owned, <span className='hide-text'>woman-owned</span>, and
+          Gen-Z owned news platform our sole mission is to tell the stories of
+          BIPOC folks from around the world. Incendiary Balloons is a visual
+          news platform and <span className='hide-text'>multimedia</span>{" "}
+          creative think hub that is perfectly designed to highlight issues
+          affecting all underrepresented groups spanning across race, gender,
+          sexuality, identity <span className='hide-text'>politics</span>,
+          entertainment, augmented world views, cultural experiences, and
+          everything in-between. Our primary focus is to highlight cutting edge
+          global and <span className='hide-text'>domestic</span> issues and
+          provide space for the voices of those who the media tries to erase. We
+          discuss world issues in <span className='hide-text'>nuanced</span>{" "}
+          avant-garde ways and tackle each issue with thoughtful critiques,
+          beautiful imagery, <span className='hide-text'>engaging</span>{" "}
+          narratives, and insight straight from the people who live these issues
+          as their reality. Incendiary Balloons moves beyond sensationalism to
+          tackle the social, political, and economic effects of the{" "}
+          <span className='hide-text'>issues</span> at hand. We are the culture,
+          as told by the culture
         </p>
         <center>
           <p className='drag-over-text'>

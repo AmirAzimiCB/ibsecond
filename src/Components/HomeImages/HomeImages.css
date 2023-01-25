@@ -133,9 +133,9 @@
 .home-desc-text {
     position: absolute;
     font-weight: 700;
-    font-size: 1.1rem;
-    line-height: 1.4em;
-    height: 35%;
+    font-size: 18px;
+    line-height: 1.3em;
+
     overflow: scroll;
     scroll-behavior: smooth;
 
@@ -168,6 +168,8 @@
 .home-text-container-span {
     font-size: 5rem;
     font-weight: 700;
+    /* add black stroke */
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 
 @media screen and (max-width: 900px) {
@@ -179,9 +181,9 @@
     }
 
     .home-desc-text {
-        height: 40%;
         font-weight: 700;
-        font-size: 1.2rem;
+
+        line-height: 1.2em;
     }
 
 }
@@ -193,9 +195,9 @@
     }
 
     .home-desc-text {
-        height: 45%;
+
         font-weight: 700;
-        font-size: 1.3rem;
+
     }
 
     .left-img-container {
@@ -234,13 +236,27 @@
 
 @media screen and (max-width: 480px) {
     .home-desc-text {
-        height: 50%;
         font-weight: 700;
-        font-size: 1.3rem;
+        font-size: 16px;
+
     }
 
     .home-text-container-span {
         font-size: 2.3rem;
+        font-weight: 700;
+    }
+
+}
+
+@media screen and (max-width: 360px) {
+    .home-desc-text {
+        font-weight: 700;
+        font-size: 14px;
+
+    }
+
+    .home-text-container-span {
+        font-size: 1.8rem;
         font-weight: 700;
     }
 

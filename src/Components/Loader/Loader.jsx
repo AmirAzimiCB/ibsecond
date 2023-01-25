@@ -4,7 +4,7 @@ import "./Loader.css";
 
 export default function Loader({ setIsLoading }) {
   const { progress } = useProgress();
-  if (progress > 50) {
+  if (progress > 70) {
     setIsLoading(false);
   }
   return (

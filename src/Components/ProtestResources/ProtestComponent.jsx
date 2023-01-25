@@ -196,14 +196,6 @@ function ProtestComponent() {
           </ul>
         </div>
       </div>
-      <div className='protest-bottom-text-container'>
-        <span className='protest-bottom-text'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit
-          molestiae tempore velit laudantium quasi excepturi! Molestias natus
-          dolorum error rerum placeat dolores architecto facilis? Corporis
-          architecto fugiat praesentium nam omnis.
-        </span>
-      </div>
     </div>
   );
 }

@@ -29,7 +29,7 @@
   color: #000;
   width: 100%;
   height: 100%;
-  top: 42%;
+  top: 36%;
   left: 0;
   display: flex;
   justify-content: center;
@@ -37,15 +37,15 @@
 }
 
 .about-instruction-text {
-  margin-top: 2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
+  margin-top: 1rem;
+  font-size: 2.5em;
+  font-weight: 400;
   background-color: #fff !important;
   padding: 15px;
   text-align: center;
   color: #000;
   width: 20vw;
-  height: 5vh;
+  height: 25vh;
 }
 
 
@@ -66,7 +66,7 @@
   top: 15%;
   right: 140%;
   transform-origin: 220%;
-  transform: rotate(calc(360deg / 7 * var(--i)));
+  transform: rotate(calc(360deg / 6 * var(--i)));
 
 }
 
@@ -118,6 +118,15 @@
   .icon-img {
     height: 100px;
   }
+
+  .about-instruction-text-container {
+    top: 33%;
+  }
+
+  .about-instruction-text {
+    font-size: 1.9em;
+    height: 18vh;
+  }
 }
 
 
@@ -146,11 +155,12 @@
   }
 
   .about-instruction-text-container {
-    top: 35%
+    top: 35%;
   }
 
   .about-instruction-text {
-
+    height: 15vh;
+    font-size: 1.7em;
     width: 35%;
   }
 }
@@ -180,11 +190,12 @@
   }
 
   .about-instruction-text-container {
-    top: 32%
+    top: 31%
   }
 
   .about-instruction-text {
     width: 32%;
-    font-size: .95rem;
+    font-size: 1.3em;
+    height: 13vh;
   }
 }

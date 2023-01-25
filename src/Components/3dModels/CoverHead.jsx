@@ -106,12 +106,57 @@ const Lighting = () => {
   );
 };
 
+const Video = () => {
+  const videoRef = useRef();
+  const [video] = useState(() => {
+    const vid = document.createElement("video");
+    vid.src = "/Video/Train.mp4";
+    vid.crossOrigin = "Anonymous";
+    vid.loop = true;
+    vid.muted = false;
+    vid.preload = "auto";
+
+    return vid;
+  });
+
+  console.log("loaded");
+  return (
+    <mesh
+      ref={videoRef}
+      scale={0}
+      position={[-5, 1.5, 20]}
+      rotation={[0, 1, 0]}
+    >
+      <planeGeometry args={[1080, 1920]} />
+
+      <meshPhongMaterial
+        side={THREE.DoubleSide}
+        encoding={THREE.RGBAFormat}
+        opacity={0.4}
+        transparent={true}
+      >
+        <videoTexture
+          attach='map'
+          args={[video]}
+          flipY={true}
+          repeat={[1, 1]}
+          offset={[0, 0]}
+          opacity={0.1}
+          wrapT={THREE.RepeatWrapping}
+          wrapS={THREE.RepeatWrapping}
+          encoding={THREE.RGBAFormat}
+        />
+      </meshPhongMaterial>
+    </mesh>
+  );
+};
+
 export default function CoverHead({ config }) {
   const [isLoading, setIsLoading] = React.useState(true);
 
   return (
     <div className='main-scene'>
-      {isLoading ? null : <LoadingEnd />}
+      {isLoading || config.page === "contact" ? null : <LoadingEnd />}
       {isLoading ? null : (
         <img
           src={
@@ -128,6 +173,7 @@ export default function CoverHead({ config }) {
         <Suspense fallback={<Loader setIsLoading={setIsLoading} />}>
           <Model config={config} />
           <Environment preset='sunset' />
+          {config.page === "cover" && <Video />}
         </Suspense>
       </Canvas>{" "}
       {isLoading ? null : (
