@@ -254,20 +254,14 @@
 }
 
 @media screen and (max-width: 380px) {
+    .mainContainer {
+
+    height: auto
+    }
     .imagesContainer {
-        height: 140vh;
-        overflow-x: scroll;
+        height: 220vh;
+        
     }
-
-    .home-desc-text {
-        font-weight: 700;
-        font-size: 14px;
-
-    }
-
-    .home-text-container-span {
-        font-size: 1.8rem;
-        font-weight: 700;
-    }
+   
 
 }
