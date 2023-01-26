@@ -17,7 +17,7 @@ const Model = ({ config }) => {
   let targetY = 0;
   let targetX = 0;
   const [target, setTarget] = useState(null);
-  console.log(gltf);
+
   const ref = useRef();
 
   useEffect(() => {
@@ -167,9 +167,11 @@ export default function CoverHead({ config }) {
       <Canvas camera={{ fov: 45, near: 0.1, far: 1000, position: [0, 0, 0] }}>
         <Lighting />
         <Suspense fallback={<Loader setIsLoading={setIsLoading} />}>
+          <Video />
+
           <Model config={config} />
+
           <Environment preset='sunset' />
-          {config.page === "cover" && <Video />}
         </Suspense>
       </Canvas>{" "}
       {isLoading ? null : (

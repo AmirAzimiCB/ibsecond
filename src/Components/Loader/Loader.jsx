@@ -4,11 +4,14 @@ import "./Loader.css";
 
 export default function Loader({ setIsLoading }) {
   const { progress } = useProgress();
-  if (progress > 80) {
+  if (progress > 95) {
+    //wait for 1 second before hiding the loader
+
     setIsLoading(false);
   }
   return (
     <Html>
+      
       <div className='loader-container'>
         <div className='loader-text'>
           <span className='loader-percent'>{progress.toFixed(2)}%</span>
