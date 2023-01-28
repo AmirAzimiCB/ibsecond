@@ -15,5 +15,11 @@ export default defineType({
       title: 'Description',
       type: 'text',
     }),
+    defineField({
+      name: 'posts',
+      title: 'Posts',
+      type: 'array',
+      of: [{ type: 'post' }],
+    }),
   ],
 })
