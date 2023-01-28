@@ -1,19 +1,15 @@
+iframe {
+  width: 100vw;
+  height: calc(100vw/1.80);
+}
 
 .container {
-  background: white;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 860px;
-  margin: 0 15%;
-  align-items: center;
-  padding: 100px 20px;
+  overflow: hidden;
 }
 
 .container img {
   width: 100%;
-    height: auto;
+  height: 100vh;
 }
 
 .container p {
