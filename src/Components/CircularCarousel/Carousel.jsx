@@ -45,9 +45,30 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
       >
         <div className='about-container' draggable='false'>
           <div className='about-instruction-text-container'>
-            <span className='about-instruction-text'>
-              Click on one of the images to read About Our Site
-            </span>
+            <div
+              style={{
+                width:
+                  window.innerWidth < 900
+                    ? window.innerWidth < 768
+                      ? window.innerWidth < 600
+                        ? window.innerWidth < 480
+                          ? window.innerWidth < 380
+                            ? "34%"
+                            : "32%"
+                          : "30%"
+                        : "25%"
+                      : "23%"
+                    : "20%",
+                height: "auto",
+                padding: "10px",
+                textAlign: "center",
+                backgroundColor: "white",
+              }}
+            >
+              <span className='about-instruction-text'>
+                Click on one of the images to read About Our Site
+              </span>
+            </div>
           </div>
           <div className='about-inner-container' ref={ref} draggable='false'>
             <li style={{ "--i": 0 }}>

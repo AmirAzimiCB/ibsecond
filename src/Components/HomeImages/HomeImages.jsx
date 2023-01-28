@@ -44,11 +44,14 @@ export default function HomeImages() {
                 Reshaping the Media's Narrative Of Our Communities. You are
                 about to enter our 3D Art Gallery. Once you enter, press the
                 keys on your keyboard to move around the gallery and view all of
-                our website categories. Use your mouse to click on each art
-                installation picture frame. Every individual artpiece leads you
-                to read more about each indiadial news topic. If you are using
-                your mobile phone, please navigate around the gallery by swiping
-                on the direction that you would like to go in.
+                our website categories.
+                <br />
+                <br />
+                Use your mouse to click on each art installation picture frame.
+                Every individual artpiece leads you to read more about each
+                indiadial news topic. If you are using your mobile phone, please
+                navigate around the gallery by swiping on the direction that you
+                would like to go in.
               </span>
             </div>
           </div>

@@ -28,7 +28,6 @@
   position: absolute;
   color: #000;
   width: 100%;
-  height: 100%;
   top: 36%;
   left: 0;
   display: flex;
@@ -40,12 +39,10 @@
   margin-top: 1rem;
   font-size: 2.5em;
   font-weight: 400;
-  background-color: #fff !important;
-  padding: 15px;
-  text-align: center;
   color: #000;
-  width: 20vw;
-  height: 25vh;
+  text-align: center;
+  word-wrap: break-word;
+
 }
 
 
@@ -120,7 +117,7 @@
   }
 
   .about-instruction-text-container {
-    top: 33%;
+    top: 44%;
   }
 
   .about-instruction-text {
@@ -155,13 +152,13 @@
   }
 
   .about-instruction-text-container {
-    top: 35%;
+    top: 42%;
   }
 
   .about-instruction-text {
-    height: 15vh;
+
     font-size: 1.7em;
-    width: 35%;
+
   }
 }
 
@@ -192,26 +189,28 @@
   }
 
   .about-instruction-text-container {
-    top: 31%
+    top: 40%
   }
 
   .about-instruction-text {
-    width: 32%;
+
     font-size: 1.3em;
-    height: 13vh;
+
   }
 }
-@media screen and (max-width:380px){
-   .about-instruction-text {
-    width: 32%;
-    font-size: 1.3em;
-    height: 20vh;
-  }
-   .about-container {
+
+@media screen and (max-width:380px) {
+
+
+  .about-container {
     width: 100%;
     height: 100vh;
     overflow-y: scroll;
 
+  }
+
+  .about-instruction-text-container {
+    top: 32%
   }
 
 
