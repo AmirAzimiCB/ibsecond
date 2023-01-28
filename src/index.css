@@ -11,10 +11,20 @@
     url("./fonts/DistortYouaLesson.otf") format("opentype");
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+img {
+  width: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
-
+  box-sizing: border-box;
   font-family: Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,6 +35,9 @@ code {
     sans-serif;
 }
 
+.font-cloister-black {
+  font-family: "CloisterBlack";
+}
 .link {
   text-decoration: none;
   color: #fff;
@@ -52,6 +65,170 @@ code {
   width: 100vw;
 }
 
+.blognav-container {
+  width: 100%;
+  max-width: 1400px;
+  padding: 1rem 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 69;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+
+.drawer li {
+  cursor: default;
+}
+
+.blognav-container img {
+  height: 64px;
+  width: 88px;
+  object-fit: contain;
+}
+
+.blognav-icon {
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drawer h2 {
+  font-size: 32px;
+  font-weight: 300;
+  border-bottom: 2px solid #333;
+}
+
+.drawer .drawer-nav-links h4 {
+  border-bottom: solid 1px #ccc;
+  font-size: 12px;
+}
+
+.drawer .flex-2 {
+  margin-left: 66px;
+}
+
+.drawer h2,
+h4 {
+  margin: 0px;
+}
+
+.drawer .icon {
+  font-size: 50px;
+  color: #333;
+  padding-top: 10px;
+}
+
+.drawer .drawer-nav-links li {
+  padding: 10px;
+}
+
+.drawer h4 {
+  padding-bottom: 8px;
+}
+
+.drawer .center-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.border-b-1 {
+  border-bottom: solid 1px #ccc;
+}
+
+.bg-black {
+  background: #000;
+  ;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+}
+
+.mb-2 {
+  margin-bottom: 10px;
+}
+
+.category-grid>p {
+  font-family: Helvetica, sans-serif;
+  padding: 10px 0px;
+  margin: 0;
+}
+
+.blog-page a {
+  text-decoration: none;
+  color: white;
+}
+
+.blog-header img {
+  object-fit: cover;
+  height: 100%;
+}
 @media screen and (max-width: 900px) {
   .founder-overlay {
     height: 400vh;
