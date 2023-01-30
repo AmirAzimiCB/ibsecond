@@ -11,7 +11,6 @@ const Blog = () => {
   const { filteredPosts } = usePosts(filter)
   useEffect(() => {
   }, [filter])
-  console.log(filteredPosts.length)
   return (
     <div className="blog-page">
       <BlogNav setFilter={setFilter} />
