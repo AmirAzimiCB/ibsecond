@@ -14,7 +14,7 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
   }
   return (
     <div className={`drawer ${showDrawer ? 'show' : 'hide'}`}>
-      <section className="center-content h-full w-full">
+      <section className="center-content h-full w-full nav-wrapper">
         <ul className="drawer-nav-links flex-1">
           <li>
             <h4>01</h4>
