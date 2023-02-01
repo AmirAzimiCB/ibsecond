@@ -31,7 +31,7 @@
     top: 17%;
     flex-direction: row;
     justify-content: space-evenly;
-    z-index: 999;
+    z-index: 68;
     overflow: hidden;
 
 }
