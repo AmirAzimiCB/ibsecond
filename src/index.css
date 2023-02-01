@@ -90,6 +90,9 @@ code {
   background: white;
 }
 
+.drawer a {
+  color: #000;
+}
 .drawer li {
   cursor: default;
 }
@@ -189,7 +192,6 @@ h4 {
 
 .bg-black {
   background: #000;
-  ;
 }
 
 .text-white {
