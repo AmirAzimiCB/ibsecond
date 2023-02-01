@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi"
 import Drawer from './Drawer'
+import { Link } from 'react-router-dom'
 
 const BlogNav = ({ setFilter }) => {
   const [showDrawer, setShowDrawer] = useState(false)
@@ -8,7 +9,9 @@ const BlogNav = ({ setFilter }) => {
     <section>
       <Drawer setFilter={setFilter} showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
       <div className="blognav-container">
-        <img src='/Icons/FinalLogo.jpg' alt="Incendiary Balloons" />
+        <Link to="/home">
+          <img src='/Icons/FinalLogo.jpg' alt="Incendiary Balloons" />
+        </Link>
         <div onClick={() => setShowDrawer(!showDrawer)}>
           {
             showDrawer ? <HiOutlineX className="blognav-icon" /> : <HiOutlineMenu className="blognav-icon" />
