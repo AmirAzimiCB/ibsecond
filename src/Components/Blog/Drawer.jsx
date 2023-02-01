@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { FiArrowUpRight } from 'react-icons/fi'
 import useCategories from '../../hooks/useCatrgories'
 
@@ -19,35 +20,45 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
           <li>
             <h4>01</h4>
             <div className="flex justify-between items-center">
-              <h2 className="font-cloister-black">Home</h2>
+              <Link to="/home">
+                <h2 className="font-cloister-black">Home</h2>
+              </Link>
               <FiArrowUpRight className="icon" />
             </div>
           </li>
           <li>
             <h4>02</h4>
             <div className="flex justify-between items-center">
-              <h2 className="font-cloister-black">Manifesto</h2>
+              <Link to="/manifesto">
+                <h2 className="font-cloister-black">Manifesto</h2>
+              </Link>
               <FiArrowUpRight className="icon" />
             </div>
           </li>
           <li>
             <h4>03</h4>
             <div className="flex justify-between items-center">
-              <h2 className="font-cloister-black">Founder & CEO</h2>
+              <Link to="/founder">
+                <h2 className="font-cloister-black">Founder & CEO</h2>
+              </Link>
               <FiArrowUpRight className="icon" />
             </div>
           </li>
           <li>
             <h4>04</h4>
             <div className="flex justify-between items-center">
-              <h2 className="font-cloister-black">Protest Resources</h2>
+              <Link to="/protestresources">
+                <h2 className="font-cloister-black">Protest Resources</h2>
+              </Link>
               <FiArrowUpRight className="icon" />
             </div>
           </li>
           <li>
             <h4>05</h4>
             <div className="flex justify-between items-center">
-              <h2 className="font-cloister-black">Contact</h2>
+              <Link to="/contact">
+                <h2 className="font-cloister-black">Contact</h2>
+              </Link>
               <FiArrowUpRight className="icon" />
             </div>
           </li>
