@@ -273,7 +273,8 @@ h4 {
   font-weight: 700;
   padding-bottom: 30px;
 }
-.category-grid>p {
+.category-grid>p,
+.category-grid>a {
   font-family: Helvetica, sans-serif;
   padding: 10px 0px;
   margin: 0;
