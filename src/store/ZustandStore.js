@@ -6,7 +6,7 @@ const useStore = create((set) => ({
     hideDrawer: () => set({ showDrawer: false }),
     visibleVideo: false,
     toggleVideo: () => set((state) => ({ visibleVideo: !state.visibleVideo })),
-    blogCategory: "All",
+    blogCategory: "",
     setBlogCategory: (category) => set((state) => ({ blogCategory: category }))
 }))
 
