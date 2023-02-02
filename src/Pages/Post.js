@@ -40,11 +40,16 @@ const Post = () => {
   return (
     <>
       <BlogNav isLight />
-      <div className="container font-helvetica text-center blog-post__container">
+      <div className="container font-helvetica blog-post__container">
         {loading && <div>Loading...</div>}
         {post?.mainImage && <img loading="lazy" src={post?.mainImage?.asset?.url} alt={""} />}
-        <h1>{post?.title}</h1>
+        <div className="post-content">
+          <h1 className="post-title">{post?.title}</h1>
+          <h3 className="category">
+            {post?.categories?.title}
+          </h3>
         <BlockContent blocks={post?.body} serializers={serializers} />
+        </div>
       </div>
     </>
   );
