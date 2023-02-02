@@ -12,11 +12,6 @@ iframe {
   height: 100vh;
 }
 
-.container p {
-  padding: 10px 60px;
-  line-height: 1.6rem;
-}
-
 .text-center {
   text-align: center;
 }
@@ -26,7 +21,23 @@ iframe {
   line-height: 2;
 }
 
+.blog-post__container>img:first-child {
+  height: 90vh;
+  object-fit: cover;
+}
+
+.blog-post__container>h1 {
+  font-size: 2.7rem;
+  padding: 2rem 0rem;
+}
+
+.blog-post__container>div h1 {
+  padding: 2rem 0rem;
+}
 .blog-post__container li:hover {
   font-weight: 400;
   cursor: auto;
+}
+.blog-post__container+.blognav .blognav-icon.menu {
+  color: #fff !important;
 }
