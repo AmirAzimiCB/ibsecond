@@ -289,18 +289,33 @@ h4 {
   object-fit: cover;
   height: 100%;
 }
+
 .blog-posts-container {
   width: 100%;
   max-width: 1380px;
   margin: 0 auto;
 }
 @media screen and (max-width: 410px) {
+  .drawer {
+      overflow-y: scroll;
+      padding-top: 2.5rem;
+    }
   .drawer .nav-wrapper {
     flex-direction: column;
-    overflow-y: scroll;
     padding-top: 700px;
   }
 
+.blog-post {
+  flex-direction: column;
+}
+
+.blog-post img {
+  width: 100%;
+}
+
+.blog-header {
+  flex-direction: column;
+}
   .drawer .flex-2 {
     flex: 1;
     margin-left: 0;
