@@ -69,6 +69,16 @@ code {
   width: 100vw;
 }
 
+.blog-page {
+  padding-top: 8rem;
+}
+
+.blogNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 .blognav-container {
   width: 100%;
   max-width: 1400px;
@@ -198,7 +208,7 @@ h4 {
 }
 
 .text-white {
-  color: #fff;
+  color: #fff !important;
 }
 
 .p-8 {
@@ -278,6 +288,11 @@ h4 {
 .blog-header img {
   object-fit: cover;
   height: 100%;
+}
+.blog-posts-container {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
 }
 @media screen and (max-width: 410px) {
   .drawer .nav-wrapper {
