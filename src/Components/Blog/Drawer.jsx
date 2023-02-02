@@ -26,7 +26,7 @@ const Drawer = () => {
           <li>
             <h4>01</h4>
             <div className="flex justify-between items-center">
-              <Link to="/home">
+              <Link onClick={() => hideDrawer()} to="/home">
                 <h2 className="font-cloister-black">Home</h2>
               </Link>
               <FiArrowUpRight className="icon" />
@@ -35,7 +35,7 @@ const Drawer = () => {
           <li>
             <h4>02</h4>
             <div className="flex justify-between items-center">
-              <Link to="/manifesto">
+              <Link onClick={() => hideDrawer()} to="/manifesto">
                 <h2 className="font-cloister-black">Manifesto</h2>
               </Link>
               <FiArrowUpRight className="icon" />
@@ -44,7 +44,7 @@ const Drawer = () => {
           <li>
             <h4>03</h4>
             <div className="flex justify-between items-center">
-              <Link to="/founder">
+              <Link onClick={() => hideDrawer()} to="/founder">
                 <h2 className="font-cloister-black">Founder & CEO</h2>
               </Link>
               <FiArrowUpRight className="icon" />
@@ -53,7 +53,7 @@ const Drawer = () => {
           <li>
             <h4>04</h4>
             <div className="flex justify-between items-center">
-              <Link to="/protestresources">
+              <Link onClick={() => hideDrawer()} to="/protestresources">
                 <h2 className="font-cloister-black">Protest Resources</h2>
               </Link>
               <FiArrowUpRight className="icon" />
@@ -62,7 +62,7 @@ const Drawer = () => {
           <li>
             <h4>05</h4>
             <div className="flex justify-between items-center">
-              <Link to="/contact">
+              <Link onClick={() => hideDrawer()} to="/contact">
                 <h2 className="font-cloister-black">Contact</h2>
               </Link>
               <FiArrowUpRight className="icon" />
@@ -72,7 +72,7 @@ const Drawer = () => {
 
         <ul className='flex-2'>
           <div className="flex justify-between items-center border-b-1 mb-2">
-            <Link to="/blog">
+            <Link onClick={() => hideDrawer()} to="/blog">
               <h2 className="font-cloister-black">News</h2>
             </Link>
             <FiArrowUpRight className="icon" />
