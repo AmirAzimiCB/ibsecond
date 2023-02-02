@@ -2,17 +2,23 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FiArrowUpRight } from 'react-icons/fi'
 import useCategories from '../../hooks/useCatrgories'
+import useStore from '../../store/ZustandStore'
 
-const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
+const Drawer = () => {
   const { categories } = useCategories()
+  const showDrawer = useStore((state) => state.showDrawer)
+  const hideDrawer = useStore((state) => state.hideDrawer)
+  const setBlogCategory = useStore((state) => state.setBlogCategory)
+
   const changeCategory = (category) => {
-    setShowDrawer(false)
+    hideDrawer()
     if (category === "All") {
-      setFilter("")
+      setBlogCategory("")
     } else {
-      setFilter(category)
+      setBlogCategory(category)
     }
   }
+
   return (
     <div className={`drawer ${showDrawer ? 'show' : 'hide'}`}>
       <section className="center-content h-full w-full nav-wrapper">
@@ -74,11 +80,11 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
           <div className="flex">
             <article className="category-grid bg-white">
               {categories.map(category => (
-                <p onClick={() => changeCategory(category.title)} key={category._id}>
+                <Link to="/blog" onClick={() => changeCategory(category.title)} key={category._id}>
                   {category.title}
-                </p>
+                </Link>
               ))}
-              <p onClick={() => changeCategory("All")}>All</p>
+              <Link to="/blog" onClick={() => changeCategory("All")}>All</Link>
             </article>
           </div>
         </ul>
