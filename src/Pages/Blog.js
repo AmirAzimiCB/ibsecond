@@ -14,7 +14,7 @@ const Blog = () => {
   return (
     <div className="blog-page">
       <BlogNav setFilter={setFilter} />
-      <div className="main font-helvetica">
+      <div className="main font-helvetica blog-posts-container">
         {
           filteredPosts.length ? (
             <>
