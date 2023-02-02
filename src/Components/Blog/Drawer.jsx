@@ -66,7 +66,9 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
 
         <ul className='flex-2'>
           <div className="flex justify-between items-center border-b-1 mb-2">
-            <h2 className="font-cloister-black">News</h2>
+            <Link to="/blog">
+              <h2 className="font-cloister-black">News</h2>
+            </Link>
             <FiArrowUpRight className="icon" />
           </div>
           <div className="flex">
