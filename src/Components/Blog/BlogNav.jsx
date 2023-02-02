@@ -3,10 +3,10 @@ import { HiOutlineMenu, HiOutlineX } from "react-icons/hi"
 import Drawer from './Drawer'
 import { Link } from 'react-router-dom'
 
-const BlogNav = ({ setFilter }) => {
+const BlogNav = ({ setFilter, isLight }) => {
   const [showDrawer, setShowDrawer] = useState(false)
   return (
-    <section>
+    <section className="blogNav">
       <Drawer setFilter={setFilter} showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
       <div className="blognav-container">
         <Link to="/home">
@@ -14,7 +14,7 @@ const BlogNav = ({ setFilter }) => {
         </Link>
         <div onClick={() => setShowDrawer(!showDrawer)}>
           {
-            showDrawer ? <HiOutlineX className="blognav-icon" /> : <HiOutlineMenu className="blognav-icon" />
+            showDrawer ? <HiOutlineX className="blognav-icon" /> : <HiOutlineMenu className={`blognav-icon ${isLight ? 'text-white' : ''}`} />
           }
         </div>
       </div>
