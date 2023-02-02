@@ -39,7 +39,7 @@ const Post = () => {
 
   return (
     <>
-      <BlogNav />
+      <BlogNav isLight />
       <div className="container font-helvetica text-center blog-post__container">
         {loading && <div>Loading...</div>}
         {post?.mainImage && <img loading="lazy" src={post?.mainImage?.asset?.url} alt={""} />}
