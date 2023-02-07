@@ -11,16 +11,12 @@
     url("./fonts/DistortYouaLesson.otf") format("opentype");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
 
 .blog-page a {
   text-decoration: none;
   color: white;
 }
+
 img {
   width: 100%;
 }
@@ -42,6 +38,7 @@ code {
 .font-cloister-black {
   font-family: "CloisterBlack";
 }
+
 .link {
   text-decoration: none;
   color: #fff;
@@ -79,6 +76,7 @@ code {
   left: 0;
   width: 100%;
 }
+
 .blognav-container {
   width: 100%;
   max-width: 1400px;
@@ -106,6 +104,7 @@ code {
   color: #000;
   text-decoration: none;
 }
+
 .drawer li {
   cursor: default;
 }
@@ -114,11 +113,14 @@ code {
   height: 64px;
   width: 88px;
   object-fit: contain;
+
+
 }
 
 .blognav-icon {
   font-size: 35px;
   cursor: pointer;
+
 }
 
 .center-content {
@@ -161,6 +163,7 @@ h4 {
   background-color: white !important;
   color: black !important;
 }
+
 .drawer h4 {
   padding-bottom: 8px;
 }
@@ -199,6 +202,7 @@ h4 {
 .blog-post .blog-post-text {
   padding: 0px 20px;
 }
+
 .border-b-1 {
   border-bottom: solid 1px #ccc;
 }
@@ -261,9 +265,14 @@ h4 {
   column-gap: 40px;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .category-grid p {
   cursor: pointer;
 }
+
 .mb-2 {
   margin-bottom: 10px;
 }
@@ -273,6 +282,7 @@ h4 {
   font-weight: 700;
   padding-bottom: 30px;
 }
+
 .category-grid>p {
   font-family: Helvetica, sans-serif;
   padding: 10px 0px;
@@ -289,11 +299,13 @@ h4 {
   object-fit: cover;
   height: 100%;
 }
+
 .blog-posts-container {
   width: 100%;
   max-width: 1380px;
   margin: 0 auto;
 }
+
 @media screen and (max-width: 410px) {
   .drawer .nav-wrapper {
     flex-direction: column;
@@ -315,6 +327,7 @@ h4 {
     padding-bottom: 1.5rem;
   }
 }
+
 @media screen and (max-width: 900px) {
   .founder-overlay {
     height: 400vh;

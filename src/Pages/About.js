@@ -19,7 +19,7 @@ export default function About() {
   return (
     <Layout>
       <div
-        draggable="false"
+        draggable='false'
         style={{
           height: window.innerWidth < 768 ? "101vh" : "100vh",
           width: "100vw",
@@ -43,9 +43,9 @@ export default function About() {
         ></div>
 
         <img
-          src="/Images/background.png"
-          alt="background"
-          draggable="false"
+          src='/Images/background.png'
+          alt='background'
+          draggable='false'
           style={{
             position: "absolute",
             top: 0,

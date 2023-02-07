@@ -22,6 +22,7 @@ export default function VideoLoader({ Navigateto }) {
       //remove class from body
       document.body.classList.remove("no-scroll");
     }
+    console.log(showVideo);
   }, [showVideo]);
 
   const handleKeyPress = (event) => {
@@ -48,7 +49,8 @@ export default function VideoLoader({ Navigateto }) {
 
     videoRef.current.addEventListener("ended", handleEnded);
     return () => {
-      videoRef.current.removeEventListener("ended", handleEnded);
+      if (videoRef.current)
+        videoRef.current.removeEventListener("ended", handleEnded);
     };
   }, []);
   return (
@@ -60,6 +62,8 @@ export default function VideoLoader({ Navigateto }) {
           width: window.innerWidth,
           minHeight: window.innerHeight,
           objectFit: "fill",
+          zIndex: 100,
+          position: "fixed",
         }}
         className='video'
       >
