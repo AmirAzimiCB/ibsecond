@@ -11,12 +11,13 @@ const useSinglePost = (slug) => {
         `*[slug.current == "${slug}"]{
           title,
             body, 
+            categories -> {title},
             mainImage{
               asset -> {
                 _id,
                 url
               },
-              alt
+              alt,
             }
         }`
       )

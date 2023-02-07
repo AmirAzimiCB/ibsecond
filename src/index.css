@@ -282,7 +282,6 @@ h4 {
   font-weight: 700;
   padding-bottom: 30px;
 }
-
 .category-grid>p {
   font-family: Helvetica, sans-serif;
   padding: 10px 0px;
@@ -307,12 +306,26 @@ h4 {
 }
 
 @media screen and (max-width: 410px) {
+  .drawer {
+      overflow-y: scroll;
+      padding-top: 2.5rem;
+    }
   .drawer .nav-wrapper {
     flex-direction: column;
-    overflow-y: scroll;
     padding-top: 700px;
   }
 
+.blog-post {
+  flex-direction: column;
+}
+
+.blog-post img {
+  width: 100%;
+}
+
+.blog-header {
+  flex-direction: column;
+}
   .drawer .flex-2 {
     flex: 1;
     margin-left: 0;

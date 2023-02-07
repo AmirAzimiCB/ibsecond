@@ -1,19 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "../styles/blog.css";
 import BlogNav from "../Components/Blog/BlogNav";
 import BlogPost from "../Components/Blog/BlogPost";
 import usePosts from "../hooks/usePosts";
 import { Link } from "react-router-dom";
+import useStore from "../store/ZustandStore";
 
 
 const Blog = () => {
-  const [filter, setFilter] = useState("")
-  const { filteredPosts } = usePosts(filter)
+  const blogCategory = useStore((state) => state.blogCategory)
+  const { filteredPosts } = usePosts(blogCategory)
   useEffect(() => {
-  }, [filter])
+  }, [blogCategory])
   return (
     <div className="blog-page">
-      <BlogNav setFilter={setFilter} />
+      <BlogNav />
       <div className="main font-helvetica blog-posts-container">
         {
           filteredPosts.length ? (
