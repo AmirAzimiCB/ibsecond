@@ -8,10 +8,10 @@ export default function LoadingEnd() {
       setIsPlaying(false);
     };
 
-    videoRef.current.addEventListener("ended", handleEnded);
+    videoRef.current?.addEventListener("ended", handleEnded);
   }, []);
 
-  if (window.width < 768) {
+  if (window.innerWidth < 768) {
     return null;
   }
   return (
