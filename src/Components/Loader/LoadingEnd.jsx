@@ -11,6 +11,9 @@ export default function LoadingEnd() {
     videoRef.current.addEventListener("ended", handleEnded);
   }, []);
 
+  if (window.width < 768) {
+    return null;
+  }
   return (
     <div
       className='loader-container'
