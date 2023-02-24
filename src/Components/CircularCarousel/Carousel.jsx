@@ -1,5 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import {
+  AiOutlineArrowDown,
+  AiOutlineArrowLeft,
+  AiOutlineArrowRight,
+  AiOutlineArrowUp,
+} from "react-icons/ai";
 import "./Carousel.css";
 
 export default function Carousel({ setObject, setIsClicked, isClicked }) {
@@ -65,9 +71,35 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
                 backgroundColor: "white",
               }}
             >
-              <span className='about-instruction-text'>
-                Click on one of the images to read About Our Site
-              </span>
+              <div className='about-instruction-test-arrow-container'>
+                <div className='vertical-arrow-container '>
+                  <AiOutlineArrowDown
+                    size={40}
+                    color={"red"}
+                    style={{ marginTop: "-15%" }}
+                  />
+                  <AiOutlineArrowUp
+                    size={40}
+                    color={"red"}
+                    style={{ marginBottom: "-15%" }}
+                  />
+                </div>
+                <div className='horizontal-arrow-container '>
+                  <AiOutlineArrowRight
+                    size={40}
+                    color={"red"}
+                    style={{ marginLeft: "-15%" }}
+                  />
+                  <AiOutlineArrowLeft
+                    size={40}
+                    color={"red"}
+                    style={{ marginRight: "-15%" }}
+                  />
+                </div>
+                <span className='about-instruction-text'>
+                  Click on one of the images to read About Our Site
+                </span>
+              </div>
             </div>
           </div>
           <div className='about-inner-container' ref={ref} draggable='false'>

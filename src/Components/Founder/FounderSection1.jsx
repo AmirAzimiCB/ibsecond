@@ -1,6 +1,12 @@
 import React from "react";
 import Scene from "./Scene";
 import "./index.css";
+import {
+  AiOutlineArrowDown,
+  AiOutlineArrowLeft,
+  AiOutlineArrowRight,
+  AiOutlineArrowUp,
+} from "react-icons/ai";
 
 function FounderSection1() {
   return (
@@ -15,7 +21,22 @@ function FounderSection1() {
         src='/Images/founder1.png'
         alt=''
       />
-      <span className='founder-scroll-text'>Scroll down to read more</span>
+      {window.innerWidth > 786 && (
+        <div className='founder-scroll-text-container'>
+          <div className='founder-scroll-text'>
+            <div className='vertical-arrow-container'>
+              <AiOutlineArrowDown size={60} color={"red"} />
+              <AiOutlineArrowUp size={60} color={"red"} />
+            </div>
+            <div className='horizontal-arrow-container'>
+              <AiOutlineArrowRight size={60} color={"red"} />
+              <AiOutlineArrowLeft size={60} color={"red"} />
+            </div>
+            <span>Scroll down to read more</span>
+          </div>
+        </div>
+      )}
+
       <div
         className='founder-text-container'
         style={{ marginBottom: window.innerWidth < 900 ? "1rem" : "4rem" }}

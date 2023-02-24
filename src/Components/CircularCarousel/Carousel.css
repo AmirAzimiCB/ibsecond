@@ -34,9 +34,6 @@
   left: 0;
   display: flex;
   justify-content: center;
-
-
-
 }
 
 .about-instruction-text {
@@ -49,6 +46,12 @@
   background-color: #fff !important;
 
 }
+
+.about-instruction-test-arrow-container{
+  position: relative;
+
+}
+
 
 
 @keyframes rotation {

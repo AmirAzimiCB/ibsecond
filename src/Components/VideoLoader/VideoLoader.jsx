@@ -1,6 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import useStore from "../../store/ZustandStore";
 import { BsArrowRightSquare } from "react-icons/bs";
+import {
+  AiOutlineArrowDown,
+  AiOutlineArrowLeft,
+  AiOutlineArrowRight,
+  AiOutlineArrowUp,
+} from "react-icons/ai";
+
 import "./VideoLoader.css";
 export default function VideoLoader({ Navigateto }) {
   const videoRef = useRef(null);
@@ -74,19 +81,29 @@ export default function VideoLoader({ Navigateto }) {
         />
       </video>
       <div
-        className='videoText'
+        className='videoText-container'
         style={{
           display: showVideo ? "flex" : "none",
         }}
       >
-        <span>
-          Press and hold the right arrow key to go to the next page on
-          Incendiary Balloons{" "}
-          <BsArrowRightSquare
-            fontSize={18}
-            style={{ marginLeft: ".5rem", alignSelf: "center" }}
-          />
-        </span>
+        <div className='videoText'>
+          <div className='vertical-arrow-container'>
+            <AiOutlineArrowDown size={50} color={"red"} />
+            <AiOutlineArrowUp size={50} color={"red"} />
+          </div>
+          <div className='horizontal-arrow-container vertical-arrow-video'>
+            <AiOutlineArrowRight size={50} color={"red"} />
+            <AiOutlineArrowLeft size={50} color={"red"} />
+          </div>
+          <span>
+            Press and hold the right arrow key to go to the next page on
+            Incendiary Balloons{" "}
+            <BsArrowRightSquare
+              fontSize={18}
+              style={{ marginLeft: ".5rem", alignSelf: "center" }}
+            />
+          </span>
+        </div>
       </div>
     </div>
   );

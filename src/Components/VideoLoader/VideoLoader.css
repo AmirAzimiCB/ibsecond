@@ -6,9 +6,9 @@
 
 }
 
-.videoText {
+.videoText-container {
     position: absolute;
-    top: 10%;
+    top: 40%;
     left: 0;
     z-index: 999999;
     color: #000;
@@ -16,10 +16,33 @@
     font-weight: bold;
     width: 100%;
     display: flex;
-
     align-items: center;
     justify-content: center;
+    height:25vh;
+}
+
+.videoText{
+    position: relative;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+}
+.videoText > span{
+    width: 80%;
+    text-align: center;
+}
 
 
+.vertical-arrow-video{
+    width: 80% !important;
+}
 
+@media screen and (max-width: 1300px) {
+   .vertical-arrow-video{
+    width: 90% !important;
+}
+    
 }

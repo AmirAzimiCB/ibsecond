@@ -4,10 +4,11 @@ import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 import { gsap } from "gsap";
 import VideoLoader from "../VideoLoader/VideoLoader";
 
-export default function HomeImages() {
+export default function HomeImages({ setOpenGallery, setIsGalleryLoading }) {
   const [isTop, setIsTop] = React.useState(true);
   const descRefBottom = React.useRef(null);
   const descRefTop = React.useRef(null);
+
 
   // useEffect(() => {
   //   document.getElementById("imagesContainer").scrollTop = 0;
@@ -24,6 +25,12 @@ export default function HomeImages() {
 
     setIsTop(!isTop);
   };
+
+  const handleGalleryClick = () => {
+    setIsGalleryLoading(true);
+    setOpenGallery(true);
+  };
+
   return (
     <div className='imagesContainer' id='imagesContainer'>
       <img className='homeBg' src='/Images/Home-bg.png' alt='1' border='0' />
@@ -68,7 +75,7 @@ export default function HomeImages() {
         </div>
         <div className='right-img-container'>
           <div className='right-img-inner-upper-container'>
-            <div className='right-img-inner-upper'>
+            <div onClick={() => handleGalleryClick()} className='right-img-inner-upper'>
               <img
                 src='/Images/Home-img1.png'
                 alt='1'
@@ -79,7 +86,7 @@ export default function HomeImages() {
                 <span className='home-text-container-span'>ENTER</span>
               </div>
             </div>
-            <div className='right-img-inner-upper'>
+            <div onClick={() => handleGalleryClick()} className='right-img-inner-upper'>
               <img
                 src='/Images/Home-img2.png'
                 alt='1'
@@ -91,7 +98,7 @@ export default function HomeImages() {
               </div>
             </div>
           </div>
-          <div className='right-img-inner-lower-container'>
+          <div onClick={() => handleGalleryClick()} className='right-img-inner-lower-container'>
             <div className='right-img-inner-lower'>
               <img
                 src='/Images/Home-img3.png'
