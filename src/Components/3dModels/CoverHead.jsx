@@ -171,7 +171,7 @@ export default function CoverHead({ config }) {
 
           <Model config={config} />
 
-          <Environment preset='sunset' />
+          <Environment preset={"warehouse"} />
         </Suspense>
       </Canvas>{" "}
       {isLoading ? null : (

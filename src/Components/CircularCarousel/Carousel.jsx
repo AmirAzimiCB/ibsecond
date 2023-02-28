@@ -68,32 +68,52 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
                 height: "auto",
                 padding: "10px",
                 textAlign: "center",
-                backgroundColor: "white",
               }}
+              className='about-instruction-text-background'
             >
               <div className='about-instruction-test-arrow-container'>
                 <div className='vertical-arrow-container '>
-                  <AiOutlineArrowDown
-                    size={40}
-                    color={"red"}
-                    style={{ marginTop: "-15%" }}
+                  <img
+                    src='/Images/redarrow.png'
+                    style={{
+                      marginTop: "-30%",
+                      width: "3rem",
+                      objectFit: "contain",
+                      transform: "rotate(-90deg)",
+                    }}
+                    alt='arrow-down'
                   />
-                  <AiOutlineArrowUp
-                    size={40}
-                    color={"red"}
-                    style={{ marginBottom: "-15%" }}
+                  <img
+                    src='/Images/redarrow.png'
+                    style={{
+                      marginBottom: "-30%",
+                      width: "3rem",
+                      objectFit: "contain",
+                      transform: "rotate(90deg)",
+                    }}
+                    alt='arrow-down'
                   />
                 </div>
                 <div className='horizontal-arrow-container '>
-                  <AiOutlineArrowRight
-                    size={40}
-                    color={"red"}
-                    style={{ marginLeft: "-15%" }}
+                  <img
+                    src='/Images/redarrow.png'
+                    style={{
+                      marginLeft: "-15%",
+                      width: "3rem",
+                      objectFit: "contain",
+                      transform: "rotate(180deg)",
+                    }}
+                    alt='arrow-down'
                   />
-                  <AiOutlineArrowLeft
-                    size={40}
-                    color={"red"}
-                    style={{ marginRight: "-15%" }}
+                  <img
+                    src='/Images/redarrow.png'
+                    style={{
+                      marginRight: "-15%",
+                      width: "3rem",
+                      objectFit: "contain",
+                      transform: "rotate(0deg)",
+                    }}
+                    alt='arrow-down'
                   />
                 </div>
                 <span className='about-instruction-text'>

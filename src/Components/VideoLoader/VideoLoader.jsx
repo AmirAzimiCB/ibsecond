@@ -88,12 +88,46 @@ export default function VideoLoader({ Navigateto }) {
       >
         <div className='videoText'>
           <div className='vertical-arrow-container'>
-            <AiOutlineArrowDown size={50} color={"red"} />
-            <AiOutlineArrowUp size={50} color={"red"} />
+            <img
+              src='/Images/redarrow.png'
+              style={{
+                marginTop: "-3%",
+                width: "3rem",
+                objectFit: "contain",
+                transform: "rotate(-90deg)",
+              }}
+              alt='arrow-down'
+            />
+            <img
+              src='/Images/redarrow.png'
+              style={{
+                marginBottom: "-3%",
+                width: "3rem",
+                objectFit: "contain",
+                transform: "rotate(90deg)",
+              }}
+              alt='arrow-down'
+            />
           </div>
           <div className='horizontal-arrow-container vertical-arrow-video'>
-            <AiOutlineArrowRight size={50} color={"red"} />
-            <AiOutlineArrowLeft size={50} color={"red"} />
+            <img
+              src='/Images/redarrow.png'
+              style={{
+                width: "3rem",
+                objectFit: "contain",
+                transform: "rotate(180deg)",
+              }}
+              alt='arrow-down'
+            />
+            <img
+              src='/Images/redarrow.png'
+              style={{
+                width: "3rem",
+                objectFit: "contain",
+                transform: "rotate(0deg)",
+              }}
+              alt='arrow-down'
+            />
           </div>
           <span>
             Press and hold the right arrow key to go to the next page on

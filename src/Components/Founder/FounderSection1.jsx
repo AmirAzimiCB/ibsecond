@@ -25,12 +25,46 @@ function FounderSection1() {
         <div className='founder-scroll-text-container'>
           <div className='founder-scroll-text'>
             <div className='vertical-arrow-container'>
-              <AiOutlineArrowDown size={60} color={"red"} />
-              <AiOutlineArrowUp size={60} color={"red"} />
+              <img
+                src='/Images/redarrow.png'
+                style={{
+                  marginTop: "-3%",
+                  width: "3rem",
+                  objectFit: "contain",
+                  transform: "rotate(-90deg)",
+                }}
+                alt='arrow-down'
+              />
+              <img
+                src='/Images/redarrow.png'
+                style={{
+                  marginBottom: "-3%",
+                  width: "3rem",
+                  objectFit: "contain",
+                  transform: "rotate(90deg)",
+                }}
+                alt='arrow-down'
+              />
             </div>
             <div className='horizontal-arrow-container'>
-              <AiOutlineArrowRight size={60} color={"red"} />
-              <AiOutlineArrowLeft size={60} color={"red"} />
+              <img
+                src='/Images/redarrow.png'
+                style={{
+                  width: "3rem",
+                  objectFit: "contain",
+                  transform: "rotate(180deg)",
+                }}
+                alt='arrow-down'
+              />
+              <img
+                src='/Images/redarrow.png'
+                style={{
+                  width: "3rem",
+                  objectFit: "contain",
+                  transform: "rotate(0deg)",
+                }}
+                alt='arrow-down'
+              />
             </div>
             <span>Scroll down to read more</span>
           </div>
