@@ -134,7 +134,7 @@
 .home-desc-text {
     position: relative;
     font-weight: 600;
-    font-size: 15px;
+    font-size: .9rem;
     line-height: 1.3em;
     padding: 2rem;
     margin-top: .5rem;
@@ -160,6 +160,22 @@
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 
+@media screen and (min-width: 1600px) {
+    .home-desc-text {
+
+        font-size: 1.2rem;
+
+    }
+}
+
+@media screen and (min-width: 2200px) {
+    .home-desc-text {
+
+        font-size: 1.4rem;
+
+    }
+}
+
 @media screen and (max-width: 900px) {
 
 
@@ -170,7 +186,7 @@
 
     .home-desc-text {
         font-weight: 600;
-        font-size: 13px;
+        font-size: .85rem;
         line-height: 1.2em;
     }
 
@@ -230,7 +246,7 @@
 
     .home-desc-text {
         font-weight: 700;
-        font-size: 16px;
+        font-size: 1rem;
 
     }
 
