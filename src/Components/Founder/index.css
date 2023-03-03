@@ -156,6 +156,7 @@
   transform: rotate(45deg);
   margin: -10px;
   animation: animate 2s infinite;
+  filter: drop-shadow(0 0 10px red);
 }
 
 .arrow span:nth-child(2) {
