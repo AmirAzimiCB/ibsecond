@@ -88,46 +88,28 @@ export default function VideoLoader({ Navigateto }) {
       >
         <div className='videoText'>
           <div className='vertical-arrow-container'>
-            <img
-              src='/Images/redarrow.png'
-              style={{
-                marginTop: "-3%",
-                width: "3rem",
-                objectFit: "contain",
-                transform: "rotate(-90deg)",
-              }}
-              alt='arrow-down'
-            />
-            <img
-              src='/Images/redarrow.png'
-              style={{
-                marginBottom: "-3%",
-                width: "3rem",
-                objectFit: "contain",
-                transform: "rotate(90deg)",
-              }}
-              alt='arrow-down'
-            />
+            <div class='arrow arrow-down'>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class='arrow arrow-up'>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
           <div className='horizontal-arrow-container vertical-arrow-video'>
-            <img
-              src='/Images/redarrow.png'
-              style={{
-                width: "3rem",
-                objectFit: "contain",
-                transform: "rotate(180deg)",
-              }}
-              alt='arrow-down'
-            />
-            <img
-              src='/Images/redarrow.png'
-              style={{
-                width: "3rem",
-                objectFit: "contain",
-                transform: "rotate(0deg)",
-              }}
-              alt='arrow-down'
-            />
+            <div class='arrow arrow-left'>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class='arrow arrow-right'>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
           <span>
             Press and hold the right arrow key to go to the next page on

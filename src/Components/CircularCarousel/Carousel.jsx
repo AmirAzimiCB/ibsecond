@@ -72,49 +72,43 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
               className='about-instruction-text-background'
             >
               <div className='about-instruction-test-arrow-container'>
-                <div className='vertical-arrow-container '>
-                  <img
-                    src='/Images/redarrow.png'
-                    style={{
-                      marginTop: "-30%",
-                      width: "3rem",
-                      objectFit: "contain",
-                      transform: "rotate(-90deg)",
-                    }}
-                    alt='arrow-down'
-                  />
-                  <img
-                    src='/Images/redarrow.png'
-                    style={{
-                      marginBottom: "-30%",
-                      width: "3rem",
-                      objectFit: "contain",
-                      transform: "rotate(90deg)",
-                    }}
-                    alt='arrow-down'
-                  />
+                <div
+                  className='vertical-arrow-container '
+                  style={{
+                    height: "35vh",
+
+                    marginTop: "-20%",
+                  }}
+                >
+                  <div class='arrow arrow-down'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class='arrow arrow-up'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
                 </div>
-                <div className='horizontal-arrow-container '>
-                  <img
-                    src='/Images/redarrow.png'
-                    style={{
-                      marginLeft: "-15%",
-                      width: "3rem",
-                      objectFit: "contain",
-                      transform: "rotate(180deg)",
-                    }}
-                    alt='arrow-down'
-                  />
-                  <img
-                    src='/Images/redarrow.png'
-                    style={{
-                      marginRight: "-15%",
-                      width: "3rem",
-                      objectFit: "contain",
-                      transform: "rotate(0deg)",
-                    }}
-                    alt='arrow-down'
-                  />
+                <div
+                  className='horizontal-arrow-container '
+                  style={{
+                    width: "25vw",
+
+                    marginLeft: "-10%",
+                  }}
+                >
+                  <div class='arrow arrow-left'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class='arrow arrow-right'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
                 </div>
                 <span className='about-instruction-text'>
                   Click on one of the images to read About Our Site
