@@ -202,6 +202,7 @@
 
         font-weight: 700;
 
+
     }
 
     .left-img-container {
@@ -222,11 +223,12 @@
     .right-img-container {
 
         width: 90%;
-        height: 110vh;
+        height: 170vh;
         margin: auto;
         justify-content: space-around;
         align-items: center;
         margin-top: .3rem;
+
     }
 
     .home-text-container-span {
@@ -240,8 +242,13 @@
 
 @media screen and (max-width: 480px) {
     .imagesContainer {
-        height: 140vh;
-        overflow-x: scroll;
+        height: 200vh !important;
+        overflow-x: scroll !important;
+
+    }
+
+    .mainContainer {
+        height: 160vh;
     }
 
     .home-desc-text {
@@ -260,13 +267,11 @@
         height: 100%;
     }
 
-
-
 }
 
 @media screen and (max-width: 380px) {
     .mainContainer {
-        height: auto
+        height: 160vh
     }
 
     .imagesContainer {

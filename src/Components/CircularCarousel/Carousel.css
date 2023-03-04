@@ -112,6 +112,18 @@
   transition: 0.5s;
 }
 
+
+.vertical-arrow-manifesto {
+  height: 35vh;
+  margin-top: -20%
+}
+
+.horizontal-arrow-manifesto {
+  width: 25vw;
+  margin-left: -10%;
+
+}
+
 @media screen and (max-width: 1200px) {
   .about-container {
     width: 100%;
@@ -179,6 +191,12 @@
     font-size: 1.7em;
 
   }
+
+  .horizontal-arrow-manifesto {
+    width: 40vw !important;
+
+
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -208,12 +226,25 @@
   }
 
   .about-instruction-text-container {
-    top: 40%
+
+    top: 30%
   }
 
   .about-instruction-text {
 
-    font-size: 1.3em;
+    font-size: .8em;
+    width: 110%;
+
+  }
+
+  .vertical-arrow-manifesto {
+    height: 20vh !important;
+    margin-top: -20%
+  }
+
+  .horizontal-arrow-manifesto {
+    width: 40vw !important;
+    margin-left: -10%;
 
   }
 }
@@ -232,6 +263,16 @@
     top: 32%
   }
 
+  .vertical-arrow-manifesto {
+    height: 40vh !important;
+    margin-top: -20%
+  }
+
+  .horizontal-arrow-manifesto {
+    width: 40vw !important;
+    margin-left: -10%;
+
+  }
 
 
 }

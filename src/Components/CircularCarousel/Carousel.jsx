@@ -73,12 +73,8 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
             >
               <div className='about-instruction-test-arrow-container'>
                 <div
-                  className='vertical-arrow-container '
-                  style={{
-                    height: "35vh",
-
-                    marginTop: "-20%",
-                  }}
+                  className='vertical-arrow-container vertical-arrow-manifesto '
+                  
                 >
                   <div class='arrow arrow-down'>
                     <span></span>
@@ -92,12 +88,8 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
                   </div>
                 </div>
                 <div
-                  className='horizontal-arrow-container '
-                  style={{
-                    width: "25vw",
-
-                    marginLeft: "-10%",
-                  }}
+                  className='horizontal-arrow-container horizontal-arrow-manifesto '
+                
                 >
                   <div class='arrow arrow-left'>
                     <span></span>
