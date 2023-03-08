@@ -10,7 +10,7 @@ function NavigationInstructions() {
       </div>
       <div className="instructions mouse-instructions">
         <img src="./Icons/mouse.png" alt="mouse-instructions" />
-        <h4>Click and drag with your mouse to move around</h4>
+        <h4>Click and drag with your mouse to look around</h4>
       </div>
 
     </div>
