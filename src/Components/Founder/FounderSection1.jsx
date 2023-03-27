@@ -1,12 +1,6 @@
 import React from "react";
 import Scene from "./Scene";
 import "./index.css";
-import {
-  AiOutlineArrowDown,
-  AiOutlineArrowLeft,
-  AiOutlineArrowRight,
-  AiOutlineArrowUp,
-} from "react-icons/ai";
 
 function FounderSection1() {
   return (

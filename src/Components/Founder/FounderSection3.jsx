@@ -17,7 +17,7 @@ function FounderSection3() {
       />
       <div className='founder-text-container '>
         <span
-          className='founder-text-bg'
+          className='founder-text-bg founder4-text'
           style={{
             marginLeft: window.innerWidth < 900 ? "0" : "2rem",
             marginTop: window.innerWidth < 900 ? "5rem" : "0",

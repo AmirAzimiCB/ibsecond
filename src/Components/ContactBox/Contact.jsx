@@ -11,7 +11,6 @@ export default function Contact() {
       </span>
       <span className='contact-navs'>
         Contact Incendiary Balloons today for more information
-        <a href=''>info@incendiaryballons.com</a>
         <a href=''>contact@incendiaryballoons.com</a>
       </span>
       <div className='form'>

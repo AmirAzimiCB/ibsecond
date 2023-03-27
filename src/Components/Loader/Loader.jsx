@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Html, useProgress } from "@react-three/drei";
 import "./Loader.css";
 
 export default function Loader({ setIsLoading }) {
   const { progress } = useProgress();
+  const ref = useRef();
   if (progress > 95) {
     //wait for 1 second before hiding the loader
 
     setIsLoading(false);
   }
+
+  useEffect(() => {
+    //play video automatically
+  }, []);
   return (
     <Html>
-      
       <div className='loader-container'>
         <div className='loader-text'>
           <span className='loader-percent'>{progress.toFixed(2)}%</span>
@@ -27,6 +31,7 @@ export default function Loader({ setIsLoading }) {
         </div>
         <video
           autoPlay
+          playsInline
           muted
           loop
           id='myVideo'
@@ -42,8 +47,10 @@ export default function Loader({ setIsLoading }) {
           <source
             style={{
               width: window.innerWidth < 756 ? "150vw" : "100vw !important",
-              height: "100vh",
+              height: "100%",
+              objectFit: "fill",
             }}
+            ref={ref}
             src='/Video/loader.mp4'
             type='video/mp4'
           />

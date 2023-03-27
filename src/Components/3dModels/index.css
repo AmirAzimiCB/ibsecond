@@ -4,6 +4,7 @@
   position: absolute;
   top: 0;
   object-fit: fill;
+
 }
 
 .main-scene {
@@ -23,5 +24,11 @@
   .main-scene {
     height: 101vh;
 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bg-img {
+    height: 105vh;
   }
 }

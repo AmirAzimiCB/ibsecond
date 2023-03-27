@@ -19,21 +19,21 @@ function ProtestComponent() {
           In support of our community’s fight for liberation against the racist,
           blood thirsty, and oppressive organizations and institutions, and, in
           support of the progression and sustainment of the black-youth led
-          movements - Yung Lords has joined in donating to help set the bail
-          funds, as well as bond funds, of those who were arrested on the front
-          lines of the national protest. Below are a list of bail and/or bonds
-          funds to choose from. We encourage you to join us in donating.
+          movements - Incendiary Balloons has joined in donating to help set the
+          bail funds, as well as bond funds, of those who were arrested on the
+          front lines of the national protest. Below are a list of bail and/or
+          bonds funds to choose from. We encourage you to join us in donating.
         </span>
         <br />
         <br />
         <span className='protest-desc-text'>
-          In addition, at Yung Lords, we know and feel that this is a traumatic
-          time for our black men and women across the country. Which is why we
-          also created a list of free and/or and monetary accessible mental
-          health resources to aid in the healing and aftermath of race based
-          trauma. Think of these resources as spaces to recharge, so that we may
-          continue to stand at the battle lines. Preserve your mental sanctuary
-          so that we may continue the ongoing fight.
+          In addition, at Incendiary Balloons, we know and feel that this is a
+          traumatic time for our black men and women across the country. Which
+          is why we also created a list of free and/or and monetary accessible
+          mental health resources to aid in the healing and aftermath of race
+          based trauma. Think of these resources as spaces to recharge, so that
+          we may continue to stand at the battle lines. Preserve your mental
+          sanctuary so that we may continue the ongoing fight.
         </span>
       </div>
       <div className='protest-lists-container'>

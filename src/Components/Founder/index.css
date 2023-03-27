@@ -28,6 +28,27 @@
 
 }
 
+.founder1-text {
+  background: rgb(7, 20, 29);
+  background: linear-gradient(27deg, rgba(7, 20, 29, 1) 50%, rgba(7, 20, 29, 1) 100%);
+  color: #fff !important;
+}
+
+.founder3-text,
+.founder2-text {
+  background: rgb(68, 101, 139);
+  background: linear-gradient(90deg, rgba(68, 101, 139, 1) 50%, rgba(151, 215, 215, 1) 100%);
+  color: #fff !important;
+}
+
+.founder4-text {
+  border-radius: 20px !important;
+  background: rgb(90, 48, 89);
+  background: linear-gradient(90deg, rgba(90, 48, 89, 1) 50%, rgba(214, 112, 153, 1) 100%);
+  color: #fff !important;
+}
+
+
 .founder-scroll-text {
   position: relative;
   height: 100%;

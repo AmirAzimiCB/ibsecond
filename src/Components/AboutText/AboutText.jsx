@@ -1,9 +1,10 @@
 import { gsap } from "gsap";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { HiOutlineX } from "react-icons/hi";
 import "./AboutText.css";
 export default function AboutText({ setIsClicked, isClicked, object }) {
   const ref = useRef();
+  const [isHovered, setIsHovered] = useState(false);
   useEffect(() => {
     if (isClicked) {
       gsap.to(ref.current, {
@@ -48,20 +49,26 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
         className='about-text'
         onPointerEnter={() => {
           let results = document.getElementsByTagName("span");
-          Array.from(results).map(
-            (item) => (item.style.backgroundColor = "#fff")
-          );
-        }}
-        onPointerLeave={() => {
-          let results = document.getElementsByTagName("span");
-          Array.from(results).map(
-            (item) => (item.style.backgroundColor = "#000")
-          );
+          Array.from(results).map((item) => {
+            if (item.className === "hide-text")
+              item.style.backgroundColor = "#fff";
+          });
+
+          // setIsHovered(true);
         }}
       >
         <h2 className='about-text-title'>
           The culture, as told by the culture.
         </h2>
+        {!isHovered && (
+          <center>
+            <p className='drag-over-text'>
+              {window.innerWidth < 768 ? "Click on Screen " : "Drag Over"} to
+              Read Full About Section
+            </p>
+          </center>
+        )}
+
         <p className='about-text-desc'>
           Here at Incendiary Balloons we take an{" "}
           <span className='hide-text'>abolitionist</span> approach to news,
@@ -101,12 +108,6 @@ export default function AboutText({ setIsClicked, isClicked, object }) {
           <span className='hide-text'>issues</span> at hand. We are the culture,
           as told by the culture
         </p>
-        <center>
-          <p className='drag-over-text'>
-            {window.innerWidth < 768 ? "Hold" : "Drag Over"} to Read Full About
-            Section
-          </p>
-        </center>
       </div>
     </div>
   );

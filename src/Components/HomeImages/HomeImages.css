@@ -40,7 +40,7 @@
     width: 33%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
 
@@ -96,7 +96,7 @@
 
 .left-img {
 
-    min-height: 49%;
+    height: 49%;
     object-fit: cover;
 
 }
@@ -132,13 +132,14 @@
 
 
 .home-desc-text {
-    position: relative;
+
     font-weight: 600;
+
     font-size: .9rem;
     line-height: 1.3em;
     padding: 2rem;
-    margin-top: .5rem;
-    height: 48%;
+    margin-bottom: .8rem;
+    height: 100%;
     background: rgb(127, 58, 46);
     background: linear-gradient(27deg, rgba(127, 58, 46, 1) 15%, rgba(243, 224, 176, 1) 95%);
 
@@ -148,9 +149,7 @@
     margin-bottom: 2rem;
 }
 
-.home-desc-text::-webkit-scrollbar {
-    display: none;
-}
+
 
 
 .home-text-container-span {

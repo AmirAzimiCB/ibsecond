@@ -16,9 +16,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: 210px;
   border-radius: 120%;
-  height: 200px;
+  height: 210px;
   margin: auto;
   transition: 2s ease-out;
 
@@ -30,7 +30,7 @@
   position: absolute;
   color: #000;
   width: 100%;
-  top: 36%;
+  top: 40%;
   left: 0;
   display: flex;
   justify-content: center;
@@ -119,8 +119,8 @@
 }
 
 .horizontal-arrow-manifesto {
-  width: 25vw;
-  margin-left: -10%;
+  width: 25vw !important;
+  margin-left: -11%;
 
 }
 
@@ -194,6 +194,7 @@
 
   .horizontal-arrow-manifesto {
     width: 40vw !important;
+    left: -10%;
 
 
   }
@@ -209,8 +210,8 @@
 
 
   .about-inner-container {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     margin-top: 20%;
   }
 
@@ -243,10 +244,12 @@
   }
 
   .horizontal-arrow-manifesto {
-    width: 40vw !important;
+    width: 45vw !important;
     margin-left: -10%;
 
   }
+
+
 }
 
 @media screen and (max-width:380px) {

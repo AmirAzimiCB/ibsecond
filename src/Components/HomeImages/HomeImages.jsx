@@ -30,9 +30,9 @@ export default function HomeImages({ setOpenGallery, setIsGalleryLoading }) {
               <br />
               <br />
               Use your mouse to click on each art installation picture frame.
-              Every individual artpiece leads you to read more about each
-              indiadial news topic. If you are using your mobile phone, please
-              navigate around the gallery by swiping on the direction that you
+              Every individual art piece leads you to read more about each
+              individual news topic. If you are using your mobile phone, please
+              navigate around the gallery by swiping in the direction that you
               would like to go in.
             </span>
           </div>

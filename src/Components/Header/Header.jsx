@@ -7,7 +7,7 @@ export default function Header() {
   };
   return (
     <>
-      <button className='enter-btn' onClick={handleClick} style={{ zIndex: 100 }}>
+      <button className='enter-btn' onClick={handleClick}>
         ENTER THE VOID
       </button>
       <div className='header-container'>

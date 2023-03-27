@@ -26,7 +26,7 @@ function FounderSection2() {
         }
       >
         <span
-          className='founder-text-bg'
+          className='founder-text-bg founder2-text'
           style={{
             marginLeft: window.innerWidth < 900 ? "0" : "2rem",
           }}
