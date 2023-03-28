@@ -56,14 +56,14 @@ const NavbatWhite = ({ navLinksRef, show, setShow }) => {
           <ul ref={navLinksRef} className='nav-link'>
             <li onClick={() => handleClick("/home")}>Home</li>
             <li onClick={() => handleClick("/manifesto")}>Manifesto</li>
-            <li onClick={() => handleClick("/founder")}>Founder & CEO</li>
+            <li>Founder & CEO</li>
             <li onClick={() => handleClick("/protestresources")}>
               Protest Resources
             </li>
-            <li>Zine</li>
+            <li onClick={()=>handleClick('/blog')}>Zine</li>
             <li onClick={() => handleClick("/contact")}>Contact</li>
             <a href='/blog' className='link'>
-              {/* <li >Blog</li> */}
+            <li >Blog</li>
             </a>
           </ul>
           {show ? (

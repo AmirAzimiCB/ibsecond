@@ -2,60 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Cover from "./Pages/Cover";
-import Contact from "./Pages/Contact";
-import About from "./Pages/About";
-import Home from "./Pages/Home";
-import Founder from "./Pages/Founder";
-import ProtestResources from "./Pages/ProtestResources";
-import Blog from "./Pages/Blog";
 import "./fonts/CloisterBlack.ttf";
-
-import Post from "./Pages/Post";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Cover />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
-  },
-  {
-    path: "/manifesto",
-    element: <About />,
-  },
-
-  {
-    path: "/home",
-    element: <Home />,
-  },
-  {
-    path: "/founder",
-    element: <Founder />,
-  },
-  {
-    path: "/protestresources",
-    element: <ProtestResources />,
-  },
-  {
-    path: "/blog",
-    element: <Blog />,
-  },
-  {
-    path: "/blog/:slug",
-    element: <Post />,
-  },
-]);
-
+import App from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+    <App/>
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
