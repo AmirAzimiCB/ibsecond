@@ -69,24 +69,21 @@ export default function HomeImages() {
             </div>
             </Link>
               
-          </div>
+              </div>
             <Link to='/gallery'>
-          <div
-            
-            className='right-img-inner-lower-container'
-          >
+          
             <div className='right-img-inner-lower'>
               <img
                 src='/Images/Home-img3.png'
-                className='home-img'
+                className='home-img12'
                 alt='1'
                 border='0'
-              />
+                />
               <div className='home-text-container'>
                 <span className='home-text-container-span'>GALLERY</span>
               </div>
             </div>
-          </div>
+          
           </Link>
         </div>
       </div>
