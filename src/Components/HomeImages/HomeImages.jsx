@@ -75,7 +75,7 @@ export default function HomeImages() {
             <div className='right-img-inner-lower'>
               <img
                 src='/Images/Home-img3.png'
-                className='home-img12'
+                className='home-img'
                 alt='1'
                 border='0'
                 />
