@@ -21,13 +21,13 @@
     font-weight: 700;
     cursor: pointer;
     border: none;
-    position: absolute;
+    position:absolute;
+    z-index:9999;
     left: 10%;
     bottom: 10%;
     border: 5px solid yellow;
-
+    
 }
-
 .cover-title {
 
     font-size: 2.5rem;

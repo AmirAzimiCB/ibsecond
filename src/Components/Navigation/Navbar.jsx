@@ -29,11 +29,11 @@ export default function Navbar({ isBlack }) {
       <NavbarBlack navLinksRef={navLinksRef} show={show} setShow={setShow} />
     );
   return (
-    <NavbatWhite navLinksRef={navLinksRef} show={show} setShow={setShow} />
+    <NavbarWhite navLinksRef={navLinksRef} show={show} setShow={setShow} />
   );
 }
 
-const NavbatWhite = ({ navLinksRef, show, setShow }) => {
+const NavbarWhite = ({ navLinksRef, show, setShow }) => {
   const navigate = useNavigate();
   const [navigateTo, setNavigateTo] = useState(null);
 
@@ -53,18 +53,15 @@ const NavbatWhite = ({ navLinksRef, show, setShow }) => {
           <img src='/Icons/FinalLogo.jpg' alt='logo' className='logo-icon' />
         </a>
         <div className={`navbar-container `}>
-          <ul ref={navLinksRef} className='nav-link'>
+          <ul >
             <li onClick={() => handleClick("/home")}>Home</li>
             <li onClick={() => handleClick("/manifesto")}>Manifesto</li>
-            <li>Founder & CEO</li>
+            <li onClick={() => handleClick("/founder")}>Founder & CEO</li>
             <li onClick={() => handleClick("/protestresources")}>
               Protest Resources
             </li>
-            <li onClick={()=>handleClick('/blog')}>Zine</li>
             <li onClick={() => handleClick("/contact")}>Contact</li>
-            <a href='/blog' className='link'>
-            <li >Blog</li>
-            </a>
+            <li onClick={()=> handleClick('/blog')}>Blog</li>
           </ul>
           {show ? (
             <div className='nav-icon' onClick={() => setShow(!show)}>
@@ -103,7 +100,7 @@ export const NavbarBlack = ({ navLinksRef, show, setShow }) => {
         </a>
 
         <div className='navbar-container'>
-          <ul ref={navLinksRef} className='nav-link'>
+          <ul >
             <li onClick={() => handleClick("/home")}>Home</li>
             <li onClick={() => handleClick("/manifesto")}>Manifesto</li>
             <li onClick={() => handleClick("/founder")}>Founder & CEO</li>
@@ -112,9 +109,7 @@ export const NavbarBlack = ({ navLinksRef, show, setShow }) => {
             </li>
             <li>Zine</li>
             <li onClick={() => handleClick("/contact")}>Contact</li>
-            <a href='/blog' className='link'>
-              {/* <li >Blog</li> */}
-            </a>
+              <li onClick={()=> handleClick("/blog")}>Blog</li>
           </ul>
           {show ? (
             <div className='nav-icon' onClick={() => setShow(!show)}>

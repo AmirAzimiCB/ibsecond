@@ -1,20 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 export default function Header() {
-  
+  const navigate=useNavigate()
   return (
     <>
      <Link to='/home'>
-      <button className='enter-btn'>
-        ENTER THE VOID
-      </button>
+      <div onClick={()=>{
+        navigate('/home')
+      }}>
+         <button className="enter-btn" >ENTER THE VOID</button>
+      </div>
      </Link>
-     <Link to='/home'>
       <div className='header-container'>
         <span className='cover-title'>Incendiary Balloons</span>
       </div>
-     </Link>
     </>
   );
 }

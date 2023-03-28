@@ -5,6 +5,7 @@ import BlogPost from "../Components/Blog/BlogPost";
 import usePosts from "../hooks/usePosts";
 import { Link } from "react-router-dom";
 import useStore from "../store/ZustandStore";
+import { Helmet } from "react-helmet-async";
 
 
 const Blog = () => {
@@ -13,7 +14,13 @@ const Blog = () => {
   useEffect(() => {
   }, [blogCategory])
   return (
-    <div className="blog-page">
+    <>
+    <Helmet>
+        <title>
+          Blog
+        </title>
+      </Helmet>
+         <div className="blog-page">
       <BlogNav />
       <div className="main font-helvetica blog-posts-container">
         {
@@ -49,6 +56,7 @@ const Blog = () => {
         }
       </div>
     </div>
+    </>
   );
 };
 

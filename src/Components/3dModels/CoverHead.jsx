@@ -11,6 +11,7 @@ import Header from "../Header/Header";
 import { useState } from "react";
 import { useEffect } from "react";
 import LoadingEnd from "../Loader/LoadingEnd";
+import { Link, useNavigate } from "react-router-dom";
 
 const Model = ({ config }) => {
   const gltf = useGLTF("/Models/afrogirl.glb");
@@ -149,7 +150,7 @@ const Video = () => {
 
 export default function CoverHead({ config }) {
   const [isLoading, setIsLoading] = React.useState(true);
-
+  const navigate=useNavigate()
   return (
     <div className='main-scene'>
       {isLoading || config.page === "contact" ? null : <LoadingEnd />}
@@ -157,12 +158,13 @@ export default function CoverHead({ config }) {
         <img
           src={
             config.page === "cover"
-              ? "/Images/Cover-bg.png"
-              : "/Images/Contact-bg.png"
+            ? "/Images/Cover-bg.png"
+            : "/Images/Contact-bg.png"
           }
           className='bg-img'
           alt='background'
-        />
+          />
+          
       )}
       <Canvas camera={{ fov: 45, near: 0.1, far: 1000, position: [0, 0, 0] }}>
         <Lighting />
@@ -177,7 +179,7 @@ export default function CoverHead({ config }) {
       {isLoading ? null : (
         <>
           {config.page === "contact" && <Contact />}
-          {config.page === "cover" && <Header />}
+          {config.page === "cover" && <Header/>}
         </>
       )}
     </div>

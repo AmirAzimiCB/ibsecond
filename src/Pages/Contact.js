@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import CoverHead from "../Components/3dModels/CoverHead";
 
 import Layout from "../Components/Layout";
@@ -13,6 +14,11 @@ const CONFIG = {
 export default function Contact() {
   return (
     <Layout>
+       <Helmet>
+        <title>
+          Contact
+        </title>
+      </Helmet>
       <CoverHead config={CONFIG} />
     </Layout>
   );

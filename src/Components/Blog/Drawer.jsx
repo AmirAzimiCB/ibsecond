@@ -72,6 +72,14 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
                 <FiArrowUpRight className='icon' />
               </div>
             </li>
+            <li onClick={() => handleClick("/blog")}>
+              <h4>05</h4>
+              <div className='flex pointer justify-between items-center'>
+                <h2 className='font-cloister-black'>Blog</h2>
+
+                <FiArrowUpRight className='icon' />
+              </div>
+            </li>
           </ul>
 
           <ul className='flex-2'>

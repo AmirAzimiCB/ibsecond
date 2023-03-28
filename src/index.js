@@ -4,10 +4,18 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import "./fonts/CloisterBlack.ttf";
 import App from "./App";
+import { HelmetProvider } from "react-helmet-async";
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <App/>
-)
+  <React.StrictMode>
+    <HelmetProvider>
+  <App/>
+  </HelmetProvider>
+  </React.StrictMode>
+
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

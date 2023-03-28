@@ -10,6 +10,7 @@ import useSinglePost from "../hooks/useSinglePost";
 import "../styles/post.css";
 import YouTube from "react-youtube";
 import BlogNav from "../Components/Blog/BlogNav";
+import { Helmet } from "react-helmet-async";
 
 const Post = () => {
   const { slug } = useParams();
@@ -39,6 +40,11 @@ const Post = () => {
 
   return (
     <>
+     <Helmet>
+        <title>
+          Post
+        </title>
+      </Helmet>
       <BlogNav isLight />
       <div className="container font-helvetica blog-post__container">
         {loading && <div>Loading...</div>}

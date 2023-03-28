@@ -3,6 +3,7 @@ import Carousel from "../Components/CircularCarousel/Carousel";
 import AboutText from "../Components/AboutText/AboutText";
 
 import Layout from "../Components/Layout";
+import { Helmet } from "react-helmet-async";
 
 export default function About() {
   const [object, setObject] = React.useState();
@@ -18,6 +19,11 @@ export default function About() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>
+          About
+        </title>
+      </Helmet>
       <div
         draggable='false'
         style={{

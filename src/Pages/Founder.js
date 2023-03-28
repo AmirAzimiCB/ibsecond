@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import FounderSection1 from "../Components/Founder/FounderSection1";
 import FounderSection2 from "../Components/Founder/FounderSection2";
 import FounderSection3 from "../Components/Founder/FounderSection3";
@@ -13,6 +14,11 @@ function Founder() {
   return (
     <Layout>
       <div>
+      <Helmet>
+        <title>
+          Founder
+        </title>
+      </Helmet>
         {videoVisible ? null : (
           <div ref={overlayRef} className='founder-overlay'></div>
         )}
