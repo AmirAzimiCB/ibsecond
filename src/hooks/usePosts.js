@@ -27,7 +27,7 @@ const usePosts = (category) => {
   const filteredPosts = category ? posts.filter(post => post.categories?.title === category) : posts  
   return {
     filteredPosts,
-    setPosts,
+    posts,
   };
 };
 

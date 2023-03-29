@@ -1,13 +1,10 @@
 import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./HomeImages.css";
 
-export default function HomeImages({ setOpenGallery, setIsGalleryLoading }) {
+export default function HomeImages() {
   const descRefTop = React.useRef(null);
-  const navigate=useNavigate()
-  const handleGalleryClick = () => {
-    navigate('/gallery')
-  };
+
 
   return (
     <div className='imagesContainer' id='imagesContainer'>
@@ -37,25 +34,27 @@ export default function HomeImages({ setOpenGallery, setIsGalleryLoading }) {
             </span>
           </div>
         </div>
-        <Link to='/gallery'>
         <div className='right-img-container'>
           <div className='right-img-inner-upper-container'>
+            <Link to='/gallery'>
             <div
-              onClick={handleGalleryClick()}
+              
               className='right-img-inner-upper'
-            >
+              >
               <img
                 src='/Images/Home-img1.png'
                 alt='1'
                 border='0'
                 className='home-img upper-right-img'
-              />
+                />
               <div className='home-text-container'>
                 <span className='home-text-container-span'>ENTER</span>
               </div>
             </div>
+                </Link>
+            <Link to='/gallery'>
             <div
-              onClick={handleGalleryClick()}
+              
               className='right-img-inner-upper'
             >
               <img
@@ -68,9 +67,12 @@ export default function HomeImages({ setOpenGallery, setIsGalleryLoading }) {
                 <span className='home-text-container-span'>THE</span>
               </div>
             </div>
+            </Link>
+              
           </div>
+            <Link to='/gallery'>
           <div
-            onClick={handleGalleryClick()}
+            
             className='right-img-inner-lower-container'
           >
             <div className='right-img-inner-lower'>
@@ -85,8 +87,8 @@ export default function HomeImages({ setOpenGallery, setIsGalleryLoading }) {
               </div>
             </div>
           </div>
+          </Link>
         </div>
-        </Link>
       </div>
     </div>
   );

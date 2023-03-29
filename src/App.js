@@ -1,7 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import BlogPost from "./Components/Blog/BlogPost"
 import VirtualGallery from "./Components/VirtualGallery/VirtualGallery"
 import About from "./Pages/About"
 import Blog from "./Pages/Blog"
+import BlogFilter from "./Pages/BlogFilter"
 import Contact from "./Pages/Contact"
 import Cover from "./Pages/Cover"
 import Founder from "./Pages/Founder"
@@ -18,7 +20,7 @@ const App=()=>{
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/manifesto" element={<About/>}/>
         <Route path="/home" element={<Home/>}/>
-        <Route path="/home/:category" element={<Blog/>}/>
+        <Route path="/home/:category" element={<BlogFilter/>}/>
         <Route path="/founder" element={<Founder/>}/>
         <Route path="/gallery" element={<VirtualGallery/>}/>
         <Route path="/protestresources" element={<ProtestResources/>}/>
