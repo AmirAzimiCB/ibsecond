@@ -21,7 +21,7 @@ export default function HomeImages({ setOpenGallery, setIsGalleryLoading }) {
             border='0'
           />
           <div className='home-desc-text' id='home-desc-text'>
-            <span ref={descRefTop} id='topText' className='top-text'>
+            <span  ref={descRefTop} id='topText' className='top-text'>
               Welcome to Incendiary Balloons! We are a One-Of-A-Kind Documentary
               News Platform Televising the Revolution and Reshaping the Media's
               Narrative Of Our Communities. You are about to enter our 3D Art
