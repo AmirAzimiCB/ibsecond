@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import BlogPost from "./Components/Blog/BlogPost"
+import BlogShow from "./Components/Blog/BlogShow"
 import VirtualGallery from "./Components/VirtualGallery/VirtualGallery"
 import About from "./Pages/About"
 import Blog from "./Pages/Blog"
@@ -20,7 +21,7 @@ const App=()=>{
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/manifesto" element={<About/>}/>
         <Route path="/home" element={<Home/>}/>
-        <Route path="/home/:category" element={<BlogFilter/>}/>
+        <Route path="/:category" element={<BlogFilter/>}/>
         <Route path="/founder" element={<Founder/>}/>
         <Route path="/gallery" element={<VirtualGallery/>}/>
         <Route path="/protestresources" element={<ProtestResources/>}/>

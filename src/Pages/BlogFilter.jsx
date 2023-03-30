@@ -22,7 +22,6 @@ const BlogFilter = () => {
       setState(true)
     }
   }
-  console.log(filteredPosts[0])
   useEffect(() => {
 }, [blogCategory])
   return (
@@ -49,6 +48,7 @@ const BlogFilter = () => {
                         slug={post.slug.current}
                         src={post.mainImage?.asset?.url}
                         heading={post.title}
+                        post={post}
                         />  
                         )
                         :
@@ -57,7 +57,7 @@ const BlogFilter = () => {
                         )
                       )  )
                         }
-              <h1>{state?null:(<div>No More Found, please choose another category</div>)}</h1>
+              <h1>{state?null:(<div>No More Blogs Found, please choose another category</div>)}</h1>
               </section>
             </>
           ) : (

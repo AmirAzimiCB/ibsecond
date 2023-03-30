@@ -92,7 +92,7 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
             <div className='flex'>
               <article className='category-grid bg-white'>
                 {categories.map((category) => (
-                 <Link to={category.title}>
+                 <Link to={`/${category.title}`}>
                   <p
                     onClick={()=> changeCategory(category.title)}
                     key={category._id}
