@@ -23,8 +23,8 @@ imagesContainer {
 .mainContainer {
 	display: flex;
 	flex-direction: row;
-	height: 82vh;
-	justify-content: space-evenly;
+	height: 78vh;
+	justify-content: center;
 	overflow: hidden;
 	position: absolute;
 	top: 17%;
@@ -42,6 +42,7 @@ imagesContainer {
 	align-items: center;
 	display: flex;
 	height: 100%;
+	margin-right:15px;
 	justify-content: space-between
 }
 
@@ -116,8 +117,8 @@ imagesContainer {
 	font-size: small;
 	font-weight: 600;
 	height: 100%;
-	line-height: 1em;
-	margin-bottom: .8rem;
+	line-height: 1.3em;
+	margin-bottom: 0.55rem;
 	padding: 1rem
 }
 
@@ -133,7 +134,7 @@ imagesContainer {
 
 @media screen and (min-width:1600px) {
 	.home-desc-text {
-		font-size: small
+		font-size: larger
 	}
 }
 
@@ -170,7 +171,7 @@ imagesContainer {
 		height: 100%;
 		justify-content: space-between;
 		margin: auto;
-		width: 100%
+		width: 90%
 	}
 
 	.mainContainer {
