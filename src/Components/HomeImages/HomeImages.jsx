@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./HomeImages.css";
 
-export default function HomeImages({ setOpenGallery, setIsGalleryLoading }) {
+export default function HomeImages() {
   const descRefTop = React.useRef(null);
   const navigate=useNavigate()
   const handleGalleryClick = () => {

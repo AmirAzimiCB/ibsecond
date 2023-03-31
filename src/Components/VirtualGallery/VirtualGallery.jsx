@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef } from 'react';
+import React, { Suspense, useState, useRef } from 'react';
 import { Vector3, Color3, Color4, CubeTexture, PBRMaterial, MeshBuilder, GlowLayer, ScreenSpaceReflectionPostProcess } from '@babylonjs/core';
 import { Engine, Scene, Model } from 'react-babylonjs';
 import './VirtualGallery.css'
@@ -6,25 +6,16 @@ import '@babylonjs/loaders';
 import '@babylonjs/core/Debug/debugLayer';
 import '@babylonjs/inspector';
 import { SkyMaterial } from '@babylonjs/materials';
+import VirtualGalleryLoader from './VirtualGalleryLoader';
+import NavigationInstructions from './NavigationInstructions';
 
+function VirtualGallery() {
 
-function VirtualGallery({ setOpenGallery, setIsGalleryLoading }) {
+  // eslint-disable-next-line no-undef
+  const [isLoading, setIsLoading] = useState(true);
 
   const sceneRef = useRef();
   const cameraRef = useRef();
-
-  const handleEscapeKey = (e) => {
-    if (e.key === 'Escape') setOpenGallery(false);
-  };
-
-  useEffect(() => {
-    document.addEventListener('keyup', (e) => handleEscapeKey(e))
-
-    return () => {
-      document.removeEventListener('keyup', handleEscapeKey)
-    }
-    // eslint-disable-next-line
-  }, [])
 
 
 
@@ -62,7 +53,7 @@ function VirtualGallery({ setOpenGallery, setIsGalleryLoading }) {
 
     scene.onReadyObservable.add(() => {
       console.log('scene ready');
-      setIsGalleryLoading(false);
+      setIsLoading(false);
     })
   };
 
@@ -243,58 +234,64 @@ function VirtualGallery({ setOpenGallery, setIsGalleryLoading }) {
   };
 
   return (
-    <Engine antialias adaptToDeviceRatio canvasId="galleryCanvas">
-      <Scene
-        clearColor={new Color4(0, 0, 0, 0)}
-        onSceneMount={(sceneObject) => {
-          setupScene(sceneObject.scene);
-        }}
-      >
-        <universalCamera
-          name='universalCamera'
-          position={new Vector3(-21, 2, 30)}
-          rotation={new Vector3(0, 2.268, 0)}
-          applyGravity
-          checkCollisions
-          ellipsoid={new Vector3(1.2, 0.94, 1.2)}
-          minZ={0}
-          speed={0.4}
-          inertia={0.85}
-          fov={0.7}
-          onCreated={(camera) => {
-            setupCamera(camera)
+  <>
+  {isLoading && <VirtualGalleryLoader/>}
+  <Engine antialias adaptToDeviceRatio canvasId="galleryCanvas">
+        
+        <Scene
+          clearColor={new Color4(0, 0, 0, 0)}
+          onSceneMount={(sceneObject) => {
+            setupScene(sceneObject.scene);
           }}
-        />
-
-        <hemisphericLight
-          name="hemisphericLight"
-          direction={new Vector3(0, 1, 0)}
-          specular={new Color3(0, 0, 0)}
-          groundColor={new Color3(1, 1, 1)}
-          intensity={0.1}
-        />
-        <Suspense fallback={<plane name="plane" size={0.2}></plane>}>
-          <Model
-            name="virtualmuseum"
-            sceneFilename="virtualmuseum.glb"
-            rootUrl="./Models/"
-            onCreated={(gallery) => setupGallery(gallery)}
-          ></Model>
-          <Model
-            name="collisions"
-            sceneFilename="collisions.glb"
-            rootUrl="./Models/"
-            onCreated={(mesh) => setupCollisions(mesh)}
-          ></Model>
-          <Model
-            name="ceiling"
-            sceneFilename="ceiling.glb"
-            rootUrl="./Models/"
-            onCreated={(ceiling) => setupCeiling(ceiling)}
-          ></Model>
-        </Suspense>
-      </Scene>
-    </Engine>
+        >
+          <universalCamera
+            name='universalCamera'
+            position={new Vector3(-21, 2, 30)}
+            rotation={new Vector3(0, 2.268, 0)}
+            applyGravity
+            checkCollisions
+            ellipsoid={new Vector3(1.2, 0.94, 1.2)}
+            minZ={0}
+            speed={0.4}
+            inertia={0.85}
+            fov={0.7}
+            onCreated={(camera) => {
+              setupCamera(camera)
+            }}
+          />
+  
+          <hemisphericLight
+            name="hemisphericLight"
+            direction={new Vector3(0, 1, 0)}
+            specular={new Color3(0, 0, 0)}
+            groundColor={new Color3(1, 1, 1)}
+            intensity={0.1}
+          />
+          <Suspense fallback={<plane name="plane" size={0.2}></plane>}>
+            <Model
+              name="virtualmuseum"
+              sceneFilename="virtualmuseum.glb"
+              rootUrl="./Models/"
+              onCreated={(gallery) => setupGallery(gallery)}
+            ></Model>
+            <Model
+              name="collisions"
+              sceneFilename="collisions.glb"
+              rootUrl="./Models/"
+              onCreated={(mesh) => setupCollisions(mesh)}
+            ></Model>
+            <Model
+              name="ceiling"
+              sceneFilename="ceiling.glb"
+              rootUrl="./Models/"
+              onCreated={(ceiling) => setupCeiling(ceiling)}
+            ></Model>
+          </Suspense>
+        </Scene>
+      </Engine>
+      <NavigationInstructions/>
+  </>
+   
   )
 }
 
