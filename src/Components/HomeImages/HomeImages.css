@@ -134,7 +134,27 @@ imagesContainer {
 
 @media screen and (min-width:1600px) {
 	.home-desc-text {
-		font-size: larger
+		font-size: revert
+	}
+}
+@media screen and (min-width:1500px) {
+	.home-desc-text {
+		font-size: revert
+	}
+}
+@media screen and (min-width:1400px) {
+	.home-desc-text {
+		font-size: revert
+	}
+}
+@media screen and (min-width:1300px) {
+	.home-desc-text {
+		font-size: revert
+	}
+}
+@media screen and (min-width:1200px) {
+	.home-desc-text {
+		font-size: revert
 	}
 }
 
