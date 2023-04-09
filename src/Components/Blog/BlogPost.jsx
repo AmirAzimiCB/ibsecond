@@ -19,14 +19,9 @@ const BlogPost = ({ src, slug, heading, body,post }) => {
         <img src={src} alt={heading} />
       </article>
       <article className='blog-post-text'>
-        <button style={{cursor:'pointer'}} onClick={handleOpenPopup}><h2 >{heading}</h2></button>
-        <Modal
-        isOpen={showPopup}
-        onRequestClose={handleClosePopup}
-      >
-        <button style={{color:'black',fontSize:20}} onClick={handleClosePopup}>CLose</button>
-        <BlogShow props={post}/>
-      </Modal>
+        <Link to={slug}>
+          <h2>{heading}</h2>
+        </Link>
       </article>
     </article>
   );
