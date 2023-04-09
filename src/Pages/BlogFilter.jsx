@@ -45,7 +45,7 @@ const BlogFilter = () => {
                 post?.categories?.title===params.category?(                     
                         <BlogPost 
                         key={post.slug.current}
-                        slug={post.slug.current}
+                        slug={`/blog/${post.slug.current}`}
                         src={post.mainImage?.asset?.url}
                         heading={post.title}
                         post={post}
