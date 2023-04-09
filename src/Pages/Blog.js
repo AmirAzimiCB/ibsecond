@@ -38,7 +38,7 @@ const Blog = () => {
          <div className="blog-page">
       <BlogNav />
       <div className="main font-helvetica blog-posts-container">
-        {
+      {
           filteredPosts.length ? (
             <>
               <section className="blog-header flex pb-10">
@@ -46,21 +46,11 @@ const Blog = () => {
                   <img className="spacing-0" src={filteredPosts[0]?.mainImage?.asset?.url} alt={filteredPosts[0?.title]} />
                 </article>
                 <article className="flex-1 bg-black text-white p-8 flex items-center">
-                  
-                  <button style={styling} onClick={handleOpenPopup}><h2 className="text-white">
+                  <Link to={filteredPosts[0]?.slug.current}>
+                    <h2 className="text-white">
                       {filteredPosts[0]?.title}
-                    </h2></button>
-                    <Modal
-        isOpen={showPopup}
-        onRequestClose={handleClosePopup}
-      >
-        <button style={{color:'black',fontSize:20}} onClick={handleClosePopup}>CLose</button>
-        <BlogPopup src={filteredPosts[0]?.mainImage?.asset?.url}
-        category={filteredPosts[0]?.title}
-        slug={filteredPosts[0].slug.current}
-        />
-      </Modal>
-                  
+                    </h2>
+                  </Link>
                 </article>
               </section>
               <section>
@@ -71,7 +61,6 @@ const Blog = () => {
                     slug={post.slug.current}
                     src={post.mainImage?.asset?.url}
                     heading={post.title}
-                    post={post}
                   />
                 ))}
               </section>
