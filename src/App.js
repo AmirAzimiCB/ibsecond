@@ -26,7 +26,7 @@ const App=()=>{
         <Route path="/gallery" element={<VirtualGallery/>}/>
         <Route path="/protestresources" element={<ProtestResources/>}/>
         <Route path="/blog" element={<Blog/>}/>
-        <Route path="/blog:slug" element={<Post/>}/>
+        <Route path="/blog/:slug" element={<Post/>}/>
         </Routes>
         </BrowserRouter>
         </>
