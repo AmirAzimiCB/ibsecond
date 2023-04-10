@@ -9,12 +9,13 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
   const navigate = useNavigate();
   const [navigateTo, setNavigateTo] = useState(null);
   const { categories } = useCategories();
+  const setBlogCategory = useStore((state) => state.setBlogCategory)
   const changeCategory = (category) => {
     setShowDrawer(false);
     if (category === "All") {
-      setFilter("");
+      setBlogCategory("")
     } else {
-      setFilter(category);
+      setBlogCategory(category)
     }
   };
   const handleClick = (link) => {

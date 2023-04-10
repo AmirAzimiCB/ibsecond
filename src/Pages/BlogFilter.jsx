@@ -7,9 +7,11 @@ import { Link, useParams } from "react-router-dom";
 import useStore from "../store/ZustandStore";
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
+import { useLocation } from "react-router-dom"
 
 
 const BlogFilter = () => {
+  const location = useLocation()
   let vars
   const [state,setState]=useState(false)
   const blogCategory = useStore((state) => state.blogCategory)
@@ -22,6 +24,7 @@ const BlogFilter = () => {
       setState(true)
     }
   }
+  console.log(blogCategory)
   useEffect(() => {
 }, [blogCategory])
   return (
@@ -34,35 +37,22 @@ const BlogFilter = () => {
          <div className="blog-page">
       <BlogNav />
       <div className="main font-helvetica blog-posts-container">
+          <h5 className="blog-list-section__title">{blogCategory}</h5>
         {
-          filteredPosts.length ? (
-            <>
-              
+            filteredPosts.length ? (
               <section>
-                <h5 className="blog-list-section__title">Result Blogs</h5>
-                
                 {filteredPosts?.map((post) => (
-                post?.categories?.title===params.category?(                     
-                        <BlogPost 
-                        key={post.slug.current}
-                        slug={`/blog/${post.slug.current}`}
-                        src={post.mainImage?.asset?.url}
-                        heading={post.title}
-                        post={post}
-                        />  
-                        )
-                        :
-                        (
-                         null
-                        )
-                      )  )
-                        }
-              <h1>{state?null:(<div>No More Blogs Found, please choose another category</div>)}</h1>
-              </section>
-            </>
-          ) : (
-            <div>No Posts Found, please choose another category</div>
-          )
+                  post?.categories?.title === params.category ? (
+                    <BlogPost
+                      key={post.slug.current}
+                      slug={`/blog/${post.slug.current}`}
+                      src={post.mainImage?.asset?.url}
+                      heading={post.title}
+                      post={post}
+                    />) :
+                    (null)))
+                }
+              </section>) : (<div>No articles from <strong>{blogCategory}</strong> has been published yet, please choose another category</div>)
         }
       </div>
     </div>
