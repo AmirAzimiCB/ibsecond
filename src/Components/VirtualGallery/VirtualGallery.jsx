@@ -1,4 +1,5 @@
-import React, { Suspense, useState, useRef } from 'react';
+
+import React, { Suspense, useState, useRef, useEffect } from 'react';
 import { Vector3, Color3, Color4, CubeTexture, PBRMaterial, MeshBuilder, GlowLayer, ScreenSpaceReflectionPostProcess, ActionManager, ExecuteCodeAction } from '@babylonjs/core';
 import { Engine, Scene, Model } from 'react-babylonjs';
 import './VirtualGallery.css'
@@ -8,18 +9,30 @@ import '@babylonjs/inspector';
 import { SkyMaterial } from '@babylonjs/materials';
 import VirtualGalleryLoader from './VirtualGalleryLoader';
 import NavigationInstructions from './NavigationInstructions';
-
+import {  useNavigate } from "react-router-dom";
 
 function VirtualGallery() {
 
-  // eslint-disable-next-line no-undef
+ 
   const [isLoading, setIsLoading] = useState(true);
 
   const sceneRef = useRef();
   const cameraRef = useRef();
 
+  const navigate=useNavigate()
+   
+  useEffect(() => {
+    const handleEscape = (e) => {
+    if (e.key === 'Escape'){
+      navigate('/home')
+  }}
 
+    document.addEventListener('keydown', handleEscape);
 
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [navigate] )
 
   const linkPhotoToURL = (meshName, url, scene) => {
     const mesh = scene.getMeshByName(meshName);
