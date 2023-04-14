@@ -1,5 +1,5 @@
 import React, { Suspense, useState, useRef } from 'react';
-import { Vector3, Color3, Color4, CubeTexture, PBRMaterial, MeshBuilder, GlowLayer, ScreenSpaceReflectionPostProcess } from '@babylonjs/core';
+import { Vector3, Color3, Color4, CubeTexture, PBRMaterial, MeshBuilder, GlowLayer, ScreenSpaceReflectionPostProcess, ActionManager, ExecuteCodeAction } from '@babylonjs/core';
 import { Engine, Scene, Model } from 'react-babylonjs';
 import './VirtualGallery.css'
 import '@babylonjs/loaders';
@@ -8,6 +8,7 @@ import '@babylonjs/inspector';
 import { SkyMaterial } from '@babylonjs/materials';
 import VirtualGalleryLoader from './VirtualGalleryLoader';
 import NavigationInstructions from './NavigationInstructions';
+
 
 function VirtualGallery() {
 
@@ -18,6 +19,19 @@ function VirtualGallery() {
   const cameraRef = useRef();
 
 
+
+
+  const linkPhotoToURL = (meshName, url, scene) => {
+    const mesh = scene.getMeshByName(meshName);
+    if (!mesh) return;
+    mesh.isPickable = true;
+    mesh.actionManager = new ActionManager(scene);
+    mesh.targetURL = url;
+    mesh.actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickTrigger, (event) => {
+      window.open(`${window.location.origin}/${event.source.targetURL}`)
+    }))
+  };
+  
 
   const addSkybox = () => {
     const skybox = MeshBuilder.CreateBox("skyBox", { size: 1000.0 }, sceneRef.current);
@@ -165,6 +179,8 @@ function VirtualGallery() {
     }
   };
 
+
+
   const setupGallery = (gallery) => {
     const root = gallery.getChildren()[0];
 
@@ -188,6 +204,7 @@ function VirtualGallery() {
     bowlsMaterial.metallic = 0;
     bowlsMaterial.roughness = 0;
     for (const mesh of root.getChildMeshes()) {
+      mesh.isPickable = false;
       if (mesh.material?.name === 'MI_Glass_Frame_Inst_Inst' && mesh.name.includes('StaticMeshActor') && mesh.parent.name !== "DatasmithSceneActor_0_vanessa_wall") {
         mesh.material = bowlsMaterial;
       }
@@ -215,6 +232,25 @@ function VirtualGallery() {
     addCollisionToWalls(root);
 
     addSSRPostProcess(cameraRef.current, sceneRef.current);
+
+    linkPhotoToURL('BP_ProcedularFrame38_SM_Canvas_Mesh_primitive0', 'Architecture and Home', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame18_SM_Canvas_Mesh_primitive0', 'Travel', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame35_SM_Canvas_Mesh_primitive0', 'Technology', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame17_SM_Canvas_Mesh_primitive0', 'Spotlight Feature', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame37_SM_Canvas_Mesh_primitive0', 'Society', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame36_SM_Canvas_Mesh_primitive0', 'Politics', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame34_SM_Canvas_Mesh_primitive0', 'Philosophy', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame19_SM_Canvas_Mesh_primitive0', '%E2%80%8B%E2%80%8BMental Health and Wellness', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame33_SM_Canvas_Mesh_primitive0', 'Magazine', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame20_SM_Canvas_Mesh_primitive0', 'Human Rights and Social Justice', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame29_SM_Canvas_Mesh_primitive0', 'History & Linguistics', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame32_SM_Canvas_Mesh_primitive0', 'Global news', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame30_SM_Canvas_Mesh_primitive0', 'Food', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame28_SM_Canvas_Mesh_primitive0', 'Environmentalism', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame31_SM_Canvas_Mesh_primitive0', 'Entertainment', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame27_SM_Canvas_Mesh_primitive0', 'Education', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame21_SM_Canvas_Mesh_primitive0', 'Economy', sceneRef.current); 
+    linkPhotoToURL('BP_ProcedularFrame26_SM_Canvas_Mesh_primitive0', 'Beyond The Headlines: A Breakdown of daily news', sceneRef.current); 
   }
 
   const setupCollisions = (mesh) => {
