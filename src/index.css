@@ -314,7 +314,13 @@ h4 {
     }
   .drawer .nav-wrapper {
     flex-direction: column;
-    padding-top: 700px;
+    padding-top: 80px;
+    flex-direction: column;
+    padding-top: 80px;
+    display: grid;
+    display: inline-block;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 
 .blog-post {
