@@ -309,6 +309,8 @@ h4 {
   .drawer {
       overflow-y: scroll;
       padding-top: 2.5rem;
+      overflow-y: scroll;
+     -webkit-overflow-scrolling: touch;
     }
   .drawer .nav-wrapper {
     flex-direction: column;
