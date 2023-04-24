@@ -349,6 +349,23 @@ h4 {
   }
 }
 
+@media only screen and (min-device-width: 375px) and (max-device-width: 410px) and (-webkit-min-device-pixel-ratio: 3) {
+  .drawer {
+    overflow-y: scroll;
+    padding-top: 2.5rem;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  .drawer .nav-wrapper {
+    flex-direction: column;
+    padding-top: 80px;
+    display: grid;
+    display: inline-block;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .founder-overlay {
     height: 400vh;
