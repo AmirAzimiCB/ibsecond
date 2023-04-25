@@ -307,33 +307,31 @@ h4 {
 
 @media screen and (max-width: 410px) {
   .drawer {
-      overflow-y: scroll;
-      padding-top: 2.5rem;
-      overflow-y: scroll;
-     -webkit-overflow-scrolling: touch;
-    }
-  .drawer .nav-wrapper {
-    flex-direction: column;
-    padding-top: 80px;
-    flex-direction: column;
-    padding-top: 80px;
-    display: grid;
-    display: inline-block;
+    overflow-y: scroll;
+    padding-top: 2.5rem;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
   }
+  .drawer .nav-wrapper {
+    flex-direction: column;
+    padding-top: 80px;
+    /* display: grid;
+    display: inline-block;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; */
+  }
 
-.blog-post {
-  flex-direction: column;
-}
+  .blog-post {
+    flex-direction: column;
+  }
 
-.blog-post img {
-  width: 100%;
-}
+  .blog-post img {
+    width: 100%;
+  }
 
-.blog-header {
-  flex-direction: column;
-}
+  .blog-header {
+    flex-direction: column;
+  }
   .drawer .flex-2 {
     flex: 1;
     margin-left: 0;
@@ -349,20 +347,20 @@ h4 {
   }
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 410px) and (-webkit-min-device-pixel-ratio: 3) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 640px) and (-webkit-min-device-pixel-ratio: 3) {
   .drawer {
     overflow-y: scroll;
     padding-top: 2.5rem;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    /* overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; */
   }
   .drawer .nav-wrapper {
     flex-direction: column;
     padding-top: 80px;
-    display: grid;
+    /* display: grid;
     display: inline-block;
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch; */
   }
 }
 
