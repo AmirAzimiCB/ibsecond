@@ -305,7 +305,7 @@ h4 {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 640px) {
   .drawer {
     overflow-y: scroll;
     padding-top: 2.5rem;
