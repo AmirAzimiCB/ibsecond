@@ -11,7 +11,6 @@
     url("./fonts/DistortYouaLesson.otf") format("opentype");
 }
 
-
 .blog-page a {
   text-decoration: none;
   color: white;
@@ -31,8 +30,7 @@ body {
 }
 
 code {
-  font-family: "CloisterBlack",
-    sans-serif;
+  font-family: "CloisterBlack", sans-serif;
 }
 
 .font-cloister-black {
@@ -44,7 +42,6 @@ code {
   color: #fff;
   z-index: 68;
 }
-
 
 .founder-overlay {
   position: absolute;
@@ -88,10 +85,15 @@ code {
   position: relative;
   z-index: 69;
   background: transparent;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .drawer {
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   z-index: 69;
   right: 0;
@@ -113,14 +115,11 @@ code {
   height: 64px;
   width: 88px;
   object-fit: contain;
-
-
 }
 
 .blognav-icon {
   font-size: 35px;
   cursor: pointer;
-
 }
 
 .center-content {
@@ -195,7 +194,7 @@ h4 {
   color: #333;
 }
 
-.blog-post>article {
+.blog-post > article {
   flex: 1;
 }
 
@@ -282,7 +281,7 @@ h4 {
   font-weight: 700;
   padding-bottom: 30px;
 }
-.category-grid>p {
+.category-grid > p {
   font-family: Helvetica, sans-serif;
   padding: 10px 0px;
   margin: 0;
@@ -292,7 +291,6 @@ h4 {
   margin: 0;
   padding: 0;
 }
-
 
 .blog-header img {
   object-fit: cover;
@@ -305,12 +303,16 @@ h4 {
   margin: 0 auto;
 }
 
+.__block {
+  position: relative;
+}
+
 @media screen and (max-width: 640px) {
   .drawer {
-    overflow-y: scroll;
+    /* overflow-y: scroll;
     padding-top: 2.5rem;
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch; */
   }
   .drawer .nav-wrapper {
     flex-direction: column;
@@ -343,6 +345,7 @@ h4 {
   }
 
   .drawer-nav-links {
+    /* margin-top: 1250px; */
     padding-bottom: 1.5rem;
   }
 }
@@ -351,15 +354,13 @@ h4 {
   .drawer {
     overflow-y: scroll;
     padding-top: 2.5rem;
-    /* overflow-y: scroll;
-    -webkit-overflow-scrolling: touch; */
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   .drawer .nav-wrapper {
     flex-direction: column;
     padding-top: 80px;
-    /* display: grid;
-    display: inline-block;
-    overflow-y: scroll;
+    /* overflow-y: scroll;
     -webkit-overflow-scrolling: touch; */
   }
 }
@@ -367,7 +368,5 @@ h4 {
 @media screen and (max-width: 900px) {
   .founder-overlay {
     height: 400vh;
-
   }
-
 }
