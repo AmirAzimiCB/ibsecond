@@ -1,27 +1,28 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
 import client from "../lib/clinet";
 
 const useCategories = () => {
-    const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
 
-    useEffect(() => {
-        client
-            .fetch(
-                `*[_type == 'category']{
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == 'category']{
                     title,
                     _id
-                }`
-            )
-            .then((data) => {
-                setCategories(data);
-            });
-    }, []);
+                } | order(title asc)`
+      )
+      .then((data) => {
+        setCategories(data);
+      });
+  }, []);
+  console.log(categories);
 
-    return {
-        categories,
-        setCategories,
-    };
+  return {
+    categories,
+    setCategories,
+  };
 };
 
 export default useCategories;
