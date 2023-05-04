@@ -16,7 +16,7 @@ const useCategories = () => {
         }`
       )
       .then((data) => {
-        console.log("data", data);
+        // console.log("data", data);
         setCategories(data);
       });
   }, []);
