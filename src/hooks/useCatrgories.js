@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import client from "../lib/clinet";
 
 const useCategories = () => {
@@ -8,16 +7,19 @@ const useCategories = () => {
   useEffect(() => {
     client
       .fetch(
-        `*[_type == 'category']{
-                    title,
-                    _id
-                } | order(title asc)`
+        `*[_type == 'category'] | order(slug.current asc) {
+          title,
+          slug {
+            current
+          },
+          _id
+        }`
       )
       .then((data) => {
+        console.log("data", data);
         setCategories(data);
       });
   }, []);
-  console.log(categories);
 
   return {
     categories,

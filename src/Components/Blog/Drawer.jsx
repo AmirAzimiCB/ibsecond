@@ -95,7 +95,7 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
             <div style={{ maxHeight: "600px" }} className="flex">
               <article className="DrawerItems">
                 {categories.map((category) => (
-                  <Link to={`/${category.title}`}>
+                  <Link to={`/${category.title}`} key={category._id}>
                     <p
                       onClick={() => changeCategory(category.title)}
                       key={category._id}
