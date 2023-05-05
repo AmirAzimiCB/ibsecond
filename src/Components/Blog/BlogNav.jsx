@@ -19,9 +19,9 @@ const BlogNav = ({ setFilter, isLight }) => {
             onClick={() => setShowDrawer(!showDrawer)}
           >
             {showDrawer ? (
-              <HiOutlineX />
+              <HiOutlineX style={{ color: "black" }} />
             ) : (
-              <HiOutlineMenu className={` ${isLight ? "text-white" : ""}`} />
+              <HiOutlineMenu style={{ color: "black" }} />
             )}
           </div>
         </div>
