@@ -29,71 +29,84 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
       setShowDrawer(false);
     }
   };
+
+  const navData = [
+    {
+      id: "01",
+      title: "Home",
+      icon: <FiArrowUpRight />,
+      handleClick: "/home",
+    },
+    {
+      id: "02",
+      title: "Manifesto",
+      icon: <FiArrowUpRight />,
+      handleClick: "/manifesto",
+    },
+    {
+      id: "03",
+      title: "Founder & CEO",
+      icon: <FiArrowUpRight />,
+      handleClick: "/founder",
+    },
+    {
+      id: "04",
+      title: "Protest Resources",
+      icon: <FiArrowUpRight />,
+      handleClick: "/protestresources",
+    },
+    {
+      id: "05",
+      title: "Contact",
+      icon: <FiArrowUpRight />,
+      handleClick: "/contact",
+    },
+    {
+      id: "06",
+      title: "Blog",
+      icon: <FiArrowUpRight />,
+      handleClick: "/blog",
+    },
+    {
+      id: "07",
+      title: "News",
+      icon: <FiArrowUpRight />,
+      handleClick: "/blog",
+    },
+  ];
   return (
     <>
-      <div className={`drawer ${showDrawer ? "show" : "hide"}`}>
-        <section className="center-content h-full w-full nav-wrapper">
-          <ul className="drawer-nav-links flex-1 drawer-nav-links drawer-nav-links-reset">
-            <li onClick={() => handleClick("/home")}>
-              <h4>01</h4>
-              <div className="flex pointer justify-between items-center">
-                <h2 className="font-cloister-black">Home</h2>
-
-                <FiArrowUpRight className="icon" />
-              </div>
-            </li>
-            <li onClick={() => handleClick("/manifesto")}>
-              <h4>02</h4>
-              <div className="flex pointer justify-between items-center">
-                <h2 className="font-cloister-black">Manifesto</h2>
-
-                <FiArrowUpRight className="icon" />
-              </div>
-            </li>
-            <li onClick={() => handleClick("/founder")}>
-              <h4>03</h4>
-              <div className="flex pointer justify-between items-center">
-                <h2 className="font-cloister-black">Founder & CEO</h2>
-
-                <FiArrowUpRight className="icon" />
-              </div>
-            </li>
-            <li onClick={() => handleClick("/protestresources")}>
-              <h4>04</h4>
-              <div className="flex pointer justify-between items-center">
-                <h2 className="font-cloister-black">Protest Resources</h2>
-
-                <FiArrowUpRight className="icon" />
-              </div>
-            </li>
-            <li onClick={() => handleClick("/contact")}>
-              <h4>05</h4>
-              <div className="flex pointer justify-between items-center">
-                <h2 className="font-cloister-black">Contact</h2>
-
-                <FiArrowUpRight className="icon" />
-              </div>
-            </li>
-            <li onClick={() => handleClick("/blog")}>
-              <h4>05</h4>
-              <div className="flex pointer justify-between items-center">
-                <h2 className="font-cloister-black">Blog</h2>
-
-                <FiArrowUpRight className="icon" />
-              </div>
-            </li>
+      <div className={`NavDrawer ${showDrawer ? "show" : "hide"}`}>
+        <section className="NavDrawer__flex__content">
+          {/* left side */}
+          <ul className="NavDrawer_ul">
+            {navData.map((data) => (
+              <li
+                className="NavDrawer_li"
+                key={data.id}
+                onClick={() => handleClick(data.handleClick)}
+              >
+                <h4 className="divider_id">{data.id}</h4>
+                <hr />
+                <div className="NavDrawer_flex">
+                  <h2
+                    style={{ fontFamily: "CloisterBlack" }}
+                    className="font-cloister-black"
+                  >
+                    {data.title}
+                  </h2>
+                  {data.icon}
+                </div>
+              </li>
+            ))}
           </ul>
-
-          <ul className="flex-2 ">
-            <div className="flex justify-between items-center border-b-1 mb-2">
-              <Link to="/blog">
-                <h2 className="font-cloister-black">News</h2>
-              </Link>
-              <FiArrowUpRight className="icon" />
-            </div>
-            <p onClick={() => changeCategory("All")}>All</p>
-            <div style={{ maxHeight: "600px" }} className="flex">
-              <article className="DrawerItems">
+          {/* right side */}
+          <ul className="NavDrawer_right_side">
+            <p onClick={() => changeCategory("All")} className="DrawerReset">
+              All
+            </p>
+            <div className="right_side_links">
+              <article className="right_side_blog_links">
                 {categories.map((category) => (
                   <Link to={`/${category.title}`} key={category._id}>
                     <p
