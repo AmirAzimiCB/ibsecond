@@ -10,7 +10,9 @@
   src: local("DistortYou"),
     url("./fonts/DistortYouaLesson.otf") format("opentype");
 }
-
+a {
+  text-decoration: none;
+}
 svg {
   cursor: pointer;
 }
