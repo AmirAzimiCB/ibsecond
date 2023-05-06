@@ -11,6 +11,10 @@
     url("./fonts/DistortYouaLesson.otf") format("opentype");
 }
 
+svg {
+  cursor: pointer;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
 }
