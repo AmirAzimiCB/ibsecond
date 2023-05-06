@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { PortableText } from "@portabletext/react";
 import BlockContent from "@sanity/block-content-to-react";
 import getYouTubeId from "get-youtube-id";
@@ -16,9 +16,6 @@ import { useEffect } from "react";
 const Post = () => {
   const { slug } = useParams();
   const { post, loading } = useSinglePost(slug);
-  useEffect(() => {
-    window.location.reload();
-  }, [loading]);
 
   const serializers = {
     types: {

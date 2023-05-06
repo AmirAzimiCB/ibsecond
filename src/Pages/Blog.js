@@ -3,7 +3,14 @@ import "../styles/blog.css";
 import BlogNav from "../Components/Blog/BlogNav";
 import BlogPost from "../Components/Blog/BlogPost";
 import usePosts from "../hooks/usePosts";
-import { Link } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useParams,
+  useRoutes,
+  useSearchParams,
+} from "react-router-dom";
 import useStore from "../store/ZustandStore";
 import { Helmet } from "react-helmet-async";
 import Modal from "react-modal";
@@ -13,12 +20,23 @@ import BlogPopup from "./Blogpopup";
 const Blog = () => {
   const blogCategory = useStore((state) => state.blogCategory);
   const { filteredPosts } = usePosts(blogCategory);
+  const parameters = useParams();
+  // const router = useRoutes();
+  const locationParam = useLocation();
   const [showPopup, setShowPopup] = useState(false);
   const styling = {
     backgroundColor: "BLACK",
     ":hover": { backgroundColor: "yellow" },
     cursor: "pointer",
   };
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (locationParam.pathname === "/Environmentalism") {
+      // console.log(locationParam);
+      navigate("/Environmentalism");
+      // window.location.reload();
+    }
+  }, [locationParam.pathname, navigate, parameters]);
 
   const handleOpenPopup = () => {
     setShowPopup(true);
@@ -27,6 +45,8 @@ const Blog = () => {
   const handleClosePopup = () => {
     setShowPopup(false);
   };
+
+  // console.log("Params", locationParam);
   useEffect(() => {}, [blogCategory]);
   return (
     <>
