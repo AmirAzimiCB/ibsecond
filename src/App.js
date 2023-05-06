@@ -12,6 +12,7 @@ import Home from "./Pages/Home";
 import Post from "./Pages/Post";
 import ProtestResources from "./Pages/ProtestResources";
 import "./App.scss";
+import Environmentalism from "./Pages/Environmentalism";
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Cover />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/Environmentalism" element={<Blog />} />
+          <Route path="/Environmentalism" element={<Environmentalism />} />
           <Route path="/manifesto" element={<About />} />
           <Route path="/home" element={<Home />} />
           <Route path="/:category" element={<BlogFilter />} />
