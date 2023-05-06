@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import client from "../lib/clinet";
+import { client } from "../lib/client";
+// import client from "../lib/clinet";
 
 const useSinglePost = (slug) => {
   const [post, setPost] = useState();

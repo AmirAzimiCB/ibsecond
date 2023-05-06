@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import client from "../lib/clinet";
+import { client } from "../lib/client";
 
 const useCategories = () => {
   const [categories, setCategories] = useState([]);
