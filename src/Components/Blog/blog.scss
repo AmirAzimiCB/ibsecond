@@ -26,7 +26,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  backdrop-filter: blur(4px);
+  // backdrop-filter: blur(4px);
   img {
     width: 55px;
     height: 55px;
@@ -40,6 +40,12 @@ body {
   .drawer_control {
     // border: 1px solid red;
     // margin-right: 12rem;
+    svg {
+      color: #333;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    backdrop-filter: blur(4px);
   }
 }
 
@@ -61,7 +67,14 @@ body {
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  max-width: 1256px;
+  margin-top: -9rem;
+  // margin-right: 2rem;
+  // padding-right: -4rem;
+  padding: 4rem;
+  // position: absolute;
+  // top: 5vh;
+  // left: 10vw;
+  // max-width: 1256px;
   overflow-y: scroll;
   background-color: white;
   a {
@@ -104,6 +117,11 @@ body {
       // border: 1px solid red;
     }
   }
+  @media screen and (max-width: 700px) {
+    margin-top: 5rem;
+    // background-color: red;
+    padding: 0.5rem;
+  }
 }
 
 .NavDrawer__flex__content {
@@ -111,13 +129,13 @@ body {
   justify-content: flex-start;
   width: 100%;
   height: full;
-  gap: 4rem;
+  // gap: 4rem;
   overflow-x: hidden;
   @media screen and (max-width: 700px) {
     flex-direction: column;
+    // border: 1px solid red;
   }
   // background-color: red;
-  // border: 1px solid red;
 }
 
 // right side
@@ -125,7 +143,36 @@ body {
 .NavDrawer_right_side {
   // border: 1px solid red;
   flex: 1;
+  width: 100%;
+  margin-top: -1rem;
   // overflow: hidden;
+  // border: 1px solid red;
+
+  .NavDrawer_news_category {
+    width: 80%;
+    // margin: 0 auto;
+    .NavDrawer_news_category_div {
+      z-index: 99999999999999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      // margin-right: 5rem;
+
+      h2 {
+        font-size: 35px;
+      }
+      svg {
+        // margin-right: 5rem;
+        width: 55px;
+        height: 55px;
+      }
+    }
+    @media screen and (max-width: 700px) {
+      width: 100%;
+      // border: 1px solid red;
+    }
+  }
 
   .right_side_header {
     display: flex;
@@ -163,11 +210,18 @@ body {
         font-weight: 600;
       }
     }
+
     @media screen and (max-width: 1058px) {
       // flex-direction: column;
       flex-wrap: nowrap;
       height: auto;
     }
+  }
+  @media screen and (max-width: 700px) {
+    // background-color: red;
+    // border: 1px solid red;
+    width: 100%;
+    margin-left: -2rem;
   }
 }
 

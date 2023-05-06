@@ -22,12 +22,12 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
   const handleClick = (link) => {
     setNavigateTo(link);
     // setShow(false);
-    if (window.innerWidth < 768) {
-      navigate(link);
-    } else {
-      useStore.setState({ showVideo: true });
-      setShowDrawer(false);
-    }
+    // if (window.innerWidth < 768) {
+    navigate(link);
+    // } else {
+    //   useStore.setState({ showVideo: true });
+    setShowDrawer(false);
+    // }
   };
 
   const navData = [
@@ -67,12 +67,6 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
       icon: <FiArrowUpRight />,
       handleClick: "/blog",
     },
-    {
-      id: "07",
-      title: "News",
-      icon: <FiArrowUpRight />,
-      handleClick: "/blog",
-    },
   ];
   return (
     <>
@@ -102,6 +96,20 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
           </ul>
           {/* right side */}
           <ul className="NavDrawer_right_side">
+            <div className="NavDrawer_news_category">
+              <div className="NavDrawer_news_category_div">
+                <h2
+                  onClick={() => handleClick("/blog")}
+                  style={{ fontFamily: "CloisterBlack" }}
+                  className="font-cloister-black"
+                >
+                  News
+                </h2>
+                <FiArrowUpRight />
+              </div>
+              <hr />
+            </div>
+
             <p onClick={() => changeCategory("All")} className="DrawerReset">
               All
             </p>
