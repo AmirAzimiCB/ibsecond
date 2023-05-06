@@ -5,22 +5,16 @@ import useCategories from "../../hooks/useCatrgories";
 import useStore from "../../store/ZustandStore";
 import VideoLoader from "../VideoLoader/VideoLoader";
 import "./blog.scss";
+import { useEffect } from "react";
+import { client } from "../../lib/clinet";
 
-const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
+const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
   const navigate = useNavigate();
   const [navigateTo, setNavigateTo] = useState(null);
-  const { categories } = useCategories();
-  const setBlogCategory = useStore((state) => state.setBlogCategory);
-  const changeCategory = (category) => {
-    setShowDrawer(false);
-    if (category === "All") {
-      setBlogCategory("");
-    } else {
-      setBlogCategory(category);
-    }
-  };
+  // const setBlogCategory = useStore((state) => state.setBlogCategory);
+
   const handleClick = (link) => {
-    setNavigateTo(link);
+    // setNavigateTo(link);
     // setShow(false);
     // if (window.innerWidth < 768) {
     navigate(link);
@@ -29,6 +23,35 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
     setShowDrawer(false);
     // }
   };
+
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch posts from Sanity
+    const fetchPosts = async () => {
+      try {
+        // Define your Sanity query here to retrieve the necessary fields
+        const query = `*[_type == 'category'] | order(slug.current asc) {
+          title,
+          slug {
+            current
+          },
+          _id
+        }`;
+
+        const response = await client.fetch(query);
+        setCategories(response);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+  console.log(categories);
 
   const navData = [
     {
@@ -110,26 +133,26 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
               <hr />
             </div>
 
-            <p onClick={() => changeCategory("All")} className="DrawerReset">
+            <p onClick={() => handleClick("/blog")} className="DrawerReset">
               All
             </p>
             <div className="right_side_links">
-              <article className="right_side_blog_links">
-                {categories.map((category) => (
-                  <Link
-                    className="blog_links"
-                    to={`/${category.title}`}
-                    key={category._id}
-                  >
-                    <p
-                      onClick={() => changeCategory(category.title)}
+              {loading ? (
+                <>Loading...</>
+              ) : (
+                <article className="right_side_blog_links">
+                  {categories.map((category) => (
+                    <Link
+                      className="blog_links"
+                      to={`/${category.slug.current}`}
                       key={category._id}
+                      onClick={() => setShowDrawer(false)}
                     >
-                      {category.title}
-                    </p>
-                  </Link>
-                ))}
-              </article>
+                      <p>{category.title}</p>
+                    </Link>
+                  ))}
+                </article>
+              )}
             </div>
           </ul>
         </section>
