@@ -4,6 +4,8 @@ import { FiArrowUpRight } from "react-icons/fi";
 import useCategories from "../../hooks/useCatrgories";
 import useStore from "../../store/ZustandStore";
 import VideoLoader from "../VideoLoader/VideoLoader";
+import sanityClient from "@sanity/client";
+
 import "./blog.scss";
 import { useEffect } from "react";
 
