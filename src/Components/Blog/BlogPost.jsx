@@ -1,11 +1,19 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./blog.scss";
 import BlogShow from "./BlogShow";
 import Modal from "react-modal";
 const BlogPost = ({ src, slug, heading, body, post }) => {
   const [showPopup, setShowPopup] = useState(false);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    if (slug === "Environmentalism") {
+      console.log(slug);
+      navigate("/Environmentalism");
+      window.location.reload();
+    }
+  }, [navigate, slug]);
   const handleOpenPopup = () => {
     setShowPopup(true);
   };

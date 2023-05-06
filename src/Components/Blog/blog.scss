@@ -190,7 +190,7 @@ body {
   }
   .right_side_blog_links {
     // border: 1px solid red;
-    height: 600px;
+    height: 550px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -209,6 +209,10 @@ body {
         color: #140101;
         font-weight: 600;
       }
+    }
+    .blog_links {
+      // border: 1px solid red;
+      padding: 0;
     }
 
     @media screen and (max-width: 1058px) {

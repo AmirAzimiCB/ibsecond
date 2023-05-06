@@ -116,7 +116,11 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer }) => {
             <div className="right_side_links">
               <article className="right_side_blog_links">
                 {categories.map((category) => (
-                  <Link to={`/${category.title}`} key={category._id}>
+                  <Link
+                    className="blog_links"
+                    to={`/${category.title}`}
+                    key={category._id}
+                  >
                     <p
                       onClick={() => changeCategory(category.title)}
                       key={category._id}

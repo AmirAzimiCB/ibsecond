@@ -1,11 +1,23 @@
 import React, { useState } from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import Drawer from "./Drawer";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import "./blog.scss";
+import { useEffect } from "react";
 
 const BlogNav = ({ setFilter, isLight }) => {
+  const locationParam = useLocation();
+  const [color, setColor] = useState("");
+  useEffect(() => {
+    if (locationParam.pathname === "/Environmentalism") {
+      // console.log(locationParam);
+      setColor("white");
+      // window.location.reload();
+    } else {
+      setColor("black");
+    }
+  }, [locationParam.pathname]);
   const [showDrawer, setShowDrawer] = useState(false);
   return (
     <section className="blog_nav_container" style={{ zIndex: 999999999 }}>
@@ -21,7 +33,7 @@ const BlogNav = ({ setFilter, isLight }) => {
             {showDrawer ? (
               <HiOutlineX style={{ color: "black" }} />
             ) : (
-              <HiOutlineMenu style={{ color: "black" }} />
+              <HiOutlineMenu style={{ color: color }} />
             )}
           </div>
         </div>
