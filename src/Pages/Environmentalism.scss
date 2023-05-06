@@ -1,7 +1,13 @@
 .Environmentalism_container {
-  min-height: 100vh;
-  //   background-color: red;
-  width: 100%;
-  margin-top: -18vh;
+  height: 100vh;
+  background-color: red;
+  width: 100vw;
+  margin-top: -20vh;
+  z-index: 1;
+  position: relative;
   background-image: url("../assets/trees.jpg");
+}
+
+.Environment_video {
+  //   background-color: red;
 }

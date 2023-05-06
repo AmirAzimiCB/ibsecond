@@ -3,16 +3,18 @@ import "../styles/blog.css";
 import BlogNav from "../Components/Blog/BlogNav";
 import BlogPost from "../Components/Blog/BlogPost";
 import usePosts from "../hooks/usePosts";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import useStore from "../store/ZustandStore";
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import useSinglePost from "../hooks/useSinglePost";
 
 const BlogFilter = () => {
   const location = useLocation();
   let vars;
   const [state, setState] = useState(false);
+  const { post } = useSinglePost(location.pathname);
   const blogCategory = useStore((state) => state.blogCategory);
   const { filteredPosts } = usePosts(blogCategory);
   // console.log(filteredPosts[0]?.categories?.title)
@@ -23,7 +25,14 @@ const BlogFilter = () => {
       setState(true);
     }
   }
-  console.log(blogCategory);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // console.log(locationParam);
+    // navigate();
+    // window.location.reload();
+  }, [location.pathname, navigate]);
+  console.log(filteredPosts);
   useEffect(() => {}, [blogCategory]);
   return (
     <>
@@ -34,10 +43,11 @@ const BlogFilter = () => {
         <BlogNav />
         <div className="main font-helvetica blog-posts-container">
           <h5 className="blog-list-section__title">{blogCategory}</h5>
-          {filteredPosts.length ? (
+          {filteredPosts.length !== 0 ? (
             <section>
-              {filteredPosts?.map((post) =>
-                post?.categories?.title === params.category ? (
+              {filteredPosts
+                .filter((post) => post?.categories?.title === params.category)
+                .map((post) => (
                   <BlogPost
                     key={post.slug.current}
                     slug={`/blog/${post.slug.current}`}
@@ -45,13 +55,33 @@ const BlogFilter = () => {
                     heading={post.title}
                     post={post}
                   />
-                ) : null
+                ))}
+              {filteredPosts.every(
+                (post) => post.categories.title !== params.category
+              ) && (
+                <>
+                  <h5 className="blog-list-section__title">
+                    {location.pathname.slice(1, location.pathname.length)}
+                  </h5>
+                  <div>
+                    No articles from{" "}
+                    <strong>
+                      {blogCategory ||
+                        location.pathname.slice(1, location.pathname.length)}
+                    </strong>{" "}
+                    have been published yet. Please choose another category.
+                  </div>
+                </>
               )}
             </section>
           ) : (
             <div>
-              No articles from <strong>{blogCategory}</strong> has been
-              published yet, please choose another category
+              No articles from{" "}
+              <strong>
+                {blogCategory ||
+                  location.pathname.slice(1, location.pathname.length)}
+              </strong>{" "}
+              have been published yet. Please choose another category.
             </div>
           )}
         </div>
