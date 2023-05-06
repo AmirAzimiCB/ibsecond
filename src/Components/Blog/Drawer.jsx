@@ -6,7 +6,7 @@ import useStore from "../../store/ZustandStore";
 import VideoLoader from "../VideoLoader/VideoLoader";
 import "./blog.scss";
 import { useEffect } from "react";
-import { client } from "../../lib/clinet";
+import { client } from "../../lib/client";
 
 const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
   const navigate = useNavigate();
