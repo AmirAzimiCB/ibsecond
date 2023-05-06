@@ -18,7 +18,7 @@ import Modal from "react-modal";
 import BlogShow from "../Components/Blog/BlogShow";
 import BlogPopup from "./Blogpopup";
 import sanityClient from "@sanity/client";
-import { urlFor } from "../lib/clinet";
+import { urlFor } from "../lib/client";
 import moment from "moment/moment";
 
 const client = sanityClient({

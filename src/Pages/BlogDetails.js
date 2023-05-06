@@ -2,23 +2,14 @@ import React, { useEffect, useState } from "react";
 import "../styles/blog.css";
 import BlogNav from "../Components/Blog/BlogNav";
 import "./BlogAll.scss";
-import BlogPost from "../Components/Blog/BlogPost";
-import usePosts from "../hooks/usePosts";
-import {
-  Link,
-  useLocation,
-  useNavigate,
-  useParams,
-  useRoutes,
-  useSearchParams,
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 import useStore from "../store/ZustandStore";
 import { Helmet } from "react-helmet-async";
 import Modal from "react-modal";
 import BlogShow from "../Components/Blog/BlogShow";
 import BlogPopup from "./Blogpopup";
 import sanityClient from "@sanity/client";
-import { urlFor } from "../lib/clinet";
+import { urlFor } from "../lib/client";
 import moment from "moment/moment";
 
 const client = sanityClient({

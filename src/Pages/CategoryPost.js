@@ -10,7 +10,7 @@ import BlogNav from "../Components/Blog/BlogNav";
 import { Helmet } from "react-helmet-async";
 import { useEffect } from "react";
 import sanityClient from "@sanity/client";
-import { urlFor } from "../lib/clinet";
+import { urlFor } from "../lib/client";
 import moment from "moment/moment";
 import { useState, CSSProperties } from "react";
 import { PropagateLoader } from "react-spinners";
