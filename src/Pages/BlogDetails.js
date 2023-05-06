@@ -29,7 +29,7 @@ const client = sanityClient({
   // other configuration options
 });
 
-const Blog = () => {
+const BlogDetails = () => {
   const blogCategory = useStore((state) => state.blogCategory);
   // const { filteredPosts } = usePosts(blogCategory);
   const [posts, setPosts] = useState([]);
@@ -63,7 +63,7 @@ const Blog = () => {
     fetchPosts();
   }, [blogCategory]);
 
-  // console.log(posts);
+  console.log(posts);
 
   return (
     <>
@@ -134,4 +134,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogDetails;
