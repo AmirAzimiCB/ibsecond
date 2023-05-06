@@ -6,7 +6,14 @@ import useStore from "../../store/ZustandStore";
 import VideoLoader from "../VideoLoader/VideoLoader";
 import "./blog.scss";
 import { useEffect } from "react";
-import { client } from "../../lib/client";
+
+const client = sanityClient({
+  projectId: "gwaghe3o",
+  dataset: "post",
+  useCdn: true,
+  apiVersion: "2021-10-21",
+  // other configuration options
+});
 
 const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
   const navigate = useNavigate();
