@@ -24,7 +24,10 @@ const usePosts = (category) => {
       .then((data) => setPosts(data))
       .catch((err) => console.error(err));
   }, []);
-  const filteredPosts = category ? posts.filter(post => post.categories?.title === category) : posts  
+  const filteredPosts = category
+    ? posts.filter((post) => post.categories?.title === category)
+    : posts;
+  // console.log(posts);
   return {
     filteredPosts,
     posts,

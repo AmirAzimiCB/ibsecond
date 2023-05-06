@@ -8,17 +8,20 @@ const useSinglePost = (slug) => {
   useEffect(() => {
     client
       .fetch(
-        `*[slug.current == "${slug}"]{
+        `*[_type == "post" && slug.current == "${slug}"]{
           title,
-            body, 
-            categories -> {title},
-            mainImage{
-              asset -> {
-                _id,
-                url
-              },
-              alt,
-            }
+          body,
+          categories[]->{
+            title
+          },
+          slug,
+          mainImage {
+            asset->{
+              _id,
+              url
+            },
+            alt
+          }
         }`
       )
       .then((data) => {
@@ -29,6 +32,7 @@ const useSinglePost = (slug) => {
       .catch((err) => console.error(err));
   }, [slug]);
 
+  // console.log(post);
   return {
     post,
     loading,
