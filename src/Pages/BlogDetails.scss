@@ -3,7 +3,9 @@
   align-items: center;
   justify-content: center;
 }
-
+body {
+  position: relative;
+}
 .details {
   display: grid;
   grid-template-columns: 1fr;
@@ -20,6 +22,27 @@
   @media screen and (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  // &.active {
+  //   position: relative;
+  //   z-index: -1;
+  //   inset: 0;
+  //   background-image: url("../assets/trees.jpg");
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  //   background-position: center;
+  //   h1,
+  //   h2,
+  //   h3,
+  //   h4,
+  //   p,
+  //   h5,
+  //   h6,
+  //   div,
+  //   span {
+  //     color: white !important;
+  //   }
+  // }
 }
 
 .grid_right_side_header {
@@ -107,6 +130,7 @@
       p {
         padding: 0.35rem;
         --tw-bg-opacity: 1;
+        cursor: pointer;
         background-color: rgb(249 250 251 / var(--tw-bg-opacity));
         border-radius: 16px;
         text-transform: capitalize;

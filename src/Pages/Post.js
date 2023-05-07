@@ -1,4 +1,4 @@
-import { useParams, useNavigate, Link, useLocation } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import getYouTubeId from "get-youtube-id";
 import imageUrlBuilder from "@sanity/image-url";
 import "./BlogAll.scss";
@@ -7,11 +7,10 @@ import "./BlogDetails.scss";
 import YouTube from "react-youtube";
 import BlogNav from "../Components/Blog/BlogNav";
 import { Helmet } from "react-helmet-async";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import sanityClient from "@sanity/client";
 import { urlFor } from "../lib/client";
 import moment from "moment/moment";
-import { useState } from "react";
 import BlockContent from "@sanity/block-content-to-react";
 import { PropagateLoader } from "react-spinners";
 
@@ -22,6 +21,75 @@ const client = sanityClient({
   apiVersion: "2021-10-21",
   // other configuration options
 });
+
+const serializers = {
+  types: {
+    block: ({ node, children }) => {
+      const { style } = node;
+      switch (style) {
+        case "h1":
+          return <h1>{children}</h1>;
+        case "centered":
+          return <div style={{ textAlign: "center" }}>{children}</div>;
+        default:
+          return <p>{children}</p>;
+      }
+    },
+    textWithImage: ({ node }) => {
+      const { image, text } = node;
+      return (
+        <div className="text-image-container">
+          <div className="text-container">
+            <BlockContent blocks={text} serializers={serializers} />
+          </div>
+          <div className="image-container">
+            <img src={urlFor(image).url()} alt="" />
+          </div>
+        </div>
+      );
+    },
+    span: ({ node, children }) => {
+      const { marks } = node;
+      let content = children;
+      marks.forEach((mark) => {
+        switch (mark) {
+          case "em":
+            content = <em>{content}</em>;
+            break;
+          case "red":
+            content = <span style={{ color: "red" }}>{content}</span>;
+            break;
+          case "blue":
+            content = <span style={{ color: "blue" }}>{content}</span>;
+            break;
+          default:
+            break;
+        }
+      });
+      return <>{content}</>;
+    },
+    youtube: ({ node }) => {
+      const { url } = node;
+      const id = getYouTubeId(url);
+      return <YouTube videoId={id} />;
+    },
+    code: ({ node }) => (
+      <pre data-language={node.language}>
+        <code>{node.code}</code>
+      </pre>
+    ),
+    image: ({ node }) => {
+      const { asset, alt } = node;
+      const builder = imageUrlBuilder(client);
+      const imageUrl = builder.image(asset._ref).url();
+      return <img src={imageUrl} alt={alt} />;
+    },
+    link: ({ node, children }) => {
+      const { href } = node;
+      return <a href={href}>{children}</a>;
+    },
+  },
+};
 
 const Post = () => {
   const { categorySlug } = useParams();
@@ -93,44 +161,27 @@ const Post = () => {
 
   // ...
 
-  console.log("post", post);
-  console.log("related", relatedPosts);
+  // console.log("post", post);
+  // console.log("related", relatedPosts);
 
-  const serializers = {
-    types: {
-      youtube: ({ node }) => {
-        const { url } = node;
-        const id = getYouTubeId(url);
-
-        return <YouTube iframeClassName={"iframe"} videoId={id} />;
-      },
-      code: (props) => (
-        <pre data-language={props.node.language}>
-          <code>{props.node.code}</code>
-        </pre>
-      ),
-      image: (props) => {
-        const { node } = props;
-        const builder = imageUrlBuilder(client);
-        const src = builder.image(node.asset._ref).url();
-        return <img src={src} alt={node.alt} />;
-      },
-    },
-  };
-  // console.log(post.title);
+  console.log(post);
   return (
     <>
       <Helmet>
         <title>Blog | {categorySlug}</title>
       </Helmet>
-      <div className=" blog-nav-fixed">
+      <div className={`blog-nav-fixed `}>
         <BlogNav />
         {isLoading ? (
           <div className="fixed_loader">
             <PropagateLoader className="loader_blog" color="#36d7b7" />
           </div>
         ) : (
-          <div className="details">
+          <div
+            className={`details ${
+              categorySlug === "five-dollar-forests" ? "active" : ""
+            }`}
+          >
             <section className="grid_left_side">
               <div className="grid_right_side_header">
                 <div className="grid_top_header">
