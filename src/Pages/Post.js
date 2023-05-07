@@ -13,6 +13,7 @@ import { urlFor } from "../lib/client";
 import moment from "moment/moment";
 import { useState } from "react";
 import BlockContent from "@sanity/block-content-to-react";
+import { PropagateLoader } from "react-spinners";
 
 const client = sanityClient({
   projectId: "gwaghe3o",
@@ -120,12 +121,14 @@ const Post = () => {
   return (
     <>
       <Helmet>
-        <title>Blog</title>
+        <title>Blog | {categorySlug}</title>
       </Helmet>
       <div className=" blog-nav-fixed">
         <BlogNav />
         {isLoading ? (
-          <>Loading...</>
+          <div className="fixed_loader">
+            <PropagateLoader className="loader_blog" color="#36d7b7" />
+          </div>
         ) : (
           <div className="details">
             <section className="grid_left_side">
@@ -151,11 +154,13 @@ const Post = () => {
               </div>
               <div className="grid_blog_showCase">
                 <div className="grid_blog_showCase_items">
-                  <img
-                    src={urlFor(post?.mainImage?.asset._ref)}
-                    alt={post?.title}
-                    className="blog_image"
-                  />
+                  <div className="blog_image">
+                    <img
+                      src={urlFor(post?.mainImage?.asset._ref)}
+                      alt={post?.title}
+                      className="blog_img"
+                    />
+                  </div>
                   <div className="blog_information">
                     <div className="blog_top">
                       <h4>{moment(post._createdAt).format("MMMM Do YYYY")}</h4>

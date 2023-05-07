@@ -1,3 +1,9 @@
+.fixed_loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .details {
   display: grid;
   grid-template-columns: 1fr;
@@ -66,13 +72,21 @@
   grid-column: span 3;
   .grid_blog_showCase {
     // border: 1px solid red; // max-width: ;
-    max-width: 800px;
+    max-width: 900px;
     .blog_image {
       width: 100%;
-      //   height: 100%;
-      object-fit: cover;
-      object-position: top;
+      // height: 25rem;
       border-radius: 16px;
+      object-fit: cover;
+      object-position: center;
+      transition: all 0.2s ease-in-out;
+      .blog_img {
+        width: 100%;
+        border-radius: 16px;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
     }
     @media screen and (max-width: 1024px) {
       max-width: 100%;

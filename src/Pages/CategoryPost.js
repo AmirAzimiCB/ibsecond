@@ -81,13 +81,13 @@ const CategoryPost = () => {
     <>
       <>
         <Helmet>
-          <title>Blog</title>
+          <title>Blog | {categorySlug}</title>
         </Helmet>
         <div className=" blog-nav-fixed">
           <BlogNav />
           {isLoading ? (
-            <div className="loader">
-              <PropagateLoader color="#36d7b7" />
+            <div className="fixed_loader">
+              <PropagateLoader className="loader_blog" color="#36d7b7" />
             </div>
           ) : (
             <div className="blog_top">
@@ -119,11 +119,13 @@ const CategoryPost = () => {
                   {relatedPosts.length ? (
                     relatedPosts?.map((post) => (
                       <div key={post._id} className="blog_showCase_items">
-                        <img
-                          src={urlFor(post?.mainImage?.asset._ref)}
-                          alt={post?.title}
-                          className="blog_image"
-                        />
+                        <div className="blog_image">
+                          <img
+                            src={urlFor(post?.mainImage?.asset._ref)}
+                            alt={post?.title}
+                            className="blog_img"
+                          />
+                        </div>
                         <div className="blog_information">
                           <div className="blog_top">
                             <h4>
@@ -140,15 +142,7 @@ const CategoryPost = () => {
                               <h3 className="title">{post?.title}</h3>
                             </Link>
                             <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Nostrum error quae harum vero! Aliquid
-                              voluptates nihil harum placeat, id veritatis quod
-                              perspiciatis a necessitatibus accusantium, amet
-                              cupiditate itaque corrupti porro. Lorem ipsum
-                              dolor sit amet consectetur adipisicing elit. Fuga,
-                              cum ratione itaque odit veniam possimus? Sed rem
-                              tempore omnis maiores nisi optio consequuntur, qui
-                              eos temporibus unde neque? In, quisquam.
+                              <p>{post?.excerpt}</p>
                             </p>
                             <div className="blog_author">
                               <img

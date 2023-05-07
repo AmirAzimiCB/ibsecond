@@ -20,6 +20,7 @@ import BlogPopup from "./Blogpopup";
 import sanityClient from "@sanity/client";
 import { urlFor } from "../lib/client";
 import moment from "moment/moment";
+import { PropagateLoader } from "react-spinners";
 
 const client = sanityClient({
   projectId: "gwaghe3o",
@@ -74,8 +75,11 @@ const Blog = () => {
       </Helmet>
       <div className=" blog-nav-fixed">
         <BlogNav />
+
         {loading ? (
-          <>Loading...</>
+          <div className="fixed_loader">
+            <PropagateLoader className="loader_blog" color="#36d7b7" />
+          </div>
         ) : (
           <div className="blog_top">
             <section className="blog">
@@ -87,11 +91,13 @@ const Blog = () => {
               <div className="blog_showCase">
                 {posts?.map((post) => (
                   <div key={post._id} className="blog_showCase_items">
-                    <img
-                      src={urlFor(post?.mainImage?.asset._ref)}
-                      alt={post?.title}
-                      className="blog_image"
-                    />
+                    <div className="blog_image">
+                      <img
+                        src={urlFor(post?.mainImage?.asset._ref)}
+                        alt={post?.title}
+                        className="blog_img"
+                      />
+                    </div>
                     <div className="blog_information">
                       <div className="blog_top">
                         <h4>
@@ -105,17 +111,7 @@ const Blog = () => {
                         <Link to={`/blog/${post?.slug.current}`}>
                           <h3 className="title">{post?.title}</h3>
                         </Link>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Nostrum error quae harum vero! Aliquid
-                          voluptates nihil harum placeat, id veritatis quod
-                          perspiciatis a necessitatibus accusantium, amet
-                          cupiditate itaque corrupti porro. Lorem ipsum dolor
-                          sit amet consectetur adipisicing elit. Fuga, cum
-                          ratione itaque odit veniam possimus? Sed rem tempore
-                          omnis maiores nisi optio consequuntur, qui eos
-                          temporibus unde neque? In, quisquam.
-                        </p>
+                        <p className="excerpt">{post?.excerpt}</p>
                         <div className="blog_author">
                           <img
                             src={"/Images/founder3.png"}
