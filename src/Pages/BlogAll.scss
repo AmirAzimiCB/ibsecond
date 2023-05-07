@@ -24,7 +24,22 @@
   color: #333;
   margin-left: auto;
   margin-right: auto;
+
+  .top_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+  svg {
+    width: 20px;
+    height: 20px;
+    --tw-text-opacity: 1;
+    cursor: pointer;
+    color: rgb(107 114 128 / var(--tw-text-opacity));
+  }
   h1 {
+    text-transform: capitalize;
     font-size: 1.875rem /* 30px */;
     line-height: 2.25rem /* 36px */;
     font-weight: 700;
@@ -84,6 +99,7 @@
       color: rgb(107 114 128 / var(--tw-text-opacity));
     }
     p {
+      cursor: pointer;
       padding: 0.35rem;
       --tw-bg-opacity: 1;
       background-color: rgb(249 250 251 / var(--tw-bg-opacity));

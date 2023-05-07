@@ -23,18 +23,14 @@ const client = sanityClient({
   // other configuration options
 });
 
-const override = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "red",
-};
-
 const CategoryPost = () => {
   const { categorySlug } = useParams();
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  const tolowerCase = categorySlug.toLowerCase();
+  const navigate = useNavigate();
   let [color, setColor] = useState("#ffffff");
+  console.log(categorySlug);
+  const tolowerCase = categorySlug.toLowerCase();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -60,6 +56,7 @@ const CategoryPost = () => {
             _id,
             title,
             slug,
+            "categorySlug": categories->slug.current,
             categories -> {title},
             excerpt,
             author -> {name, image},
@@ -76,8 +73,9 @@ const CategoryPost = () => {
     };
 
     fetchPosts();
-  }, [categorySlug]);
-  //   console.log("rela, relatedPosts);
+  }, [categorySlug, tolowerCase]);
+
+  // console.log("rela", relatedPosts);
 
   return (
     <>
@@ -94,8 +92,28 @@ const CategoryPost = () => {
           ) : (
             <div className="blog_top">
               <section className="blog">
-                <div className="blog_header">
-                  <h1>Posts related to {relatedPosts[0]?.categories?.title}</h1>
+                <div className="blog_header ">
+                  <div className="top_header">
+                    <svg
+                      onClick={() => navigate("/blog")}
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+                      />
+                    </svg>
+                    <h1>
+                      Posts related to{" "}
+                      {relatedPosts[0]?.categories?.title || categorySlug}
+                    </h1>
+                  </div>
                 </div>
                 <div className="blog_showCase">
                   {relatedPosts.length ? (
@@ -111,10 +129,14 @@ const CategoryPost = () => {
                             <h4>
                               {moment(post._createdAt).format("MMMM Do YYYY")}
                             </h4>
-                            <p>{post?.categories?.title}</p>
+                            <p
+                              onClick={() => navigate(`/${post?.categorySlug}`)}
+                            >
+                              {post?.categories?.title}
+                            </p>
                           </div>
                           <div className="blog_content">
-                            <Link to={`/blog/details/${post?.slug.current}`}>
+                            <Link to={`/blog/${post?.slug.current}`}>
                               <h3 className="title">{post?.title}</h3>
                             </Link>
                             <p>

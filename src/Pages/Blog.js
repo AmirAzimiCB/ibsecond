@@ -34,6 +34,7 @@ const Blog = () => {
   // const { filteredPosts } = usePosts(blogCategory);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch posts from Sanity
@@ -44,7 +45,8 @@ const Blog = () => {
           _id,
           title,
           slug,
-          categories -> {title},
+          "categorySlug": categories->slug.current,
+          categories -> {_id,title},
           excerpt,
           author -> {name,image},
           mainImage,
@@ -63,7 +65,7 @@ const Blog = () => {
     fetchPosts();
   }, [blogCategory]);
 
-  // console.log(posts);
+  console.log(posts);
 
   return (
     <>
@@ -80,6 +82,7 @@ const Blog = () => {
               <div className="blog_header">
                 <h1>From the blog</h1>
                 <p>Learn from our experts.</p>
+                <hr />
               </div>
               <div className="blog_showCase">
                 {posts?.map((post) => (
@@ -94,7 +97,9 @@ const Blog = () => {
                         <h4>
                           {moment(post._createdAt).format("MMMM Do YYYY")}
                         </h4>
-                        <p>{post?.categories?.title}</p>
+                        <p onClick={() => navigate(`/${post?.categorySlug}`)}>
+                          {post?.categories?.title}
+                        </p>
                       </div>
                       <div className="blog_content">
                         <Link to={`/blog/${post?.slug.current}`}>

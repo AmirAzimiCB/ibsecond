@@ -3,6 +3,7 @@ import getYouTubeId from "get-youtube-id";
 import imageUrlBuilder from "@sanity/image-url";
 import "./BlogAll.scss";
 import "../styles/post.css";
+import "./BlogDetails.scss";
 import YouTube from "react-youtube";
 import BlogNav from "../Components/Blog/BlogNav";
 import { Helmet } from "react-helmet-async";
@@ -11,6 +12,7 @@ import sanityClient from "@sanity/client";
 import { urlFor } from "../lib/client";
 import moment from "moment/moment";
 import { useState } from "react";
+import BlockContent from "@sanity/block-content-to-react";
 
 const client = sanityClient({
   projectId: "gwaghe3o",
@@ -22,35 +24,62 @@ const client = sanityClient({
 
 const Post = () => {
   const { categorySlug } = useParams();
+  const [post, setPost] = useState(null);
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  // console.log(categoryName);
+  console.log(categorySlug);
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        // Fetch category ID based on the slug
-        const categoryQuery = `*[_type == "category" && slug.current == $categorySlug] {
-          _id,
-       
-        }`;
-        const categoryResult = await client.fetch(categoryQuery, {
-          categorySlug,
-        });
-        const categoryId = categoryResult[0]._id;
-
-        // Fetch posts with the specified category ID
-        const postQuery = `*[_type == "post" && references(categories, $categoryId)] {
+        const postQuery = `*[_type == "post" && slug.current == $slug] {
           _id,
           title,
+          body,
           slug,
-          categories -> {title},
+          "categorySlug": categories->slug.current,
+          categories[]->{title, slug},
           excerpt,
-          author -> {name,image},
+          author->{name, image},
           mainImage,
           _createdAt
         }`;
-        const response = await client.fetch(postQuery, { categoryId });
-        setRelatedPosts(response);
+
+        const postResponse = await client.fetch(postQuery, {
+          slug: categorySlug,
+        });
+
+        // Fetch category ID based on the slug
+        let category = postResponse[0].categorySlug;
+        const categoryQuery = `*[_type == "category" && slug.current == $category] {
+          _id
+        }`;
+        const categoryResult = await client.fetch(categoryQuery, {
+          category,
+        });
+        const categoryId = categoryResult[0]._id;
+        console.log(categoryId);
+
+        // Fetch posts with the specified category ID
+        const relatedPostsQuery = `*[_type == "post" && references(categories, $categoryId) && slug.current != $slug ] {
+          _id,
+          title,
+          body,
+          slug,
+          "categorySlug": categories->slug.current,
+          categories -> {title},
+          excerpt,
+          author -> {name, image},
+          mainImage,
+          _createdAt
+        }`;
+        const relatedPostsResponse = await client.fetch(relatedPostsQuery, {
+          categoryId,
+          slug: categorySlug,
+        });
+
+        setRelatedPosts(relatedPostsResponse);
+        setPost(postResponse[0]);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching posts:", error);
@@ -60,7 +89,11 @@ const Post = () => {
 
     fetchPosts();
   }, [categorySlug]);
-  // console.log("related", relatedPosts);
+
+  // ...
+
+  console.log("post", post);
+  console.log("related", relatedPosts);
 
   const serializers = {
     types: {
@@ -83,7 +116,7 @@ const Post = () => {
       },
     },
   };
-
+  // console.log(post.title);
   return (
     <>
       <Helmet>
@@ -94,63 +127,88 @@ const Post = () => {
         {isLoading ? (
           <>Loading...</>
         ) : (
-          <div className="blog_top">
-            <section className="blog">
-              <div className="blog_header">
-                <h1>Posts related to {relatedPosts[0]?.categories?.title}</h1>
+          <div className="details">
+            <section className="grid_left_side">
+              <div className="grid_right_side_header">
+                <div className="grid_top_header">
+                  <svg
+                    onClick={() => navigate("/blog")}
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+                    />
+                  </svg>
+                  <h1>Back</h1>
+                </div>
               </div>
-              <div className="blog_showCase">
-                {relatedPosts.length ? (
-                  relatedPosts?.map((post) => (
-                    <div key={post._id} className="blog_showCase_items">
-                      <img
-                        src={urlFor(post?.mainImage?.asset._ref)}
-                        alt={post?.title}
-                        className="blog_image"
-                      />
-                      <div className="blog_information">
-                        <div className="blog_top">
-                          <h4>
-                            {moment(post._createdAt).format("MMMM Do YYYY")}
-                          </h4>
-                          <p>{post?.categories?.title}</p>
-                        </div>
-                        <div className="blog_content">
-                          <Link to={`/blog/details/${post?.slug.current}`}>
-                            <h3 className="title">{post?.title}</h3>
-                          </Link>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Nostrum error quae harum vero! Aliquid
-                            voluptates nihil harum placeat, id veritatis quod
-                            perspiciatis a necessitatibus accusantium, amet
-                            cupiditate itaque corrupti porro. Lorem ipsum dolor
-                            sit amet consectetur adipisicing elit. Fuga, cum
-                            ratione itaque odit veniam possimus? Sed rem tempore
-                            omnis maiores nisi optio consequuntur, qui eos
-                            temporibus unde neque? In, quisquam.
-                          </p>
-                          <div className="blog_author">
-                            <img
-                              src={"/Images/founder3.png"}
-                              alt="authors_image"
-                            />
-                            <div className="infoBar">
-                              <h3>{post?.author?.name}</h3>
-                              <p>Author</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+              <div className="grid_blog_showCase">
+                <div className="grid_blog_showCase_items">
+                  <img
+                    src={urlFor(post?.mainImage?.asset._ref)}
+                    alt={post?.title}
+                    className="blog_image"
+                  />
+                  <div className="blog_information">
+                    <div className="blog_top">
+                      <h4>{moment(post._createdAt).format("MMMM Do YYYY")}</h4>
+                      <p onClick={() => navigate(`/${post?.categorySlug}`)}>
+                        {post?.categorySlug}
+                      </p>
                     </div>
-                  ))
-                ) : (
-                  <>
-                    <div className="blog_showCase_items">
-                      No posts for this category exists
+                    <div className="blog_content">
+                      {/* <Link to={`/blog/${post?.slug.current}`}> */}
+                      <h3 className="title">{post?.title}</h3>
+                      {/* </Link> */}
+                      {/* <div className="blog_author">
+                        <img src={"/Images/founder3.png"} alt="authors_image" />
+                        <div className="infoBar">
+                          <h3>{post?.author?.name}</h3>
+                          <p>Author</p>
+                        </div>
+                      </div> */}
                     </div>
-                  </>
-                )}
+                  </div>
+                  <div>
+                    <BlockContent
+                      blocks={post?.body}
+                      serializers={serializers}
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section className="grid_right_side">
+              <div className="grid_right_side_title">
+                <h3>MORE LIKE THIS</h3>
+                <hr />
+              </div>
+              <div className="grid_content">
+                {relatedPosts.map((data) => (
+                  <div key={data._id} className="right_side_container">
+                    <div className="right_side_data">
+                      <Link to={`/blog/${data?.categorySlug}`}>
+                        <p className="card">{data?.categories?.title}</p>
+                      </Link>
+                      <h4 className="title_related">{data?.title}</h4>
+                      <span>{data?.author?.name}</span>
+                      <p>{moment(data?._createdAt).format("MMMM Do YYYY")}</p>
+                    </div>
+                    <img
+                      className="right_side_img"
+                      src={urlFor(data?.mainImage?.asset?._ref)}
+                      alt={data?.title}
+                    />
+                  </div>
+                ))}
               </div>
             </section>
           </div>
