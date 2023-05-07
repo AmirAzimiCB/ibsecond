@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiArrowUpRight } from "react-icons/fi";
-import useCategories from "../../hooks/useCatrgories";
-import useStore from "../../store/ZustandStore";
 import VideoLoader from "../VideoLoader/VideoLoader";
 import sanityClient from "@sanity/client";
 
@@ -60,7 +58,7 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
 
     fetchPosts();
   }, []);
-  console.log(categories);
+  // console.log(categories);
 
   const navData = [
     {
