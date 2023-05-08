@@ -6,12 +6,14 @@ import Layout from "../Components/Layout";
 export default function Home() {
   return (
     <>
-      <Helmet>
-        <title>Home</title>
+       <Helmet>
+        <title>
+          Home
+        </title>
       </Helmet>
-      <Layout>
-        <HomePage />
-      </Layout>
+    <Layout>
+      <HomePage />
+    </Layout>
     </>
   );
 }
