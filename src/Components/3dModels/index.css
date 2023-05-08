@@ -1,0 +1,35 @@
+.bg-img {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  object-fit: fill;
+
+}
+
+.main-scene {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  overflow: hidden !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact-container {
+    width: 45%;
+     z-index: 100;
+
+  }
+
+  .main-scene {
+    height: 101vh;
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bg-img {
+    height: 105vh;
+  }
+}

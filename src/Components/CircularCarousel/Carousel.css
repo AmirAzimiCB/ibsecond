@@ -1,0 +1,281 @@
+.about-container {
+  width: 70%;
+  height: 100vh;
+  align-content: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: auto;
+  padding-top: 20%;
+
+
+}
+
+.about-inner-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 210px;
+  border-radius: 120%;
+  height: 210px;
+  margin: auto;
+  transition: 2s ease-out;
+
+  animation: rotation 20s infinite linear;
+  z-index: 1000;
+}
+
+.about-instruction-text-container {
+  position: absolute;
+  color: #000;
+  width: 100%;
+  top: 40%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.about-instruction-text {
+  margin-top: 1rem;
+  font-size: 2.2em;
+  font-weight: 400;
+  color: #000;
+  line-height: 42px;
+  text-align: center;
+  word-wrap: break-word;
+  /* add gradient */
+
+  opacity: .95;
+
+
+}
+
+.about-instruction-text-background {
+  background: rgb(199, 148, 58);
+  background: linear-gradient(83deg, rgba(199, 148, 58, 0.95) 65%, rgba(243, 224, 176, 0.95) 95%);
+  opacity: .9;
+  border-radius: 10px;
+}
+
+.about-instruction-test-arrow-container {
+  position: relative;
+
+}
+
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.about-inner-container li {
+  position: absolute;
+  list-style-type: none;
+  left: -120%;
+  top: 15%;
+  right: 140%;
+  transform-origin: 220%;
+  transform: rotate(calc(360deg / 6 * var(--i)));
+
+}
+
+
+
+
+@keyframes rotateIcons {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-359deg);
+  }
+}
+
+.icon-img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  /* animation: rotateIcons 10s infinite linear; */
+
+}
+
+.icon-img:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+
+.vertical-arrow-manifesto {
+  height: 35vh;
+  margin-top: -20%
+}
+
+.horizontal-arrow-manifesto {
+  width: 25vw !important;
+  margin-left: -11%;
+
+}
+
+@media screen and (max-width: 1200px) {
+  .about-container {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .about-inner-container {
+    width: 150px;
+    height: 150px;
+    top: 15%;
+
+  }
+
+  .about-inner-container li {
+    right: 135%;
+    top: 9%;
+    transform-origin: 200%;
+  }
+
+  .icon-img {
+    height: 100px;
+  }
+
+  .about-instruction-text-container {
+    top: 44%;
+  }
+
+  .about-instruction-text {
+    font-size: 1.9em;
+    height: 18vh;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    width: 100%;
+    height: 100vh;
+
+    overflow-y: hidden;
+  }
+
+  .about-inner-container {
+    width: 150px;
+    height: 150px;
+    margin-top: 10%;
+  }
+
+  .about-inner-container li {
+    right: 130%;
+    top: 10%;
+    transform-origin: 200%;
+  }
+
+  .icon-img {
+    height: 100px;
+  }
+
+  .about-instruction-text-container {
+    top: 42%;
+  }
+
+  .about-instruction-text {
+
+    font-size: 1.7em;
+
+  }
+
+  .horizontal-arrow-manifesto {
+    width: 40vw !important;
+    left: -10%;
+
+
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+
+  }
+
+
+  .about-inner-container {
+    width: 110px;
+    height: 110px;
+    margin-top: 20%;
+  }
+
+  .about-inner-container li {
+    right: 130%;
+    top: 8%;
+    transform-origin: 200%;
+  }
+
+  .icon-img {
+    height: 60px;
+
+  }
+
+  .about-instruction-text-container {
+
+    top: 30%
+  }
+
+  .about-instruction-text {
+
+    font-size: .8em;
+    width: 110%;
+
+  }
+
+  .vertical-arrow-manifesto {
+    height: 20vh !important;
+    margin-top: -20%
+  }
+
+  .horizontal-arrow-manifesto {
+    width: 45vw !important;
+    margin-left: -10%;
+
+  }
+
+
+}
+
+@media screen and (max-width:380px) {
+
+
+  .about-container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+
+  }
+
+  .about-instruction-text-container {
+    top: 32%
+  }
+
+  .vertical-arrow-manifesto {
+    height: 40vh !important;
+    margin-top: -20%
+  }
+
+  .horizontal-arrow-manifesto {
+    width: 40vw !important;
+    margin-left: -10%;
+
+  }
+
+
+}

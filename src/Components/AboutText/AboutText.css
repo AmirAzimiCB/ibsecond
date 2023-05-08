@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+
+.about-text-container {
+  font-family: "Courier Prime", monospace;
+  width: 80vw;
+  height: 85vh;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 10%;
+  left: 0;
+  transform: translate(15%, 120%);
+  background-color: #fff;
+  z-index: 999;
+}
+
+.about-text-container p {
+  font-size: .9rem;
+}
+
+.about-image {
+  height: 100%;
+  width: 30vw;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 999;
+}
+
+.about-text {
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3%;
+  padding-top: 1rem;
+  overflow: hidden;
+
+}
+
+.about-text-title {
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+.drag-over-text {
+  font-size: 1.3rem;
+  margin-top: 5%;
+  color: #000;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px red,
+    0 0 20px red,
+    0 0 40px red,
+    0 0 80px red,
+    0 0 90px red,
+    0 0 100px red,
+    0 0 150px red;
+}
+
+.cross-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #000;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  z-index: 999999;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .about-image {
+
+    object-fit: contain;
+    flex: 3;
+  }
+
+  .about-text {
+
+    flex: 6;
+
+    text-align: center;
+
+  }
+
+  .about-text-title {
+    font-size: 1.5rem;
+  }
+
+
+}
+
+@media screen and (max-width: 768px) {
+  .about-text-container {
+    height: 90vh;
+    width: 90vw;
+    top: 12%;
+    flex-direction: column;
+    transform: translate(5vw, 0);
+  }
+
+  .about-image {
+    width: 100%;
+    height: 40vh;
+    object-fit: contain;
+    flex: 3;
+  }
+
+  .about-text {
+    width: 100%;
+    flex: 10;
+    padding: 0;
+    text-align: center;
+
+  }
+
+  .about-text-title {
+    font-size: 1.5rem;
+  }
+
+  .about-text-desc {
+    font-size: 1rem !important;
+    padding: 0 2%;
+
+  }
+
+  .drag-over-text {
+    font-size: 1rem;
+    margin-top: 0;
+  }
+
+  .cross-icon {
+    color: #fff;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .about-text-container {
+    height: 85vh;
+    width: 95vw;
+    top: 13%;
+    transform: translate(2.5vw, 0);
+    flex-direction: column;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 35vh;
+    flex: 3;
+    object-fit: contain;
+  }
+
+  .about-text {
+    width: 100%;
+    flex: 10;
+    padding: 0;
+    text-align: center;
+
+  }
+
+  .about-text-title {
+    font-size: 1rem;
+  }
+
+  .about-text-desc {
+    font-size: .7rem !important;
+    padding: 0 5%;
+
+  }
+
+  .drag-over-text {
+    font-size: 1rem;
+    margin-top: 0;
+  }
+
+  .cross-icon {
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .about-image {
+
+    flex: 2;
+
+  }
+
+  .about-text {
+
+    flex: 11;
+
+  }
+}
+
+@media screen and (max-width: 420px) and (max-height: 750px) {
+  .about-image {
+    flex: 3;
+  }
+
+  .about-text {
+    flex: 14;
+    overflow: scroll;
+
+  }
+
+  .about-text-container p {
+    font-size: .68rem !important;
+
+  }
+
+  .about-text-container {
+    overflow-y: scroll;
+  }
+
+}
