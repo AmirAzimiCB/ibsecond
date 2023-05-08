@@ -4,7 +4,9 @@
     url("./fonts/CloisterBlack.ttf") format("truetype");
   font-weight: 100;
 }
-
+a {
+  text-decoration: none;
+}
 @font-face {
   font-family: "DistortYou";
   src: local("DistortYou"),
@@ -17,6 +19,8 @@
 }
 .blog-nav-fixed {
   // background-color: red;
+  &.active {
+  }
 }
 
 img {
