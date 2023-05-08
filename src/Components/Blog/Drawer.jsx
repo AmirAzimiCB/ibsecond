@@ -117,13 +117,16 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
                 <li
                   className="NavDrawer_li"
                   key={data.id}
-                  onClick={() => handleClick(data.handleClick)}
+                  onClick={() => {
+                    handleClick(data.handleClick);
+                    setShowDrawer(false);
+                  }}
                 >
                   <h4 className="divider_id">{data.id}</h4>
                   <hr />
                   <div className="NavDrawer_flex">
                     <h2
-                      style={{ fontFamily: "CloisterBlack" }}
+                      // style={{ fontFamily: "CloisterBlack" }}
                       className="font-cloister-black"
                     >
                       {data.title}
@@ -176,7 +179,16 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
           </section>
         )}
         <div
-          style={{ zIndex: "999999", marginLeft: "-7rem", marginTop: "-2rem" }}
+          style={{
+            zIndex: "99999999999",
+            // marginLeft: "-7rem",
+            // marginTop: "-2rem",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+          }}
         >
           {navigateTo && <VideoLoader Navigateto={navigateTo} />}
         </div>
