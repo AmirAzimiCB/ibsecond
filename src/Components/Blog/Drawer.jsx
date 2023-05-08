@@ -30,7 +30,7 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
   };
   const handleClick = (link) => {
     setNavigateTo(link);
-    // setShow(false);
+    setShowDrawer(false);
     if (window.innerWidth < 768) {
       navigate(link);
     } else {
@@ -119,7 +119,6 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
                   key={data.id}
                   onClick={() => {
                     handleClick(data.handleClick);
-                    setShowDrawer(false);
                   }}
                 >
                   <h4 className="divider_id">{data.id}</h4>
@@ -178,20 +177,18 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
             </ul>
           </section>
         )}
-        <div
-          style={{
-            zIndex: "99999999999",
-            // marginLeft: "-7rem",
-            // marginTop: "-2rem",
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-          }}
-        >
-          {navigateTo && <VideoLoader Navigateto={navigateTo} />}
-        </div>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -100,
+        }}
+      >
+        {navigateTo && <VideoLoader Navigateto={navigateTo} />}
       </div>
     </>
   );
