@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./HomeImages.scss";
+import "./HomeImages.css";
 
 export default function HomeImages() {
   const descRefTop = React.useRef(null);
@@ -10,9 +10,9 @@ export default function HomeImages() {
   };
 
   return (
-    <div className="imagesContainer">
+    <div className="imagesContainer" id="imagesContainer">
       <img className="homeBg" src="/Images/Home-bg.png" alt="1" border="0" />
-      <div className="mainContainer">
+      <div style={{ top: "20%" }} className="mainContainer">
         <div className="left-img-container">
           <img
             className="left-img"
@@ -40,7 +40,10 @@ export default function HomeImages() {
         <Link to="/gallery">
           <div className="right-img-container">
             <div className="right-img-inner-upper-container">
-              <div className="right-img-inner-upper">
+              <div
+                // onClick={handleGalleryClick()}
+                className="right-img-inner-upper"
+              >
                 <img
                   src="/Images/Home-img1.png"
                   alt="1"
@@ -51,7 +54,10 @@ export default function HomeImages() {
                   <span className="home-text-container-span">ENTER</span>
                 </div>
               </div>
-              <div className="right-img-inner-upper">
+              <div
+                // onClick={handleGalleryClick()}
+                className="right-img-inner-upper"
+              >
                 <img
                   src="/Images/Home-img2.png"
                   alt="1"
@@ -63,7 +69,10 @@ export default function HomeImages() {
                 </div>
               </div>
             </div>
-            <div className="right-img-inner-lower-container">
+            <div
+              // onClick={handleGalleryClick()}
+              className="right-img-inner-lower-container"
+            >
               <div className="right-img-inner-lower">
                 <img
                   src="/Images/Home-img3.png"
