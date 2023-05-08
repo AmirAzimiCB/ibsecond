@@ -171,7 +171,11 @@ const Post = () => {
         ) : (
           <div className={`details`}>
             <section className="grid_left_side">
-              <div className="grid_right_side_header">
+              <div
+                className={`grid_right_side_header black ${
+                  categorySlug === "five-dollar-forests" ? "active" : ""
+                } `}
+              >
                 <div className="grid_top_header">
                   <svg
                     onClick={() => navigate("/blog")}
@@ -220,7 +224,11 @@ const Post = () => {
                       </div> */}
                     </div>
                   </div>
-                  <div>
+                  <div
+                    className={`black ${
+                      categorySlug === "five-dollar-forests" ? "active" : ""
+                    }`}
+                  >
                     <BlockContent
                       blocks={post?.body}
                       serializers={serializers}
@@ -230,7 +238,11 @@ const Post = () => {
               </div>
             </section>
 
-            <section className="grid_right_side">
+            <section
+              className={`grid_right_side black ${
+                categorySlug === "five-dollar-forests" ? "active" : ""
+              }`}
+            >
               <div className="grid_right_side_title">
                 <h3>RELATED POSTS</h3> <hr />
               </div>

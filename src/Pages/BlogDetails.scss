@@ -14,17 +14,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
-    h5,
-    h6,
-    div,
-    span {
-      color: white !important;
-    }
+
     overflow-y: scroll;
 
     //
@@ -240,6 +230,23 @@
           color: rgb(75 85 99 / var(--tw-text-opacity));
         }
       }
+    }
+  }
+}
+
+.black {
+  &.active {
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    h5,
+    h6,
+    div,
+    svg,
+    span {
+      color: white !important;
     }
   }
 }
