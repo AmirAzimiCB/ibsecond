@@ -2,27 +2,16 @@ img {
   width: 100%;
   height: 400px;
   object-fit: cover;
-}
-
-@media screen and (max-width: 420px) {
-  img {
-    height: auto;
   }
-}
-@media screen and (max-width: 420px) {
-  img {
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  #category_grid {
-  }
+  
+  @media screen and (max-width: 420px) {
+    img {
+      height: auto;
+    }
 }
 
 .marquee {
   display: flex;
-  flex-direction: column;
 }
 
 .marquee li {
