@@ -5,7 +5,7 @@ import "./Navbar.css";
 import useStore from "../../store/ZustandStore";
 import VideoLoader from "../VideoLoader/VideoLoader";
 import useCatrgoires from "../../hooks/useCatrgories";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 
 export default function Navbar({ isBlack }) {
   const [show, setShow] = useState(false);
@@ -35,6 +35,7 @@ export default function Navbar({ isBlack }) {
 
 const NavbarWhite = ({ navLinksRef, show, setShow }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [navigateTo, setNavigateTo] = useState(null);
 
   const handleClick = (link) => {
@@ -46,6 +47,7 @@ const NavbarWhite = ({ navLinksRef, show, setShow }) => {
       useStore.setState({ showVideo: true });
     }
   };
+  console.log(location.pathname);
   return (
     <>
       <div style={{ position: "relative" }}>
@@ -81,6 +83,8 @@ const NavbarWhite = ({ navLinksRef, show, setShow }) => {
 
 export const NavbarBlack = ({ navLinksRef, show, setShow }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [navigateTo, setNavigateTo] = useState(null);
   const handleClick = (link) => {
     setNavigateTo(link);
@@ -92,6 +96,8 @@ export const NavbarBlack = ({ navLinksRef, show, setShow }) => {
       useStore.setState({ showVideo: true });
     }
   };
+  console.log(location.pathname);
+
   return (
     <>
       <div style={{ position: "relative" }}>
