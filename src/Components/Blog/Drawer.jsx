@@ -6,6 +6,7 @@ import sanityClient from "@sanity/client";
 
 import "./blog.scss";
 import { useEffect } from "react";
+import useStore from "../../store/ZustandStore";
 
 const client = sanityClient({
   projectId: "gwaghe3o",
@@ -18,17 +19,24 @@ const client = sanityClient({
 const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
   const navigate = useNavigate();
   const [navigateTo, setNavigateTo] = useState(null);
-  // const setBlogCategory = useStore((state) => state.setBlogCategory);
-
-  const handleClick = (link) => {
-    // setNavigateTo(link);
-    // setShow(false);
-    // if (window.innerWidth < 768) {
-    navigate(link);
-    // } else {
-    //   useStore.setState({ showVideo: true });
+  const setBlogCategory = useStore((state) => state.setBlogCategory);
+  const changeCategory = (category) => {
     setShowDrawer(false);
-    // }
+    if (category === "All") {
+      setBlogCategory("");
+    } else {
+      setBlogCategory(category);
+    }
+  };
+  const handleClick = (link) => {
+    setNavigateTo(link);
+    // setShow(false);
+    if (window.innerWidth < 768) {
+      navigate(link);
+    } else {
+      useStore.setState({ showVideo: true });
+      setShowDrawer(false);
+    }
   };
 
   const [categories, setCategories] = useState([]);
@@ -101,70 +109,78 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
   return (
     <>
       <div className={`NavDrawer ${showDrawer ? "show" : "hide"}`}>
-        <section className="NavDrawer__flex__content">
-          {/* left side */}
-          <ul className="NavDrawer_ul">
-            {navData.map((data) => (
-              <li
-                className="NavDrawer_li"
-                key={data.id}
-                onClick={() => handleClick(data.handleClick)}
-              >
-                <h4 className="divider_id">{data.id}</h4>
-                <hr />
-                <div className="NavDrawer_flex">
+        {!navigateTo && (
+          <section className="NavDrawer__flex__content">
+            {/* left side */}
+            <ul className="NavDrawer_ul">
+              {navData.map((data) => (
+                <li
+                  className="NavDrawer_li"
+                  key={data.id}
+                  onClick={() => handleClick(data.handleClick)}
+                >
+                  <h4 className="divider_id">{data.id}</h4>
+                  <hr />
+                  <div className="NavDrawer_flex">
+                    <h2
+                      style={{ fontFamily: "CloisterBlack" }}
+                      className="font-cloister-black"
+                    >
+                      {data.title}
+                    </h2>
+                    {data.icon}
+                  </div>
+                </li>
+              ))}
+            </ul>
+            {/* right side */}
+            <ul className="NavDrawer_right_side">
+              <div className="NavDrawer_news_category">
+                <div className="NavDrawer_news_category_div">
                   <h2
+                    onClick={() => handleClick("/blog")}
                     style={{ fontFamily: "CloisterBlack" }}
                     className="font-cloister-black"
                   >
-                    {data.title}
+                    News
                   </h2>
-                  {data.icon}
+                  <FiArrowUpRight />
                 </div>
-              </li>
-            ))}
-          </ul>
-          {/* right side */}
-          <ul className="NavDrawer_right_side">
-            <div className="NavDrawer_news_category">
-              <div className="NavDrawer_news_category_div">
-                <h2
-                  onClick={() => handleClick("/blog")}
-                  style={{ fontFamily: "CloisterBlack" }}
-                  className="font-cloister-black"
-                >
-                  News
-                </h2>
-                <FiArrowUpRight />
+                <hr />
               </div>
-              <hr />
-            </div>
 
-            <p onClick={() => handleClick("/blog")} className="DrawerReset">
-              All
-            </p>
-            <div className="right_side_links">
-              {loading ? (
-                <>Loading...</>
-              ) : (
-                <article className="right_side_blog_links">
-                  {categories.map((category) => (
-                    <Link
-                      className="blog_links"
-                      to={`/${category.slug.current}`}
-                      key={category._id}
-                      onClick={() => setShowDrawer(false)}
-                    >
-                      <p>{category.title}</p>
-                    </Link>
-                  ))}
-                </article>
-              )}
-            </div>
-          </ul>
-        </section>
+              <p onClick={() => handleClick("/blog")} className="DrawerReset">
+                All
+              </p>
+              <div className="right_side_links">
+                {loading ? (
+                  <>Loading...</>
+                ) : (
+                  <article className="right_side_blog_links">
+                    {categories.map((category) => (
+                      <Link
+                        className="blog_links"
+                        to={`/${category.slug.current}`}
+                        key={category._id}
+                        onClick={() => setShowDrawer(false)}
+                      >
+                        <p onClick={() => changeCategory(category.title)}>
+                          {category.title}
+                        </p>
+                      </Link>
+                    ))}
+                  </article>
+                )}
+              </div>
+            </ul>
+          </section>
+        )}
+        <div
+          style={{ zIndex: "999999", marginLeft: "-7rem", marginTop: "-2rem" }}
+        >
+          {navigateTo && <VideoLoader Navigateto={navigateTo} />}
+        </div>
       </div>
-      {navigateTo && <VideoLoader Navigateto={navigateTo} />}
     </>
   );
 };

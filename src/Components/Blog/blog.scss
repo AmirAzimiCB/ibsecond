@@ -1,7 +1,4 @@
 // blog nav bar
-body {
-  position: relative;
-}
 
 .padded_container {
   padding: 2rem;
@@ -10,13 +7,13 @@ body {
     background-color: white;
     position: fixed;
     inset: 0;
-    z-index: 99999999;
+    // z-index: 99999999;
     overflow-y: scroll;
   }
 }
 .blogNavBar_container {
   display: flex;
-  z-index: 999999999;
+  // z-index: 999999999;
   // border: 1px solid red;
   position: fixed;
   top: 0;

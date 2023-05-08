@@ -1,39 +1,15 @@
 import React, { useState } from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import Drawer from "./Drawer";
-import { Link, useLocation } from "react-router-dom";
-
-import "./blog.scss";
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const BlogNav = ({ setFilter, isLight }) => {
-  const locationParam = useLocation();
-  // const [color, setColor] = useState("");
-  // const [colorbg, setbg] = useState("");
-  // useEffect(() => {
-  //   if (locationParam.pathname === "/Environmentalism") {
-  //     // console.log(locationParam);
-  //     setColor("white");
-  //     setbg("#142222");
-  //     // window.location.reload();
-  //   } else {
-  //     setColor("black");
-  //     setbg("transparent");
-  //   }
-  // }, [locationParam.pathname]);
   const [showDrawer, setShowDrawer] = useState(false);
   return (
-    <section className="blog_nav_container" style={{ zIndex: 999999999 }}>
-      <div className={`padded_container ${showDrawer ? "active" : ""}`}>
+    <section className="blogNav" style={{ zIndex: 10000 }}>
+      <div className={`__block padded_container ${showDrawer ? "active" : ""}`}>
         <div className="blogNavBar_container">
-          <Link
-            to="/home"
-            onClick={() => {
-              if (showDrawer === true) {
-                setShowDrawer(false);
-              }
-            }}
-          >
+          <Link to="/home">
             <img src="/Icons/FinalLogo.jpg" alt="Incendiary Balloons" />
           </Link>
           <div
@@ -41,9 +17,11 @@ const BlogNav = ({ setFilter, isLight }) => {
             onClick={() => setShowDrawer(!showDrawer)}
           >
             {showDrawer ? (
-              <HiOutlineX style={{ color: "black" }} />
+              <HiOutlineX className="blognav-icon" />
             ) : (
-              <HiOutlineMenu style={{ color: "black" }} />
+              <HiOutlineMenu
+                className={`blognav-icon ${isLight ? "text-white" : ""}`}
+              />
             )}
           </div>
         </div>
