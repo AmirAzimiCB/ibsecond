@@ -138,7 +138,7 @@ const CategoryPost = () => {
                             </p>
                           </div>
                           <div className="blog_content">
-                            <Link to={`/blog/${post?.slug.current}`}>
+                            <Link to={`/blog/details/${post?.slug.current}`}>
                               <h3 className="title">{post?.title}</h3>
                             </Link>
                             <p>

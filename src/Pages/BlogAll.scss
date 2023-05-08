@@ -1,7 +1,3 @@
-.loader {
-  position: fixed;
-  inset: 0;
-}
 .blog {
   // border: 1px solid red;
   display: flex;
@@ -11,6 +7,7 @@
   align-items: center;
   max-width: 1280px;
   margin: 0 auto;
+  margin-top: 7rem;
   padding-left: 1.5rem /* 24px */;
   padding-right: 1.5rem /* 24px */;
   @media screen and (min-width: 1024px) {
@@ -104,6 +101,7 @@
   .blog_top {
     display: flex;
     gap: 32px;
+
     align-items: center;
     font-size: 0.75rem /* 12px */;
     line-height: 1rem /* 16px */;

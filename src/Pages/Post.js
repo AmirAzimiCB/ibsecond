@@ -35,19 +35,6 @@ const serializers = {
           return <p>{children}</p>;
       }
     },
-    textWithImage: ({ node }) => {
-      const { image, text } = node;
-      return (
-        <div className="text-image-container">
-          <div className="text-container">
-            <BlockContent blocks={text} serializers={serializers} />
-          </div>
-          <div className="image-container">
-            <img src={urlFor(image).url()} alt="" />
-          </div>
-        </div>
-      );
-    },
     span: ({ node, children }) => {
       const { marks } = node;
       let content = children;
@@ -119,31 +106,32 @@ const Post = () => {
         });
 
         // Fetch category ID based on the slug
-        let category = postResponse[0].categorySlug;
-        const categoryQuery = `*[_type == "category" && slug.current == $category] {
-          _id
-        }`;
-        const categoryResult = await client.fetch(categoryQuery, {
-          category,
-        });
-        const categoryId = categoryResult[0]._id;
-        console.log(categoryId);
+        // let category = postResponse[0].categorySlug;
+        // const categoryQuery = `*[_type == "category" && slug.current == $category] {
+        //   _id
+        // }`;
+        // const categoryResult = await client.fetch(categoryQuery, {
+        //   category,
+        // });
+        // const categoryId = categoryResult[0]._id;
+        // console.log(categoryId);
 
         // Fetch posts with the specified category ID
-        const relatedPostsQuery = `*[_type == "post" && references(categories, $categoryId) && slug.current != $slug ] {
-          _id,
-          title,
-          body,
-          slug,
-          "categorySlug": categories->slug.current,
-          categories -> {title},
-          excerpt,
-          author -> {name, image},
-          mainImage,
-          _createdAt
-        }`;
+        const relatedPostsQuery = `*[_type == "post" && slug.current != $slug] | order(_createdAt asc)   [0...3] 
+  {  
+      _id,
+      title,
+      body,
+      slug,
+      "categorySlug": categories->slug.current,
+      categories->{title},
+      excerpt,
+      author->{name, image},
+      mainImage,
+      _createdAt
+    }`;
+
         const relatedPostsResponse = await client.fetch(relatedPostsQuery, {
-          categoryId,
           slug: categorySlug,
         });
 
@@ -164,24 +152,24 @@ const Post = () => {
   // console.log("post", post);
   // console.log("related", relatedPosts);
 
-  console.log(post);
+  // console.log(post);
   return (
     <>
       <Helmet>
         <title>Blog | {categorySlug}</title>
       </Helmet>
-      <div className={`blog-nav-fixed `}>
+      <div
+        className={`blog-nav-fixed ${
+          categorySlug === "five-dollar-forests" ? "active" : ""
+        }`}
+      >
         <BlogNav />
         {isLoading ? (
           <div className="fixed_loader">
             <PropagateLoader className="loader_blog" color="#36d7b7" />
           </div>
         ) : (
-          <div
-            className={`details ${
-              categorySlug === "five-dollar-forests" ? "active" : ""
-            }`}
-          >
+          <div className={`details`}>
             <section className="grid_left_side">
               <div className="grid_right_side_header">
                 <div className="grid_top_header">
@@ -212,12 +200,12 @@ const Post = () => {
                       className="blog_img"
                     />
                   </div>
-                  <div className="blog_information">
+                  <div className={`blog_information `}>
                     <div className="blog_top">
                       <h4>{moment(post._createdAt).format("MMMM Do YYYY")}</h4>
-                      <p onClick={() => navigate(`/${post?.categorySlug}`)}>
-                        {post?.categorySlug}
-                      </p>
+                      <Link to={`/${post?.categorySlug}`}>
+                        <p className="badge_top">{post?.categorySlug}</p>
+                      </Link>
                     </div>
                     <div className="blog_content">
                       {/* <Link to={`/blog/${post?.slug.current}`}> */}
@@ -244,17 +232,22 @@ const Post = () => {
 
             <section className="grid_right_side">
               <div className="grid_right_side_title">
-                <h3>MORE LIKE THIS</h3>
-                <hr />
+                <h3>RELATED POSTS</h3> <hr />
               </div>
-              <div className="grid_content">
+              <div
+                className={`grid_content ${
+                  categorySlug === "five-dollar-forests" ? "active" : ""
+                } `}
+              >
                 {relatedPosts.map((data) => (
                   <div key={data._id} className="right_side_container">
                     <div className="right_side_data">
                       <Link to={`/blog/${data?.categorySlug}`}>
                         <p className="card">{data?.categories?.title}</p>
                       </Link>
-                      <h4 className="title_related">{data?.title}</h4>
+                      <Link to={`/blog/details/${data?.slug.current}`}>
+                        <h4 className="title_related">{data?.title}</h4>
+                      </Link>
                       <span>{data?.author?.name}</span>
                       <p>{moment(data?._createdAt).format("MMMM Do YYYY")}</p>
                     </div>

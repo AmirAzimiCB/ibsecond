@@ -3,15 +3,46 @@
   align-items: center;
   justify-content: center;
 }
-body {
-  position: relative;
+
+.blog-nav-fixed {
+  // background-color: red;
+  &.active {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-image: url("../assets/trees.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    h5,
+    h6,
+    div,
+    span {
+      color: white !important;
+    }
+    overflow-y: scroll;
+
+    //
+    .grid_blog_showCase_items {
+      .badge_top {
+        color: black !important;
+      }
+    }
+  }
 }
 .details {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
+  gap: 1rem;
   max-width: 1280px;
   margin: 0 auto;
+  margin-top: 7rem !important;
+
   padding-left: 1.5rem /* 24px */;
   padding-right: 1.5rem /* 24px */;
   @media screen and (min-width: 1024px) {
@@ -43,6 +74,7 @@ body {
   //     color: white !important;
   //   }
   // }
+  margin-top: -2rem;
 }
 
 .grid_right_side_header {
@@ -214,6 +246,7 @@ body {
 
 .grid_right_side {
   grid-column: span 1;
+  width: 100%;
   @media screen and (max-width: 1024px) {
     grid-column: span 3;
   }
@@ -235,31 +268,43 @@ body {
     gap: 32px;
     .right_side_container {
       display: flex;
-      gap: 16px;
+      // gap: 16px;
       width: 100%;
       align-items: center;
       justify-content: space-between;
-      .card {
-        text-align: center;
-        max-width: min-content;
-        padding: 0.35rem;
-        --tw-bg-opacity: 1;
-        background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-        // background-color: red;
-        border-radius: 16px;
-        text-transform: capitalize;
-        --tw-text-opacity: 1;
-        color: rgb(75 85 99 / var(--tw-text-opacity));
-        padding-left: 0.75rem /* 12px */;
-        padding-right: 0.75rem /* 12px */;
-        padding-top: 0.375rem /* 6px */;
-        padding-bottom: 0.375rem /* 6px */;
-        font-weight: 500;
-        &:hover {
+      flex-shrink: 0;
+      .right_side_data {
+        width: 100%;
+        // display: none;
+        display: flex;
+        flex-direction: column;
+
+        .card {
+          flex-shrink: 0;
+          // border: 1px solid red;
+          width: 100%;
+          text-align: center;
+          max-width: fit-content;
+          padding: 0.35rem;
           --tw-bg-opacity: 1;
-          background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+          background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+          // background-color: red;
+          border-radius: 16px;
+          text-transform: capitalize;
+          --tw-text-opacity: 1;
+          color: rgb(75 85 99 / var(--tw-text-opacity));
+          padding-left: 0.75rem /* 12px */;
+          padding-right: 0.75rem /* 12px */;
+          padding-top: 0.375rem /* 6px */;
+          padding-bottom: 0.375rem /* 6px */;
+          font-weight: 500;
+          &:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+          }
         }
       }
+
       .title_related {
         // max-height: 30px;
         // max-width: 10px;
@@ -273,6 +318,37 @@ body {
         width: 100px;
         height: 100px;
         border-radius: 16px;
+      }
+    }
+    &.active {
+      .right_side_container {
+        color: white !important;
+        .right_side_data {
+          // display: none;
+
+          .card {
+            // padding: 0.35rem;
+            --tw-bg-opacity: 1;
+            cursor: pointer;
+            background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+            border-radius: 16px;
+            text-transform: capitalize;
+            color: black !important;
+            padding-left: 0.75rem /* 12px */;
+            padding-right: 0.75rem /* 12px */;
+            padding-top: 0.375rem /* 6px */;
+            padding-bottom: 0.375rem /* 6px */;
+            font-weight: 500;
+            // flex-shrink: 0;
+            overflow: hidden;
+            // text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            &:hover {
+              --tw-bg-opacity: 1;
+              background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+            }
+          }
+        }
       }
     }
   }
