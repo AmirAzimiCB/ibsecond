@@ -10,9 +10,9 @@ export default function HomeImages() {
   };
 
   return (
-    <div className="imagesContainer" id="imagesContainer">
+    <div className="imagesContainer">
       <img className="homeBg" src="/Images/Home-bg.png" alt="1" border="0" />
-      <div style={{ top: "20%" }} className="mainContainer">
+      <div className="mainContainer">
         <div className="left-img-container">
           <img
             className="left-img"
@@ -41,7 +41,7 @@ export default function HomeImages() {
           <div className="right-img-container">
             <div className="right-img-inner-upper-container">
               <div
-                // onClick={handleGalleryClick()}
+                onClick={handleGalleryClick()}
                 className="right-img-inner-upper"
               >
                 <img
@@ -55,7 +55,7 @@ export default function HomeImages() {
                 </div>
               </div>
               <div
-                // onClick={handleGalleryClick()}
+                onClick={handleGalleryClick()}
                 className="right-img-inner-upper"
               >
                 <img
@@ -70,7 +70,7 @@ export default function HomeImages() {
               </div>
             </div>
             <div
-              // onClick={handleGalleryClick()}
+              onClick={handleGalleryClick()}
               className="right-img-inner-lower-container"
             >
               <div className="right-img-inner-lower">
