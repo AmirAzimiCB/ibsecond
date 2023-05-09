@@ -121,6 +121,9 @@ const CategoryPost = () => {
                       <div key={post._id} className="blog_showCase_items">
                         <div className="blog_image">
                           <img
+                            onClick={() =>
+                              navigate(`/blog/details/${post?.slug.current}`)
+                            }
                             src={urlFor(post?.mainImage?.asset._ref)}
                             alt={post?.title}
                             className="blog_img"
