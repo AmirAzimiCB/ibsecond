@@ -248,6 +248,8 @@
 
     .mainContainer {
         height: 160vh;
+        margin-top: 2rem;
+
     }
 
     .home-desc-text {
