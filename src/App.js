@@ -14,11 +14,7 @@ import ProtestResources from "./Pages/ProtestResources";
 import CategoryPost from "./Pages/CategoryPost";
 
 const App = () => {
-  
-  app.get('/cors', (req, res) => {
-res.set('Access-Control-Allow-Origin', '*');
-res.send({ "msg": "This has CORS enabled 🎈" })
-})
+ 
   
   
   return (
@@ -43,6 +39,10 @@ res.send({ "msg": "This has CORS enabled 🎈" })
   );
 };
 
+  app.get('/cors', (req, res) => {
+res.set('Access-Control-Allow-Origin', '*');
+res.send({ "msg": "This has CORS enabled 🎈" })
+})
 
 
 
