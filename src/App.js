@@ -37,11 +37,6 @@ const App = () => {
       </BrowserRouter>
     </>
 
-  App.get('/cors', (req, res) => {
-res.set('Access-Control-Allow-Origin', '*');
-})
-
-
   );
 };
 
