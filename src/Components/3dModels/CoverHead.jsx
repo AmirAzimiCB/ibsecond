@@ -22,18 +22,20 @@ const Model = ({ config }) => {
   const ref = useRef();
 
   useEffect(() => {
-    if (ref) {
-      config.onlyHead
-        ? setTarget(
-            ref.current.children[1].children[0].children[0].children[0]
-              .children[0].children[0]
-          )
-        : setTarget(
-            ref.current.children[1].children[0].children[0].children[0]
-              .children[0]
-          );
+    if (ref.current) {
+      const { children } = ref.current;
+      if (config.onlyHead) {
+        setTarget(
+          children[1]?.children[0]?.children[0]?.children[0]?.children[0]
+            ?.children[0]
+        );
+      } else {
+        setTarget(
+          children[1]?.children[0]?.children[0]?.children[0]?.children[0]
+        );
+      }
     }
-  }, [ref]);
+  }, [ref, config.onlyHead]);
 
   useFrame(({ pointer }) => {
     if (target) {
@@ -133,7 +135,7 @@ const Video = () => {
         transparent={true}
       >
         <videoTexture
-          attach='map'
+          attach="map"
           args={[video]}
           flipY={true}
           repeat={[1, 1]}
@@ -150,21 +152,20 @@ const Video = () => {
 
 export default function CoverHead({ config }) {
   const [isLoading, setIsLoading] = React.useState(true);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   return (
-    <div className='main-scene'>
+    <div className="main-scene">
       {isLoading || config.page === "contact" ? null : <LoadingEnd />}
       {isLoading ? null : (
         <img
           src={
             config.page === "cover"
-            ? "/Images/Cover-bg.png"
-            : "/Images/Contact-bg.png"
+              ? "/Images/Cover-bg.png"
+              : "/Images/Contact-bg.png"
           }
-          className='bg-img'
-          alt='background'
-          />
-          
+          className="bg-img"
+          alt="background"
+        />
       )}
       <Canvas camera={{ fov: 45, near: 0.1, far: 1000, position: [0, 0, 0] }}>
         <Lighting />
@@ -179,7 +180,7 @@ export default function CoverHead({ config }) {
       {isLoading ? null : (
         <>
           {config.page === "contact" && <Contact />}
-          {config.page === "cover" && <Header/>}
+          {config.page === "cover" && <Header />}
         </>
       )}
     </div>
