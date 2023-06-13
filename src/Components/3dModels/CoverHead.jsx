@@ -150,7 +150,7 @@ const Video = () => {
 
 export default function CoverHead({ config }) {
   const [isLoading, setIsLoading] = React.useState(true);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   return (
     <div className='main-scene'>
       {isLoading || config.page === "contact" ? null : <LoadingEnd />}
@@ -158,13 +158,12 @@ export default function CoverHead({ config }) {
         <img
           src={
             config.page === "cover"
-            ? "/Images/Cover-bg.png"
-            : "/Images/Contact-bg.png"
+              ? "/Images/Cover-bg.png"
+              : "/Images/Contact-bg.png"
           }
           className='bg-img'
           alt='background'
-          />
-          
+        />
       )}
       <Canvas camera={{ fov: 45, near: 0.1, far: 1000, position: [0, 0, 0] }}>
         <Lighting />
@@ -173,13 +172,13 @@ export default function CoverHead({ config }) {
 
           <Model config={config} />
 
-          <Environment preset={"warehouse"} />
+          <Environment files={"/Textures/empty_warehouse_01_1k.hdr"} />
         </Suspense>
       </Canvas>{" "}
       {isLoading ? null : (
         <>
           {config.page === "contact" && <Contact />}
-          {config.page === "cover" && <Header/>}
+          {config.page === "cover" && <Header />}
         </>
       )}
     </div>
