@@ -162,7 +162,7 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
                     {categories.map((category) => (
                       <Link
                         className="blog_links"
-                        to={`/${category.slug.current}`}
+                        to={`/category/${category.slug.current}`}
                         key={category._id}
                         onClick={() => setShowDrawer(false)}
                       >
