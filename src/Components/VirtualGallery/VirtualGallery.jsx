@@ -41,7 +41,7 @@ function VirtualGallery() {
     mesh.actionManager = new ActionManager(scene);
     mesh.targetURL = url;
     mesh.actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnPickTrigger, (event) => {
-      window.open(`${window.location.origin}/category/${event.source.targetURL}`)
+      window.open(`https://incendiaryballoons.org/category/${event.source.targetURL}`)
     }))
   };
   
