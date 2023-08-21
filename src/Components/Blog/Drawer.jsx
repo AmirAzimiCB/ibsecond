@@ -160,16 +160,17 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
                 ) : (
                   <article className="right_side_blog_links">
                     {categories.map((category) => (
-                      <Link
+                      <a
                         className="blog_links"
-                        to={`/category/${category.slug.current}`}
+                        target="_blank"
+                        href={`https://incendiaryballoons.org/category/${category.slug.current}`}
                         key={category._id}
                         onClick={() => setShowDrawer(false)}
                       >
                         <p onClick={() => changeCategory(category.title)}>
                           {category.title}
                         </p>
-                      </Link>
+                      </a>
                     ))}
                   </article>
                 )}
