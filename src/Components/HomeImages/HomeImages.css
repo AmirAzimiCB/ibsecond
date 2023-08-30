@@ -179,7 +179,7 @@ imagesContainer {
 
 @media screen and (max-width:768px) {
 	.imagesContainer {
-		height: 140vh;
+		  height: 890vh;
 		overflow-x: scroll
 	}
 
