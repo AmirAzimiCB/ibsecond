@@ -2,20 +2,29 @@
 
 .about-text-container {
   font-family: "Courier Prime", monospace;
-  width: 80vw;
+  max-width: 80vw;
   height: 85vh;
   position: absolute;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   top: 10%;
-  left: 0;
-  transform: translate(15%, 120%);
+  left: 5%;
+  /* transform: translate(15%, 10%); */
   background-color: #fff;
   z-index: 999;
+  overscroll-behavior-y: scroll;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 500px) {
+  .about-text-container {
+    left: 0%;
+  }
 }
 
 .about-text-container p {
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .about-image {
@@ -33,7 +42,7 @@
   padding: 0 3%;
   padding-top: 1rem;
   overflow: hidden;
-
+  overflow-y: scroll !important;
 }
 
 .about-text-title {
@@ -46,15 +55,8 @@
   font-size: 1.3rem;
   margin-top: 5%;
   color: #000;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px red,
-    0 0 20px red,
-    0 0 40px red,
-    0 0 80px red,
-    0 0 90px red,
-    0 0 100px red,
-    0 0 150px red;
+  text-shadow: 0 0 5px #fff, 0 0 10px red, 0 0 20px red, 0 0 40px red,
+    0 0 80px red, 0 0 90px red, 0 0 100px red, 0 0 150px red;
 }
 
 .cross-icon {
@@ -70,24 +72,19 @@
 
 @media screen and (max-width: 1024px) {
   .about-image {
-
     object-fit: contain;
     flex: 3;
   }
 
   .about-text {
-
     flex: 6;
 
     text-align: center;
-
   }
 
   .about-text-title {
     font-size: 1.5rem;
   }
-
-
 }
 
 @media screen and (max-width: 768px) {
@@ -111,7 +108,6 @@
     flex: 10;
     padding: 0;
     text-align: center;
-
   }
 
   .about-text-title {
@@ -121,7 +117,6 @@
   .about-text-desc {
     font-size: 1rem !important;
     padding: 0 2%;
-
   }
 
   .drag-over-text {
@@ -133,7 +128,6 @@
     color: #fff;
   }
 }
-
 
 @media screen and (max-width: 480px) {
   .about-text-container {
@@ -156,7 +150,6 @@
     flex: 10;
     padding: 0;
     text-align: center;
-
   }
 
   .about-text-title {
@@ -164,9 +157,8 @@
   }
 
   .about-text-desc {
-    font-size: .7rem !important;
+    font-size: 0.7rem !important;
     padding: 0 5%;
-
   }
 
   .drag-over-text {
@@ -181,15 +173,11 @@
 
 @media screen and (max-width: 380px) {
   .about-image {
-
     flex: 2;
-
   }
 
   .about-text {
-
     flex: 11;
-
   }
 }
 
@@ -201,16 +189,13 @@
   .about-text {
     flex: 14;
     overflow: scroll;
-
   }
 
   .about-text-container p {
-    font-size: .68rem !important;
-
+    font-size: 0.68rem !important;
   }
 
   .about-text-container {
     overflow-y: scroll;
   }
-
 }
