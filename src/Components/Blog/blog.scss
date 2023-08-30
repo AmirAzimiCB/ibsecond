@@ -1,7 +1,7 @@
 // blog nav bar
 
 .padded_container {
-  padding: 2rem;
+  padding: 0 2rem;
 
   &.active {
     background-color: white;
@@ -41,9 +41,7 @@
       color: #333;
     }
   }
-  @media screen and (max-width: 700px) {
-    backdrop-filter: blur(4px);
-  }
+ 
 }
 
 .drawerTab {
@@ -67,7 +65,7 @@
   margin-top: -9rem;
   // margin-right: 2rem;
   // padding-right: -4rem;
-  padding: 4rem;
+  padding:6rem 4rem;
   // position: absolute;
   // top: 5vh;
   // left: 10vw;
@@ -149,7 +147,7 @@
     width: 80%;
     // margin: 0 auto;
     .NavDrawer_news_category_div {
-      z-index: 99999999999999;
+      z-index: 9999999;
       display: flex;
       justify-content: space-between;
       align-items: center;
