@@ -6,7 +6,7 @@ export default function Contact() {
     <div className='contact-container'>
       <span className='contact-title'>YOUTH. CULTURE. NOW</span>
       <span className='contact-desc'>
-        Have a current issue you would like us to cover? Interesting in having
+        Have a current issue you would like us to cover? Interested in having
         Incendiary Ballons produce your next media piece?
       </span>
       <span className='contact-navs'>
