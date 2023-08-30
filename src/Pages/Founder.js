@@ -5,6 +5,7 @@ import FounderSection2 from "../Components/Founder/FounderSection2";
 import FounderSection3 from "../Components/Founder/FounderSection3";
 import Layout from "../Components/Layout";
 import useStore from "../store/ZustandStore";
+import FounderSection4 from "../Components/Founder/FounderSection4";
 function Founder() {
   const [change, setChange] = React.useState(false);
   const overlayRef = React.useRef(null);
@@ -14,16 +15,15 @@ function Founder() {
   return (
     <Layout>
       <div>
-      <Helmet>
-        <title>
-          Founder
-        </title>
-      </Helmet>
+        <Helmet>
+          <title>Founder</title>
+        </Helmet>
         {videoVisible ? null : (
-          <div ref={overlayRef} className='founder-overlay'></div>
+          <div ref={overlayRef} className="founder-overlay"></div>
         )}
 
         <FounderSection1 />
+        <FounderSection4 />
         <FounderSection2 />
         <FounderSection3 />
       </div>
