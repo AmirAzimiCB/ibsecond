@@ -151,7 +151,7 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
                 <hr />
               </div>
 
-              <p onClick={() => handleClick("/blog")} className="DrawerReset">
+              <p onClick={() => handleClick("https://incendiaryballoons.org/")} className="DrawerReset">
                 All
               </p>
               <div className="right_side_links">
