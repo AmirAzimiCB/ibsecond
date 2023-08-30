@@ -3,11 +3,10 @@
   height: 100vh;
   position: relative;
   display: flex;
+  padding: 0;
   flex-direction: column;
   overflow-x: hidden !important;
   overflow-y: hidden !important;
-
-
 }
 
 .founder-scroll-text-container {
@@ -25,29 +24,39 @@
 
   height: 25vh;
   text-align: center;
-
 }
 
 .founder1-text {
   background: rgb(7, 20, 29);
-  background: linear-gradient(27deg, rgba(7, 20, 29, 1) 50%, rgba(7, 20, 29, 1) 100%);
+  background: linear-gradient(
+    27deg,
+    rgba(7, 20, 29, 1) 50%,
+    rgba(7, 20, 29, 1) 100%
+  );
   color: #fff !important;
 }
 
 .founder3-text,
 .founder2-text {
   background: rgb(68, 101, 139);
-  background: linear-gradient(90deg, rgba(68, 101, 139, 1) 50%, rgba(151, 215, 215, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(68, 101, 139, 1) 50%,
+    rgba(151, 215, 215, 1) 100%
+  );
   color: #fff !important;
 }
 
 .founder4-text {
   border-radius: 20px !important;
   background: rgb(90, 48, 89);
-  background: linear-gradient(90deg, rgba(90, 48, 89, 1) 50%, rgba(214, 112, 153, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(90, 48, 89, 1) 50%,
+    rgba(214, 112, 153, 1) 100%
+  );
   color: #fff !important;
 }
-
 
 .founder-scroll-text {
   position: relative;
@@ -60,8 +69,6 @@
 
 .vertical-arrow-container,
 .horizontal-arrow-container {
-
-
   position: absolute;
   width: 100%;
   height: 100%;
@@ -73,7 +80,6 @@
 }
 
 .vertical-arrow-container {
-
   height: 35vh;
 }
 
@@ -83,7 +89,6 @@
   height: 100%;
 
   width: 100%;
-
 }
 
 .founder-section-img {
@@ -92,13 +97,11 @@
   overflow: hidden !important;
   object-fit: cover;
   position: absolute;
-
 }
-
 
 .founder-text-container {
   max-width: 100vw;
-  height: 50%;
+  height: auto !important;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -106,14 +109,12 @@
   z-index: 5;
 
   overflow: hidden !important;
+  overflow-y: scroll !important;
 }
-
 
 .founder-text {
   z-index: 2;
-
 }
-
 
 .founder-text-bg {
   background-color: #fff;
@@ -128,7 +129,6 @@
 .founder-section1-inner-text-container {
   display: flex;
   flex-direction: column;
-
 }
 
 .founders-name {
@@ -145,11 +145,7 @@
 }
 
 .arrow {
-
-
-
   cursor: pointer;
-
 }
 
 .arrow-left {
@@ -210,7 +206,6 @@
   }
 
   .vertical-arrow-container {
-
     height: 30vh;
   }
 }
@@ -221,11 +216,8 @@
   }
 
   .vertical-arrow-container {
-
     height: 25vh;
   }
-
-
 }
 
 @media screen and (max-width: 900px) {
@@ -235,7 +227,6 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-
   }
 
   .founders-scene {
@@ -255,7 +246,7 @@
 
   .founder-text-bg {
     width: 70%;
-    font-size: .95rem;
+    font-size: 0.95rem;
     padding: 1rem;
   }
 }
@@ -271,5 +262,4 @@
   .founders-scene {
     width: 90vw;
   }
-
 }
