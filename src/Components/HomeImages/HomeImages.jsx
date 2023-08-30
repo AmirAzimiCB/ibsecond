@@ -10,7 +10,7 @@ export default function HomeImages() {
   };
 
   return (
-    <div className="imagesContainer">
+    <div className="imagesContainer" id="imagesContainer">
       <img className="homeBg" src="/Images/Home-bg.png" alt="1" border="0" />
       <div className="mainContainer">
         <div className="left-img-container">
