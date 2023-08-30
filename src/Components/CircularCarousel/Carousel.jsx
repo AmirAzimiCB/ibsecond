@@ -6,7 +6,7 @@ import {
   AiOutlineArrowRight,
   AiOutlineArrowUp,
 } from "react-icons/ai";
-import "./Carousel.css";
+import "./Carousel.scss";
 
 export default function Carousel({ setObject, setIsClicked, isClicked }) {
   const ref = useRef();
@@ -46,11 +46,11 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
     <>
       <div
         ref={refAboutImage}
-        className='about-image-container'
-        draggable='false'
+        className="about-image-container"
+        draggable="false"
       >
-        <div className='about-container' draggable='false'>
-          <div className='about-instruction-text-container'>
+        <div className="about-container" draggable="false">
+          <div className="about-instruction-text-container">
             <div
               style={{
                 width:
@@ -59,62 +59,56 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
                       ? window.innerWidth < 600
                         ? window.innerWidth < 480
                           ? window.innerWidth < 380
-                            ? "34%"
+                            ? "36%"
                             : "32%"
                           : "30%"
                         : "25%"
-                      : "23%"
+                      : "32%"
                     : "20%",
                 height: "auto",
                 padding: "10px",
                 textAlign: "center",
               }}
-              className='about-instruction-text-background'
+              className="about-instruction-text-background"
             >
-              <div className='about-instruction-test-arrow-container'>
-                <div
-                  className='vertical-arrow-container vertical-arrow-manifesto '
-                  
-                >
-                  <div class='arrow arrow-down'>
+              <div className="about-instruction-test-arrow-container">
+                <div className="vertical-arrow-container vertical-arrow-manifesto ">
+                  <div class="arrow arrow-down">
                     <span></span>
                     <span></span>
                     <span></span>
                   </div>
-                  <div class='arrow arrow-up'>
+                  <div class="arrow arrow-up">
                     <span></span>
                     <span></span>
                     <span></span>
                   </div>
                 </div>
-                <div
-                  className='horizontal-arrow-container horizontal-arrow-manifesto '
-                
-                >
-                  <div class='arrow arrow-left'>
+                <div className="horizontal-arrow-container horizontal-arrow-manifesto ">
+                  <div class="arrow arrow-left">
                     <span></span>
                     <span></span>
                     <span></span>
                   </div>
-                  <div class='arrow arrow-right'>
+                  <div class="arrow arrow-right">
                     <span></span>
                     <span></span>
                     <span></span>
                   </div>
                 </div>
-                <span className='about-instruction-text'>
+                <span className="about-instruction-text">
                   Click on one of the images to read About Our Site
                 </span>
               </div>
             </div>
           </div>
-          <div className='about-inner-container' ref={ref} draggable='false'>
+          <div className="about-inner-container" ref={ref} draggable="false">
             <li style={{ "--i": 0 }}>
               <img
-                className='icon-img'
-                src='/Icons/body.png'
-                draggable='false'
-                alt='body'
+                className="icon-img"
+                src="/Icons/body.png"
+                draggable="false"
+                alt="body"
                 onPointerEnter={onHover}
                 onPointerLeave={onHoverOut}
                 onClick={handleClick}
@@ -122,10 +116,10 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
             </li>
             <li style={{ "--i": 1 }}>
               <img
-                className='icon-img'
-                src='/Icons/bottle.png'
-                draggable='false'
-                alt='bottle'
+                className="icon-img"
+                src="/Icons/bottle.png"
+                draggable="false"
+                alt="bottle"
                 onPointerEnter={onHover}
                 onPointerLeave={onHoverOut}
                 onClick={handleClick}
@@ -133,10 +127,10 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
             </li>
             <li style={{ "--i": 2 }}>
               <img
-                className='icon-img'
-                src='/Icons/earings.png'
-                draggable='false'
-                alt='earings'
+                className="icon-img"
+                src="/Icons/earings.png"
+                draggable="false"
+                alt="earings"
                 onPointerEnter={onHover}
                 onPointerLeave={onHoverOut}
                 onClick={handleClick}
@@ -144,10 +138,10 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
             </li>
             <li style={{ "--i": 3 }}>
               <img
-                className='icon-img'
-                src='/Icons/fist.png'
-                draggable='false'
-                alt='fist'
+                className="icon-img"
+                src="/Icons/fist.png"
+                draggable="false"
+                alt="fist"
                 onPointerEnter={onHover}
                 onPointerLeave={onHoverOut}
                 onClick={handleClick}
@@ -155,10 +149,10 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
             </li>
             <li style={{ "--i": 4 }}>
               <img
-                className='icon-img'
-                src='/Icons/nails.png'
-                draggable='false'
-                alt='nails'
+                className="icon-img"
+                src="/Icons/nails.png"
+                draggable="false"
+                alt="nails"
                 onPointerEnter={onHover}
                 onPointerLeave={onHoverOut}
                 onClick={handleClick}
@@ -167,10 +161,10 @@ export default function Carousel({ setObject, setIsClicked, isClicked }) {
 
             <li style={{ "--i": 5 }}>
               <img
-                className='icon-img'
-                src='/Icons/teeth.png'
-                draggable='false'
-                alt='teeth'
+                className="icon-img"
+                src="/Icons/teeth.png"
+                draggable="false"
+                alt="teeth"
                 onPointerEnter={onHover}
                 onPointerLeave={onHoverOut}
                 onClick={handleClick}
