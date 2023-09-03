@@ -4,7 +4,7 @@
     flex-direction: column;
     padding: .5rem;
     align-items: center;
-
+    z-index: 9999999;
     position: absolute;
     top: 20%;
     right: 1%;
