@@ -3,11 +3,11 @@ import "./Contact.css";
 
 export default function Contact() {
   return (
-    <div className='contact-container'>
+    <div style={{zIndex:99999999999}} className='contact-container'>
       <span className='contact-title'>YOUTH. CULTURE. NOW</span>
       <span className='contact-desc'>
         Have a current issue you would like us to cover? Interested in having
-        Incendiary Ballons produce your next media piece?
+        Incendiary Balloon produce your next media piece?
       </span>
       <span className='contact-navs'>
         Contact Incendiary Balloons today for more information
