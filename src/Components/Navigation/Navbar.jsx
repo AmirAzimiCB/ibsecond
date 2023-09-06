@@ -63,7 +63,7 @@ const NavbarWhite = ({ navLinksRef, show, setShow }) => {
               Protest Resources
             </li>
             <li onClick={() => handleClick("/contact")}>Contact</li>
-            <li onClick={() => handleClick("/blog")}>Blog</li>
+            <li onClick={() => handleClick("https://incendiaryballoons.org/")}>Blog</li>
           </ul>
           {show ? (
             <div className="nav-icon" onClick={() => setShow(!show)}>
