@@ -19,6 +19,8 @@ const client = sanityClient({
 const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
   const navigate = useNavigate();
   const [navigateTo, setNavigateTo] = useState(null);
+  const [showVideo, setShowVideo] = useState(false);
+
   const setBlogCategory = useStore((state) => state.setBlogCategory);
   const changeCategory = (category) => {
     setShowDrawer(false);
@@ -31,6 +33,7 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
   const handleClick = (link) => {
     setNavigateTo(link);
     setShowDrawer(false);
+    setShowVideo(true);
     if (window.innerWidth < 768) {
       navigate(link);
     } else {
@@ -151,7 +154,10 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
                 <hr />
               </div>
 
-              <p onClick={() => handleClick("https://incendiaryballoons.org/")} className="DrawerReset">
+              <p
+                onClick={() => handleClick("https://incendiaryballoons.org/")}
+                className="DrawerReset"
+              >
                 All
               </p>
               <div className="right_side_links">
@@ -179,18 +185,17 @@ const Drawer = ({ showDrawer, setFilter, setShowDrawer = () => {} }) => {
           </section>
         )}
       </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          zIndex: -100,
-        }}
-      >
-        {navigateTo && <VideoLoader Navigateto={navigateTo} />}
-      </div>
+      {showVideo && (
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 99999999999999999,
+          }}
+        >
+          {navigateTo && <VideoLoader Navigateto={navigateTo} />}
+        </div>
+      )}
     </>
   );
 };
