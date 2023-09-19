@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./HomeImages.css";
+import "./HomeImages.scss";
 
 export default function HomeImages() {
   const descRefTop = React.useRef(null);
@@ -11,7 +11,7 @@ export default function HomeImages() {
 
   return (
     <div className="imagesContainer" id="imagesContainer">
-      <img className="homeBg" src="/Images/Home-bg.png" alt="1" border="0" />
+      {/* <img className="homeBg" src="/Images/Home-bg.png" alt="1" border="0" /> */}
       <div className="mainContainer">
         <div className="left-img-container">
           <img
